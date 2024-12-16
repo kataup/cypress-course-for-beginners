@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      max-width: 400px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+
+    .success {
+      color: green;
+      font-size: 1.1em;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Login</h1>
+  <form data-testid="login-form">
+    <div class="form-group">
+      <label for="username">Username</label><br />
+      <input data-testid="username-input" id="username" type="text" name="username" placeholder="Enter your username" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label><br />
+      <input data-testid="password-input" id="password" type="password" name="password" placeholder="Enter your password" />
+    </div>
+    <button data-testid="login-button" type="submit">Login</button>
+  </form>
+  <div data-testid="error-message" class="error" style="display: none;">Invalid credentials, please try again.</div>
+  <div data-testid="success-message" class="success" style="display: none;">Login successful! Welcome back.</div>
+
+  <script>
+    const form = document.querySelector('[data-testid="login-form"]');
+    const usernameInput = document.querySelector('[data-testid="username-input"]');
+    const passwordInput = document.querySelector('[data-testid="password-input"]');
+    const errorMessage = document.querySelector('[data-testid="error-message"]');
+    const successMessage = document.querySelector('[data-testid="success-message"]');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      // Simulate an authentication check
+      if (username === 'testuser' && password === 'password123') {
+        successMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+      } else {
+        errorMessage.style.display = 'block';
+        successMessage.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
