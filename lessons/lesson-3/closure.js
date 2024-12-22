@@ -1,42 +1,42 @@
-// Global scope
-var globalVar = "I'm global!";
+// Globálny rozsah
+var globalnaPremenna = "Som globálna!";
 
-function outerFunction() {
-  // Outer function scope
-  let outerVariable = 'I am outside!';
+function vonkajsiaFunkcia() {
+  // Rozsah vonkajšej funkcie
+  let vonkajsiaPremenna = 'Som vonku!';
 
-  function innerFunction() {
-    // Inner function scope
-    let innerVariable = 'I am inside!';
-    console.log(outerVariable); // Accessible
-    console.log(innerVariable); // Accessible
+  function vnutornaFunkcia() {
+    // Rozsah vnútornej funkcie
+    let vnutornaPremenna = 'Som vnútri!';
+    console.log(vonkajsiaPremenna); // Prístupné
+    console.log(vnutornaPremenna); // Prístupné
   }
 
   if (true) {
-    // Block scope
-    let blockVar = "I'm inside a block!";
-    console.log(blockVar); // Accessible
+    // Blokový rozsah
+    let blokovaPremenna = "Som v bloku!";
+    console.log(blokovaPremenna); // Prístupné
   }
 
-  const arrowFunction = () => { return 'I am an arrow function!' };
+  const arrowFunction = () => { return 'Som šípková funkcia!' };
 
-  innerFunction();
-  console.log(globalVar); // Accessible
-  console.log(innerVariable); // ReferenceError: innerVariable is not defined
-  console.log(arrowFunction()); // Accessible
+  vnutornaFunkcia();
+  console.log(globalnaPremenna); // Prístupné
+  console.log(vnutornaPremenna); // ReferenceError: vnutornaPremenna nie je definovaná
+  console.log(arrowFunction()); // Prístupné
 }
-//outerFunction();
+vonkajsiaFunkcia();
 
-// function anotherOuterFunction() {
-//   let outerVar = "I'm from the outer scope!";
+function dalsiaVonkajsiaFunkcia() {
+  let dalsiaVonkajsiaPremenna = "Som z vonkajšieho rozsahu!";
 
-//   function innerFunction() {
-//     console.log(outerVar); // Accessing outerVar
-//   }
+  function vnutornaFunkcia() {
+    console.log(dalsiaVonkajsiaPremenna); // Prístup k dalsiaVonkajsiaPremenna
+  }
 
-//   return innerFunction;
-// }
+  return vnutornaFunkcia;
+}
 
-// const myInnerFunction = anotherOuterFunction();
-//myInnerFunction(); // Outputs: I'm from the outer scope!
+const mojaVnutornaFunkcia = dalsiaVonkajsiaFunkcia();
+mojaVnutornaFunkcia(); // Výstup: Som z vonkajšieho rozsahu!
 

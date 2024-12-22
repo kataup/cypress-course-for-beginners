@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ukážka interakcie Cypress</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ukážka interakcie Cypress</h1>
+
+  <!-- Input Fields -->
+  <div>
+    <label for="username">Používateľské meno:</label>
+    <input data-testid="username-input" type="text" id="username" placeholder="Zadajte svoje používateľské meno" />
+  </div>
+  <div>
+    <label for="password">Heslo:</label>
+    <input data-testid="password-input" type="password" id="password" placeholder="Zadajte svoje heslo" />
+  </div>
+
+  <!-- Dropdown -->
+  <div>
+    <label for="role">Rola:</label>
+    <select data-testid="role-select" id="role">
+      <option value="user">Používateľ</option>
+      <option value="admin">Administrátor</option>
+      <option value="superadmin">Super Administrátor</option>
+    </select>
+  </div>
+
+  <!-- Checkboxes and Radio Buttons -->
+  <div>
+    <input data-testid="accept-terms" type="checkbox" id="accept-terms" />
+    <label for="accept-terms">Súhlasím s podmienkami</label>
+  </div>
+  <div>
+    <input data-testid="gender-male" type="radio" id="gender-male" name="gender" value="male" />
+    <label for="gender-male">Muž</label>
+    <input data-testid="gender-female" type="radio" id="gender-female" name="gender" value="female" />
+    <label for="gender-female">Žena</label>
+  </div>
+
+  <!-- Buttons -->
+  <div>
+    <button data-testid="submit-button">Odoslať</button>
+    <button data-testid="reset-button" type="reset">Resetovať</button>
+  </div>
+
+  <!-- Hidden and Disabled Elements -->
+  <div>
+    <p data-testid="hidden-message" class="hidden">Toto je skrytá správa.</p>
+    <button data-testid="disabled-button" disabled>Zakázané tlačidlo</button>
+  </div>
+
+  <!-- File Upload -->
+  <div>
+    <label for="file-upload">Nahrať súbor:</label>
+    <input data-testid="file-upload" type="file" id="file-upload" />
+  </div>
+
+  <!-- Table -->
+  <table data-testid="user-table" border="1" style="margin-top: 20px;">
+    <thead>
+      <tr>
+        <th>Používateľské meno</th>
+        <th>Rola</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Alice</td>
+        <td>Používateľ</td>
+      </tr>
+      <tr>
+        <td>Bob</td>
+        <td>Administrátor</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Dynamic Interaction -->
+  <div>
+    <label for="dynamic-search">Hľadať:</label>
+    <input data-testid="dynamic-search" type="text" id="dynamic-search" placeholder="Hľadať..." />
+    <ul data-testid="search-results">
+      <li>Alice</li>
+      <li>Bob</li>
+      <li>Charlie</li>
+    </ul>
+  </div>
+
+  <script>
+    // JavaScript for dynamic interaction
+    const searchInput = document.querySelector('[data-testid="dynamic-search"]');
+    const searchResults = document.querySelector('[data-testid="search-results"]');
+
+    searchInput.addEventListener('input', (event) => {
+      const query = event.target.value.toLowerCase();
+      const items = searchResults.querySelectorAll('li');
+      items.forEach((item) => {
+        if (item.textContent.toLowerCase().includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

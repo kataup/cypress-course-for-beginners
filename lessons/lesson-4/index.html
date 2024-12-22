@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test Interakcie s DOM</title>
+</head>
+
+<body>
+  <h1 id="title">Vitajte na testovacej stránke</h1>
+  <button id="changeTitle">Zmeniť názov</button>
+  <input type="text" id="username" placeholder="Zadajte používateľské meno" />
+  <button id="submitForm">Odoslať</button>
+  <div id="output"></div>
+
+  <h2>Items</h2>
+  <button onclick="orderList()">Ocislovat list</button>
+  <ul id="list">
+    <li class="list-item">Item</li>
+    <li class="list-item">Item</li>
+    <li class="list-item">Item</li>
+  </ul>
+
+  <script>
+    document.getElementById('changeTitle').addEventListener('click', () => {
+      document.getElementById('title').innerText = 'Title Changed!';
+      const title = document.querySelector('#title');
+      title.style.color = 'red';
+
+      const listItems = document.querySelectorAll('.list-item');
+      listItems.forEach((item) => {
+        item.style.color = 'blue';
+      });
+    });
+
+    // Napiste, ktora prida poradove cislo k itemom v zozname
+
+    // Napiste funkciu, ktora do zoznamu prida dalsi item a text bude bold
+
+
+    document.getElementById('submitForm').addEventListener('click', () => {
+      const username = document.getElementById('username').value;
+      document.getElementById('output').innerText = `Hello, ${username}!`;
+    });
+  </script>
+</body>
+
+</html>
