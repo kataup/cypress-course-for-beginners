@@ -9,7 +9,29 @@
 - **Types of Control Structures:**
   - **Conditional Statements:** `if`, `else if`, `else`, `switch`.
   - **Loops:** `for`, `while`, `do...while`, `for...of`, `for...in`.
-    
+
+
+##### **What are Control Structures?**
+
+**Definition:**
+Control structures are programming constructs that dictate the flow of execution within a program. They determine the order in which statements are executed, allowing developers to implement decision-making and repetitive tasks in their code.
+
+**Detailed Explanation:**
+- **Purpose:** Control structures enable the creation of dynamic and flexible programs by allowing the code to respond differently based on various conditions or by repeating certain operations multiple times.
+  
+- **Types of Control Structures:**
+  1. **Conditional Statements:** Execute different blocks of code based on whether a condition is true or false.
+  2. **Loops:** Repeat a block of code multiple times as long as a specified condition remains true.
+
+- **Importance in Programming:**
+  - **Decision Making:** Allows programs to make decisions and execute code selectively.
+  - **Repetition:** Facilitates the execution of repetitive tasks without redundant code.
+  - **Efficiency:** Enhances code efficiency and readability by reducing duplication and handling complex logic succinctly.
+
+**Visual Representation:**
+- **Flowcharts:** Often used to visualize control structures, showing the flow of execution based on conditions and iterations.
+
+
 #### **B. Conditional Statements**
 - **`if` Statement:**
   - Executes a block of code if a specified condition is true.
@@ -21,6 +43,108 @@
 - **`switch` Statement:**
   - Evaluates an expression against multiple cases.
   - Simplifying multiple conditional checks.
+
+##### **Conditional Statements**
+
+**Definition:**
+Conditional statements are control structures that execute specific blocks of code based on whether a given condition evaluates to true or false.
+
+**Detailed Explanation:**
+- **Types of Conditional Statements:**
+  1. **`if` Statement:**
+     - **Purpose:** Executes a block of code if a specified condition is true.
+     - **Syntax:**
+       ```javascript
+       if (condition) {
+         // code to execute if condition is true
+       }
+       ```
+     - **Example:**
+       ```javascript
+       let score = 85;
+       if (score >= 80) {
+         console.log("Great job!");
+       }
+       ```
+
+  2. **`else if` Statement:**
+     - **Purpose:** Provides additional conditions if the previous `if` condition is false.
+     - **Syntax:**
+       ```javascript
+       if (condition1) {
+         // code if condition1 is true
+       } else if (condition2) {
+         // code if condition2 is true
+       }
+       ```
+     - **Example:**
+       ```javascript
+       let score = 75;
+       if (score >= 90) {
+         console.log("Excellent!");
+       } else if (score >= 80) {
+         console.log("Great job!");
+       }
+       ```
+
+  3. **`else` Statement:**
+     - **Purpose:** Executes a block of code if all preceding conditions are false.
+     - **Syntax:**
+       ```javascript
+       if (condition1) {
+         // code if condition1 is true
+       } else if (condition2) {
+         // code if condition2 is true
+       } else {
+         // code if all conditions are false
+       }
+       ```
+     - **Example:**
+       ```javascript
+       let score = 55;
+       if (score >= 90) {
+         console.log("Excellent!");
+       } else if (score >= 80) {
+         console.log("Great job!");
+       } else {
+         console.log("Keep trying!");
+       }
+       ```
+
+  4. **`switch` Statement:**
+     - **Purpose:** Evaluates an expression against multiple case values and executes corresponding code blocks.
+     - **Syntax:**
+       ```javascript
+       switch (expression) {
+         case value1:
+           // code to execute if expression === value1
+           break;
+         case value2:
+           // code to execute if expression === value2
+           break;
+         default:
+           // code to execute if expression doesn't match any case
+       }
+       ```
+     - **Example:**
+       ```javascript
+       let day = "Monday";
+       switch (day) {
+         case "Monday":
+           console.log("Start of the work week!");
+           break;
+         case "Friday":
+           console.log("End of the work week!");
+           break;
+         default:
+           console.log("Midweek days.");
+       }
+       ```
+
+**Use Cases in Test Automation:**
+- **Dynamic Test Behavior:** Adjusting test steps based on varying application states or user inputs.
+- **Error Handling:** Executing different actions when tests pass or fail under certain conditions.
+
     
 #### **C. Loops**
 - **`for` Loop:**
@@ -33,7 +157,100 @@
   - Similar to `while` but guarantees at least one execution.
 - **`for...of` and `for...in` Loops:**
   - Iterating over iterable objects (arrays, strings) and object properties respectively.
-    
+
+##### **Loops**
+
+**Definition:**
+Loops are control structures that repeatedly execute a block of code as long as a specified condition remains true.
+
+**Detailed Explanation:**
+- **Types of Loops:**
+  1. **`for` Loop:**
+     - **Purpose:** Executes a block of code a predetermined number of times.
+     - **Syntax:**
+       ```javascript
+       for (initialization; condition; increment) {
+         // code to execute
+       }
+       ```
+     - **Example:**
+       ```javascript
+       for (let i = 0; i < 5; i++) {
+         console.log("Iteration:", i);
+       }
+       ```
+
+  2. **`while` Loop:**
+     - **Purpose:** Continues to execute a block of code as long as the condition is true.
+     - **Syntax:**
+       ```javascript
+       while (condition) {
+         // code to execute
+       }
+       ```
+     - **Example:**
+       ```javascript
+       let i = 0;
+       while (i < 5) {
+         console.log("Iteration:", i);
+         i++;
+       }
+       ```
+
+  3. **`do...while` Loop:**
+     - **Purpose:** Executes a block of code once before checking the condition, then repeats as long as the condition is true.
+     - **Syntax:**
+       ```javascript
+       do {
+         // code to execute
+       } while (condition);
+       ```
+     - **Example:**
+       ```javascript
+       let i = 0;
+       do {
+         console.log("Iteration:", i);
+         i++;
+       } while (i < 5);
+       ```
+
+  4. **`for...of` Loop:**
+     - **Purpose:** Iterates over iterable objects (like arrays, strings) and accesses their values.
+     - **Syntax:**
+       ```javascript
+       for (const element of iterable) {
+         // code to execute
+       }
+       ```
+     - **Example:**
+       ```javascript
+       const fruits = ["Apple", "Banana", "Cherry"];
+       for (const fruit of fruits) {
+         console.log("Fruit:", fruit);
+       }
+       ```
+
+  5. **`for...in` Loop:**
+     - **Purpose:** Iterates over the enumerable properties of an object.
+     - **Syntax:**
+       ```javascript
+       for (const key in object) {
+         // code to execute
+       }
+       ```
+     - **Example:**
+       ```javascript
+       const user = { name: "Alice", age: 25, role: "Tester" };
+       for (const key in user) {
+         console.log(key + ":", user[key]);
+       }
+       ```
+
+**Use Cases in Test Automation:**
+- **Data-Driven Testing:** Iterating over arrays of test data to perform repetitive test cases with different inputs.
+- **Batch Operations:** Executing a series of test steps multiple times under varying conditions or configurations.
+
+
 #### **D. Introduction to Functions**
 - **What are Functions?**
   - Reusable blocks of code designed to perform specific tasks.
@@ -46,6 +263,87 @@
 - **Scope and Closures:**
   - Understanding variable accessibility within functions.
   - Introduction to closures and their significance.
+
+
+##### **Scope and Closures**
+
+**Definition:**
+- **Scope:** The accessibility of variables and functions in different parts of the code during runtime.
+- **Closures:** A feature in JavaScript where an inner function has access to variables in its outer enclosing function's scope, even after the outer function has finished executing.
+
+**Detailed Explanation:**
+
+###### **A. Scope:**
+1. **Global Scope:**
+   - **Definition:** Variables declared outside any function or block are in the global scope and accessible anywhere in the code.
+   - **Example:**
+     ```javascript
+     var globalVar = "I'm global!";
+     function displayGlobal() {
+       console.log(globalVar); // Accessible
+     }
+     displayGlobal(); // Outputs: I'm global!
+     console.log(globalVar); // Accessible
+     ```
+
+2. **Function Scope:**
+   - **Definition:** Variables declared within a function are accessible only within that function and its nested (inner) functions.
+   - **Example:**
+     ```javascript
+     function outerFunction() {
+       var functionVar = "I'm inside a function!";
+       function innerFunction() {
+         console.log(functionVar); // Accessible
+       }
+       innerFunction();
+       console.log(functionVar); // Accessible
+     }
+     outerFunction();
+     console.log(functionVar); // ReferenceError: functionVar is not defined
+     ```
+
+3. **Block Scope:**
+   - **Definition:** Variables declared within a block (`{}`) using `let` or `const` are accessible only within that block.
+   - **Example:**
+     ```javascript
+     if (true) {
+       let blockVar = "I'm inside a block!";
+       console.log(blockVar); // Accessible
+     }
+     console.log(blockVar); // ReferenceError: blockVar is not defined
+     ```
+
+###### **B. Closures:**
+1. **Definition:**
+   - A closure is created when an inner function retains access to its outer function's variables even after the outer function has completed execution.
+
+2. **Example:**
+   ```javascript
+   function outerFunction() {
+     let outerVar = "I'm from the outer scope!";
+     
+     function innerFunction() {
+       console.log(outerVar); // Accessing outerVar
+     }
+     
+     return innerFunction;
+   }
+   
+   const myInnerFunction = outerFunction();
+   myInnerFunction(); // Outputs: I'm from the outer scope!
+   ```
+
+3. **Use Cases in Test Automation:**
+   - **Private Variables:** Encapsulating variables that should not be accessible globally.
+   - **Function Factories:** Creating specialized functions with pre-configured parameters or behaviors.
+
+4. **Benefits:**
+   - **Data Privacy:** Keeps certain variables hidden from the global scope, preventing unintended modifications.
+   - **Enhanced Functionality:** Allows the creation of more versatile and flexible functions that can maintain state across multiple invocations.
+
+**Visual Representation:**
+- **Closure Diagram:** Illustrate how an inner function retains access to the outer function's variables even after the outer function has executed.
+
     
 #### **E. Best Practices for Control Structures and Functions**
 - **Readability and Maintainability:**
@@ -57,7 +355,136 @@
   - Descriptive names for functions and variables to convey intent.
 - **DRY Principle (Don't Repeat Yourself):**
   - Reducing code duplication by leveraging functions and loops effectively.
-    
+
+
+
+##### **Code Examples for "Best Practices for Control Structures and Functions"**
+
+Implementing best practices ensures that your code is clean, maintainable, and efficient. Below are some code examples demonstrating these practices in the context of control structures and functions.
+
+##### **A. Readability and Maintainability**
+
+**Bad Practice: Deep Nesting**
+```javascript
+if (isUserLoggedIn) {
+  if (user.hasPermission) {
+    if (user.isActive) {
+      performSensitiveOperation();
+    }
+  }
+}
+```
+
+**Good Practice: Early Returns to Reduce Nesting**
+```javascript
+function performOperation(user) {
+  if (!user.isLoggedIn) return;
+  if (!user.hasPermission) return;
+  if (!user.isActive) return;
+  
+  performSensitiveOperation();
+}
+```
+
+##### **B. Keeping Functions Focused and Single-Purposed**
+
+**Bad Practice: Function Doing Multiple Tasks**
+```javascript
+function processUserData(user) {
+  // Validate user
+  if (!user.email) {
+    console.log("Invalid user");
+    return;
+  }
+  
+  // Save user to database
+  database.save(user);
+  
+  // Send welcome email
+  emailService.sendWelcomeEmail(user.email);
+}
+```
+
+**Good Practice: Separate Functions for Each Task**
+```javascript
+function validateUser(user) {
+  if (!user.email) {
+    console.log("Invalid user");
+    return false;
+  }
+  return true;
+}
+
+function saveUser(user) {
+  database.save(user);
+}
+
+function sendWelcomeEmail(user) {
+  emailService.sendWelcomeEmail(user.email);
+}
+
+function processUserData(user) {
+  if (!validateUser(user)) return;
+  saveUser(user);
+  sendWelcomeEmail(user);
+}
+```
+
+##### **C. Avoiding Deep Nesting with Guard Clauses**
+
+**Bad Practice: Multiple Levels of Conditions**
+```javascript
+function checkAccess(user) {
+  if (user) {
+    if (user.isActive) {
+      if (user.hasAccess) {
+        grantAccess();
+      }
+    }
+  }
+}
+```
+
+**Good Practice: Using Guard Clauses**
+```javascript
+function checkAccess(user) {
+  if (!user) return;
+  if (!user.isActive) return;
+  if (!user.hasAccess) return;
+  
+  grantAccess();
+}
+```
+
+##### **D. Using Descriptive Naming Conventions**
+
+**Bad Practice: Vague Variable and Function Names**
+```javascript
+function doIt(a, b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+let x = doIt(5, 10);
+```
+
+**Good Practice: Descriptive Names**
+```javascript
+function getHigherValue(firstValue, secondValue) {
+  if (firstValue > secondValue) {
+    return firstValue;
+  } else {
+    return secondValue;
+  }
+}
+
+let higherScore = getHigherValue(5, 10);
+
+```
+
 #### **F. Practical Examples**
 - **Implementing Conditional Logic in Tests:**
   - Using `if` statements to handle different test scenarios.
@@ -65,6 +492,139 @@
   - Iterating over arrays of test inputs to perform data-driven testing.
 - **Creating Utility Functions:**
   - Writing functions to encapsulate repetitive test actions, enhancing reusability.
+
+
+
+
+
+### **E. How Control Structures Direct the Flow of a Program**
+
+**Example Scenario: User Authentication**
+
+Imagine you are writing a test script to verify user authentication on a web application. Control structures help determine the flow based on different user inputs and system states.
+
+**Code Example:**
+```javascript
+function authenticateUser(username, password) {
+  if (!username || !password) {
+    console.log("Username and password are required.");
+    return;
+  }
+
+  if (password.length < 6) {
+    console.log("Password must be at least 6 characters long.");
+    return;
+  }
+
+  // Simulate server-side authentication
+  let isAuthenticated = serverAuthenticate(username, password);
+
+  if (isAuthenticated) {
+    console.log("User authenticated successfully!");
+    // Proceed to grant access
+  } else {
+    console.log("Authentication failed. Please check your credentials.");
+    // Prompt user to retry or reset password
+  }
+}
+
+// Simulated server authentication function
+function serverAuthenticate(username, password) {
+  // For demonstration, any password "password123" authenticates successfully
+  return password === "password123";
+}
+
+// Test cases
+authenticateUser("testUser", "password123"); // Successful authentication
+authenticateUser("testUser", "pass");        // Password too short
+authenticateUser("", "password123");         // Missing username
+authenticateUser("testUser", "wrongPass");   // Authentication failed
+```
+
+**Explanation:**
+1. **Initial Checks:**
+   - Uses `if` statements to verify that both username and password are provided.
+   - Ensures password meets minimum length requirements.
+
+2. **Authentication Logic:**
+   - Calls `serverAuthenticate` to simulate server-side validation.
+   - Based on the result, uses another `if` statement to determine whether to grant access or prompt the user to retry.
+
+3. **Flow Control:**
+   - Depending on the conditions, the program directs the flow to different blocks of code, ensuring that only valid and authenticated users gain access.
+
+**Outcome:**
+- Demonstrates how `if` and `else` statements control program execution based on varying conditions, ensuring robust and secure authentication processes.
+
+
+#### **Illustrations and Real Examples**
+
+##### **Illustrate How Control Structures Direct the Flow of a Program**
+
+**Example Scenario: Automated Form Submission Testing**
+
+Imagine you are writing a Cypress test to automate the submission of a user registration form. Control structures help manage different test scenarios based on user inputs and application responses.
+
+**Code Example:**
+```javascript
+describe('User Registration Form', () => {
+  it('Submits the form with valid data', () => {
+    cy.visit('/register');
+
+    // Fill out the form
+    cy.get('#username').type('testUser');
+    cy.get('#email').type('testuser@example.com');
+    cy.get('#password').type('SecurePass123');
+
+    // Conditional Check: Ensure the Submit button is enabled
+    cy.get('#submit').then(($btn) => {
+      if (!$btn.is(':disabled')) {
+        cy.wrap($btn).click();
+      } else {
+        throw new Error('Submit button is disabled');
+      }
+    });
+
+    // Verify successful registration
+    cy.contains('Registration Successful!').should('be.visible');
+  });
+
+  it('Displays error with invalid email', () => {
+    cy.visit('/register');
+
+    // Fill out the form with invalid email
+    cy.get('#username').type('testUser');
+    cy.get('#email').type('invalid-email');
+    cy.get('#password').type('SecurePass123');
+
+    // Attempt to submit the form
+    cy.get('#submit').click();
+
+    // Conditional Check: Display error message if email is invalid
+    cy.get('.error-message').then(($msg) => {
+      if ($msg.is(':visible')) {
+        cy.wrap($msg).should('contain', 'Invalid email address');
+      } else {
+        throw new Error('Error message not displayed for invalid email');
+      }
+    });
+  });
+});
+```
+
+**Explanation:**
+1. **Conditional Statements (`if`):**
+   - Before clicking the submit button, the test checks if the button is not disabled.
+   - If the button is enabled, it proceeds to click; otherwise, it throws an error.
+
+2. **Looping Structures:**
+   - Although not explicitly shown here, loops can be used to iterate through multiple test cases or data sets, enhancing test coverage.
+
+3. **Flow Control:**
+   - Depending on user input (valid or invalid email), the test either verifies successful registration or checks for appropriate error messages, directing the flow accordingly.
+
+**Outcome:**
+- Demonstrates how `if` statements control test execution based on dynamic conditions, ensuring that tests respond appropriately to different user inputs and application states.
 
 ---
     
@@ -315,568 +875,3 @@
 - **Provide Multiple Examples:**
   - Offer various examples for each concept to cater to different learning styles and reinforce understanding.
     
----
-
-Absolutely! Let's delve into the detailed definitions and examples for **Lesson 3: Control Structures and Functions in JavaScript**. These explanations and examples will enhance your presentation and course materials, ensuring your students grasp these fundamental concepts effectively.
-
----
-
-## **Detailed Definitions**
-
-### **1. What are Control Structures?**
-
-**Definition:**
-Control structures are programming constructs that dictate the flow of execution within a program. They determine the order in which statements are executed, allowing developers to implement decision-making and repetitive tasks in their code.
-
-**Detailed Explanation:**
-- **Purpose:** Control structures enable the creation of dynamic and flexible programs by allowing the code to respond differently based on various conditions or by repeating certain operations multiple times.
-  
-- **Types of Control Structures:**
-  1. **Conditional Statements:** Execute different blocks of code based on whether a condition is true or false.
-  2. **Loops:** Repeat a block of code multiple times as long as a specified condition remains true.
-
-- **Importance in Programming:**
-  - **Decision Making:** Allows programs to make decisions and execute code selectively.
-  - **Repetition:** Facilitates the execution of repetitive tasks without redundant code.
-  - **Efficiency:** Enhances code efficiency and readability by reducing duplication and handling complex logic succinctly.
-
-**Visual Representation:**
-- **Flowcharts:** Often used to visualize control structures, showing the flow of execution based on conditions and iterations.
-
----
-
-### **2. Conditional Statements**
-
-**Definition:**
-Conditional statements are control structures that execute specific blocks of code based on whether a given condition evaluates to true or false.
-
-**Detailed Explanation:**
-- **Types of Conditional Statements:**
-  1. **`if` Statement:**
-     - **Purpose:** Executes a block of code if a specified condition is true.
-     - **Syntax:**
-       ```javascript
-       if (condition) {
-         // code to execute if condition is true
-       }
-       ```
-     - **Example:**
-       ```javascript
-       let score = 85;
-       if (score >= 80) {
-         console.log("Great job!");
-       }
-       ```
-
-  2. **`else if` Statement:**
-     - **Purpose:** Provides additional conditions if the previous `if` condition is false.
-     - **Syntax:**
-       ```javascript
-       if (condition1) {
-         // code if condition1 is true
-       } else if (condition2) {
-         // code if condition2 is true
-       }
-       ```
-     - **Example:**
-       ```javascript
-       let score = 75;
-       if (score >= 90) {
-         console.log("Excellent!");
-       } else if (score >= 80) {
-         console.log("Great job!");
-       }
-       ```
-
-  3. **`else` Statement:**
-     - **Purpose:** Executes a block of code if all preceding conditions are false.
-     - **Syntax:**
-       ```javascript
-       if (condition1) {
-         // code if condition1 is true
-       } else if (condition2) {
-         // code if condition2 is true
-       } else {
-         // code if all conditions are false
-       }
-       ```
-     - **Example:**
-       ```javascript
-       let score = 55;
-       if (score >= 90) {
-         console.log("Excellent!");
-       } else if (score >= 80) {
-         console.log("Great job!");
-       } else {
-         console.log("Keep trying!");
-       }
-       ```
-
-  4. **`switch` Statement:**
-     - **Purpose:** Evaluates an expression against multiple case values and executes corresponding code blocks.
-     - **Syntax:**
-       ```javascript
-       switch (expression) {
-         case value1:
-           // code to execute if expression === value1
-           break;
-         case value2:
-           // code to execute if expression === value2
-           break;
-         default:
-           // code to execute if expression doesn't match any case
-       }
-       ```
-     - **Example:**
-       ```javascript
-       let day = "Monday";
-       switch (day) {
-         case "Monday":
-           console.log("Start of the work week!");
-           break;
-         case "Friday":
-           console.log("End of the work week!");
-           break;
-         default:
-           console.log("Midweek days.");
-       }
-       ```
-
-**Use Cases in Test Automation:**
-- **Dynamic Test Behavior:** Adjusting test steps based on varying application states or user inputs.
-- **Error Handling:** Executing different actions when tests pass or fail under certain conditions.
-
----
-
-### **3. Loops**
-
-**Definition:**
-Loops are control structures that repeatedly execute a block of code as long as a specified condition remains true.
-
-**Detailed Explanation:**
-- **Types of Loops:**
-  1. **`for` Loop:**
-     - **Purpose:** Executes a block of code a predetermined number of times.
-     - **Syntax:**
-       ```javascript
-       for (initialization; condition; increment) {
-         // code to execute
-       }
-       ```
-     - **Example:**
-       ```javascript
-       for (let i = 0; i < 5; i++) {
-         console.log("Iteration:", i);
-       }
-       ```
-
-  2. **`while` Loop:**
-     - **Purpose:** Continues to execute a block of code as long as the condition is true.
-     - **Syntax:**
-       ```javascript
-       while (condition) {
-         // code to execute
-       }
-       ```
-     - **Example:**
-       ```javascript
-       let i = 0;
-       while (i < 5) {
-         console.log("Iteration:", i);
-         i++;
-       }
-       ```
-
-  3. **`do...while` Loop:**
-     - **Purpose:** Executes a block of code once before checking the condition, then repeats as long as the condition is true.
-     - **Syntax:**
-       ```javascript
-       do {
-         // code to execute
-       } while (condition);
-       ```
-     - **Example:**
-       ```javascript
-       let i = 0;
-       do {
-         console.log("Iteration:", i);
-         i++;
-       } while (i < 5);
-       ```
-
-  4. **`for...of` Loop:**
-     - **Purpose:** Iterates over iterable objects (like arrays, strings) and accesses their values.
-     - **Syntax:**
-       ```javascript
-       for (const element of iterable) {
-         // code to execute
-       }
-       ```
-     - **Example:**
-       ```javascript
-       const fruits = ["Apple", "Banana", "Cherry"];
-       for (const fruit of fruits) {
-         console.log("Fruit:", fruit);
-       }
-       ```
-
-  5. **`for...in` Loop:**
-     - **Purpose:** Iterates over the enumerable properties of an object.
-     - **Syntax:**
-       ```javascript
-       for (const key in object) {
-         // code to execute
-       }
-       ```
-     - **Example:**
-       ```javascript
-       const user = { name: "Alice", age: 25, role: "Tester" };
-       for (const key in user) {
-         console.log(key + ":", user[key]);
-       }
-       ```
-
-**Use Cases in Test Automation:**
-- **Data-Driven Testing:** Iterating over arrays of test data to perform repetitive test cases with different inputs.
-- **Batch Operations:** Executing a series of test steps multiple times under varying conditions or configurations.
-
----
-
-### **4. Scope and Closures**
-
-**Definition:**
-- **Scope:** The accessibility of variables and functions in different parts of the code during runtime.
-- **Closures:** A feature in JavaScript where an inner function has access to variables in its outer enclosing function's scope, even after the outer function has finished executing.
-
-**Detailed Explanation:**
-
-#### **A. Scope:**
-1. **Global Scope:**
-   - **Definition:** Variables declared outside any function or block are in the global scope and accessible anywhere in the code.
-   - **Example:**
-     ```javascript
-     var globalVar = "I'm global!";
-     function displayGlobal() {
-       console.log(globalVar); // Accessible
-     }
-     displayGlobal(); // Outputs: I'm global!
-     console.log(globalVar); // Accessible
-     ```
-
-2. **Function Scope:**
-   - **Definition:** Variables declared within a function are accessible only within that function and its nested (inner) functions.
-   - **Example:**
-     ```javascript
-     function outerFunction() {
-       var functionVar = "I'm inside a function!";
-       function innerFunction() {
-         console.log(functionVar); // Accessible
-       }
-       innerFunction();
-       console.log(functionVar); // Accessible
-     }
-     outerFunction();
-     console.log(functionVar); // ReferenceError: functionVar is not defined
-     ```
-
-3. **Block Scope:**
-   - **Definition:** Variables declared within a block (`{}`) using `let` or `const` are accessible only within that block.
-   - **Example:**
-     ```javascript
-     if (true) {
-       let blockVar = "I'm inside a block!";
-       console.log(blockVar); // Accessible
-     }
-     console.log(blockVar); // ReferenceError: blockVar is not defined
-     ```
-
-#### **B. Closures:**
-1. **Definition:**
-   - A closure is created when an inner function retains access to its outer function's variables even after the outer function has completed execution.
-
-2. **Example:**
-   ```javascript
-   function outerFunction() {
-     let outerVar = "I'm from the outer scope!";
-     
-     function innerFunction() {
-       console.log(outerVar); // Accessing outerVar
-     }
-     
-     return innerFunction;
-   }
-   
-   const myInnerFunction = outerFunction();
-   myInnerFunction(); // Outputs: I'm from the outer scope!
-   ```
-
-3. **Use Cases in Test Automation:**
-   - **Private Variables:** Encapsulating variables that should not be accessible globally.
-   - **Function Factories:** Creating specialized functions with pre-configured parameters or behaviors.
-
-4. **Benefits:**
-   - **Data Privacy:** Keeps certain variables hidden from the global scope, preventing unintended modifications.
-   - **Enhanced Functionality:** Allows the creation of more versatile and flexible functions that can maintain state across multiple invocations.
-
-**Visual Representation:**
-- **Closure Diagram:** Illustrate how an inner function retains access to the outer function's variables even after the outer function has executed.
-
----
-
-## **Code Examples for "Best Practices for Control Structures and Functions"**
-
-Implementing best practices ensures that your code is clean, maintainable, and efficient. Below are some code examples demonstrating these practices in the context of control structures and functions.
-
-### **A. Readability and Maintainability**
-
-**Bad Practice: Deep Nesting**
-```javascript
-if (isUserLoggedIn) {
-  if (user.hasPermission) {
-    if (user.isActive) {
-      performSensitiveOperation();
-    }
-  }
-}
-```
-
-**Good Practice: Early Returns to Reduce Nesting**
-```javascript
-function performOperation(user) {
-  if (!user.isLoggedIn) return;
-  if (!user.hasPermission) return;
-  if (!user.isActive) return;
-  
-  performSensitiveOperation();
-}
-```
-
-### **B. Keeping Functions Focused and Single-Purposed**
-
-**Bad Practice: Function Doing Multiple Tasks**
-```javascript
-function processUserData(user) {
-  // Validate user
-  if (!user.email) {
-    console.log("Invalid user");
-    return;
-  }
-  
-  // Save user to database
-  database.save(user);
-  
-  // Send welcome email
-  emailService.sendWelcomeEmail(user.email);
-}
-```
-
-**Good Practice: Separate Functions for Each Task**
-```javascript
-function validateUser(user) {
-  if (!user.email) {
-    console.log("Invalid user");
-    return false;
-  }
-  return true;
-}
-
-function saveUser(user) {
-  database.save(user);
-}
-
-function sendWelcomeEmail(user) {
-  emailService.sendWelcomeEmail(user.email);
-}
-
-function processUserData(user) {
-  if (!validateUser(user)) return;
-  saveUser(user);
-  sendWelcomeEmail(user);
-}
-```
-
-### **C. Avoiding Deep Nesting with Guard Clauses**
-
-**Bad Practice: Multiple Levels of Conditions**
-```javascript
-function checkAccess(user) {
-  if (user) {
-    if (user.isActive) {
-      if (user.hasAccess) {
-        grantAccess();
-      }
-    }
-  }
-}
-```
-
-**Good Practice: Using Guard Clauses**
-```javascript
-function checkAccess(user) {
-  if (!user) return;
-  if (!user.isActive) return;
-  if (!user.hasAccess) return;
-  
-  grantAccess();
-}
-```
-
-### **D. Using Descriptive Naming Conventions**
-
-**Bad Practice: Vague Variable and Function Names**
-```javascript
-function doIt(a, b) {
-  if (a > b) {
-    return a;
-  } else {
-    return b;
-  }
-}
-
-let x = doIt(5, 10);
-```
-
-**Good Practice: Descriptive Names**
-```javascript
-function getHigherValue(firstValue, secondValue) {
-  if (firstValue > secondValue) {
-    return firstValue;
-  } else {
-    return secondValue;
-  }
-}
-
-let higherScore = getHigherValue(5, 10);
-```
-
----
-
-### **E. How Control Structures Direct the Flow of a Program**
-
-**Example Scenario: User Authentication**
-
-Imagine you are writing a test script to verify user authentication on a web application. Control structures help determine the flow based on different user inputs and system states.
-
-**Code Example:**
-```javascript
-function authenticateUser(username, password) {
-  if (!username || !password) {
-    console.log("Username and password are required.");
-    return;
-  }
-
-  if (password.length < 6) {
-    console.log("Password must be at least 6 characters long.");
-    return;
-  }
-
-  // Simulate server-side authentication
-  let isAuthenticated = serverAuthenticate(username, password);
-
-  if (isAuthenticated) {
-    console.log("User authenticated successfully!");
-    // Proceed to grant access
-  } else {
-    console.log("Authentication failed. Please check your credentials.");
-    // Prompt user to retry or reset password
-  }
-}
-
-// Simulated server authentication function
-function serverAuthenticate(username, password) {
-  // For demonstration, any password "password123" authenticates successfully
-  return password === "password123";
-}
-
-// Test cases
-authenticateUser("testUser", "password123"); // Successful authentication
-authenticateUser("testUser", "pass");        // Password too short
-authenticateUser("", "password123");         // Missing username
-authenticateUser("testUser", "wrongPass");   // Authentication failed
-```
-
-**Explanation:**
-1. **Initial Checks:**
-   - Uses `if` statements to verify that both username and password are provided.
-   - Ensures password meets minimum length requirements.
-
-2. **Authentication Logic:**
-   - Calls `serverAuthenticate` to simulate server-side validation.
-   - Based on the result, uses another `if` statement to determine whether to grant access or prompt the user to retry.
-
-3. **Flow Control:**
-   - Depending on the conditions, the program directs the flow to different blocks of code, ensuring that only valid and authenticated users gain access.
-
-**Outcome:**
-- Demonstrates how `if` and `else` statements control program execution based on varying conditions, ensuring robust and secure authentication processes.
-
----
-
-## **Illustrations and Real Examples**
-
-### **1. Illustrate How Control Structures Direct the Flow of a Program**
-
-**Example Scenario: Automated Form Submission Testing**
-
-Imagine you are writing a Cypress test to automate the submission of a user registration form. Control structures help manage different test scenarios based on user inputs and application responses.
-
-**Code Example:**
-```javascript
-describe('User Registration Form', () => {
-  it('Submits the form with valid data', () => {
-    cy.visit('/register');
-
-    // Fill out the form
-    cy.get('#username').type('testUser');
-    cy.get('#email').type('testuser@example.com');
-    cy.get('#password').type('SecurePass123');
-
-    // Conditional Check: Ensure the Submit button is enabled
-    cy.get('#submit').then(($btn) => {
-      if (!$btn.is(':disabled')) {
-        cy.wrap($btn).click();
-      } else {
-        throw new Error('Submit button is disabled');
-      }
-    });
-
-    // Verify successful registration
-    cy.contains('Registration Successful!').should('be.visible');
-  });
-
-  it('Displays error with invalid email', () => {
-    cy.visit('/register');
-
-    // Fill out the form with invalid email
-    cy.get('#username').type('testUser');
-    cy.get('#email').type('invalid-email');
-    cy.get('#password').type('SecurePass123');
-
-    // Attempt to submit the form
-    cy.get('#submit').click();
-
-    // Conditional Check: Display error message if email is invalid
-    cy.get('.error-message').then(($msg) => {
-      if ($msg.is(':visible')) {
-        cy.wrap($msg).should('contain', 'Invalid email address');
-      } else {
-        throw new Error('Error message not displayed for invalid email');
-      }
-    });
-  });
-});
-```
-
-**Explanation:**
-1. **Conditional Statements (`if`):**
-   - Before clicking the submit button, the test checks if the button is not disabled.
-   - If the button is enabled, it proceeds to click; otherwise, it throws an error.
-
-2. **Looping Structures:**
-   - Although not explicitly shown here, loops can be used to iterate through multiple test cases or data sets, enhancing test coverage.
-
-3. **Flow Control:**
-   - Depending on user input (valid or invalid email), the test either verifies successful registration or checks for appropriate error messages, directing the flow accordingly.
-
-**Outcome:**
-- Demonstrates how `if` statements control test execution based on dynamic conditions, ensuring that tests respond appropriately to different user inputs and application states.
