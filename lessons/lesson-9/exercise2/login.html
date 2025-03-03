@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prihlásenie - Demo Aplikácia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <h1 data-testid="page-title">Prihlásenie Používateľa</h1>
+  <form data-testid="login-form" id="login-form">
+    <div class="form-group">
+      <label for="login-username">Používateľské meno:</label>
+      <input data-testid="login-username-input" type="text" id="login-username" placeholder="Zadajte používateľské meno" required />
+    </div>
+    <div class="form-group">
+      <label for="login-password">Heslo:</label>
+      <input data-testid="login-password-input" type="password" id="login-password" placeholder="Zadajte heslo" required />
+    </div>
+    <button data-testid="login-submit-button" type="submit">Prihlásiť sa</button>
+  </form>
+  <div data-testid="login-success-message" class="success hidden">Prihlásenie úspešné! Vitajte.</div>
+  <div data-testid="login-error-message" class="error hidden">Neplatné prihlasovacie údaje, skúste znova.</div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Simulovaná prihlasovacia logika
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+
+      // Pre demo účely predpokladáme, že prihlásenie je úspešné, ak sa používateľské meno rovná "demoUser" a heslo sa rovná "demoPass"
+      if (username === "demoUser" && password === "demoPass") {
+        document.querySelector('[data-testid="login-error-message"]').classList.add('hidden');
+        document.querySelector('[data-testid="login-success-message"]').classList.remove('hidden');
+      } else {
+        document.querySelector('[data-testid="login-success-message"]').classList.add('hidden');
+        document.querySelector('[data-testid="login-error-message"]').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>

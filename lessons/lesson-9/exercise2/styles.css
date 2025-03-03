@@ -1,0 +1,108 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Form Container */
+form {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1c5980;
+}
+
+/* Success and Error Messages */
+.success {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #dff0d8;
+  border: 1px solid #d0e9c6;
+  color: #3c763d;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.error {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #a94442;
+  border-radius: 3px;
+  text-align: center;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Input Focus Styles */
+input:focus,
+select:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
