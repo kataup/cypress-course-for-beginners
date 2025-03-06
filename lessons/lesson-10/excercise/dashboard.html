@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nástenka - Demo Aplikácia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1 data-cy="dashboard-title">Nástenka</h1>
+    <p data-cy="welcome-message">Vitajte, demoUser!</p>
+
+    <!-- Príklad dynamických dát: zoznam dostupných technológií -->
+    <div class="box">
+      <h2 data-cy="tech-title">Dostupné Technológie</h2>
+      <ul data-cy="tech-list" id="tech-list">
+        <!-- Položky zoznamu budú dynamicky vložené -->
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Vzorové dáta - V reálnej aplikácii by mohli byť načítané zo servera alebo fixture súboru
+    const technologies = [
+      { tech: "Optika", ruian_code: "RU123" },
+      { tech: "DSL", ruian_code: "RU456" },
+      { tech: "Kábel", ruian_code: "RU789" }
+    ];
+
+    function renderTechnologies() {
+      const techList = document.getElementById("tech-list");
+      techList.innerHTML = ""; // Vymazanie predchádzajúcich dát
+      technologies.forEach(item => {
+        const li = document.createElement("li");
+        li.setAttribute("data-cy", "tech-item");
+        li.innerText = `${item.tech} (Ruian kód: ${item.ruian_code})`;
+        techList.appendChild(li);
+      });
+    }
+
+    // Vykreslenie technológií pri načítaní stránky
+    renderTechnologies();
+  </script>
+</body>
+
+</html>

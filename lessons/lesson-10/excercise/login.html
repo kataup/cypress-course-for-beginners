@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prihlásenie - Demo Aplikácia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1 data-cy="page-title">Prihlásenie používateľa</h1>
+    <form data-cy="login-form" id="login-form">
+      <div class="form-group">
+        <label for="login-username">Používateľské meno:</label>
+        <input data-cy="login-username-input" type="text" id="login-username" placeholder="Zadajte používateľské meno" />
+        <span data-cy="error-username" class="error hidden">Používateľské meno je povinné.</span>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Heslo:</label>
+        <input data-cy="login-password-input" type="password" id="login-password" placeholder="Zadajte heslo" />
+        <span data-cy="error-password" class="error hidden">Heslo je povinné.</span>
+      </div>
+      <button data-cy="login-submit-button" type="submit">Prihlásiť</button>
+    </form>
+    <div data-cy="error-invalid" class="error hidden">Nesprávne prihlasovacie údaje, skúste znova.</div>
+    <div data-cy="login-success-message" class="success hidden">Prihlásenie úspešné! Presmerovanie...</div>
+  </div>
+
+  <script>
+    // Validácia a spracovanie prihlasovacieho formulára
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Vymazanie predchádzajúcich chybových správ
+      document.querySelector('[data-cy="error-username"]').classList.add('hidden');
+      document.querySelector('[data-cy="error-password"]').classList.add('hidden');
+      document.querySelector('[data-cy="error-invalid"]').classList.add('hidden');
+      document.querySelector('[data-cy="login-success-message"]').classList.add('hidden');
+
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+      let isValid = true;
+
+      // Kontrola validácie
+      if (!username) {
+        document.querySelector('[data-cy="error-username"]').classList.remove('hidden');
+        isValid = false;
+      }
+      if (!password) {
+        document.querySelector('[data-cy="error-password"]').classList.remove('hidden');
+        isValid = false;
+      }
+      if (!isValid) {
+        return;
+      }
+
+      // Simulácia overenia
+      if (username === "demoUser" && password === "demoPass") {
+        document.querySelector('[data-cy="login-success-message"]').classList.remove('hidden');
+        // Simulácia presmerovania po oneskorení
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+      } else {
+        document.querySelector('[data-cy="error-invalid"]').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>
