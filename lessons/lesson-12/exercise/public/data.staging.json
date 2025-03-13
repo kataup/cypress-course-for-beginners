@@ -1,0 +1,26 @@
+[
+  {
+    "address": "987 Pine Ave",
+    "ruian_code": "RU987",
+    "available_technologies": [
+      "Fiber",
+      "Wireless"
+    ]
+  },
+  {
+    "address": "654 Maple Dr",
+    "ruian_code": "RU654",
+    "available_technologies": [
+      "Cable",
+      "Wireless"
+    ]
+  },
+  {
+    "address": "321 Birch Ln",
+    "ruian_code": "RU321",
+    "available_technologies": [
+      "DSL",
+      "Fiber"
+    ]
+  }
+]

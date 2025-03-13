@@ -1,0 +1,110 @@
+[
+  {
+    "address": "Hlavná ulica 12, Bratislava",
+    "ruian_code": "101010101",
+    "available_technologies": [
+      "Optické vlákno",
+      "DSL",
+      "Kábel"
+    ],
+    "population_density": "Vysoká",
+    "average_speed": "100 Mbps",
+    "customer_satisfaction": 4.5
+  },
+  {
+    "address": "Námestie Slobody 5, Košice",
+    "ruian_code": "202020202",
+    "available_technologies": [
+      "Kábel",
+      "DSL"
+    ],
+    "population_density": "Stredná",
+    "average_speed": "50 Mbps",
+    "customer_satisfaction": 4.2
+  },
+  {
+    "address": "Štefánikova trieda 33, Žilina",
+    "ruian_code": "303030303",
+    "available_technologies": [
+      "Optické vlákno",
+      "Bezdrôtové pripojenie"
+    ],
+    "population_density": "Nízka",
+    "average_speed": "75 Mbps",
+    "customer_satisfaction": 4.8
+  },
+  {
+    "address": "Mlynská dolina 8, Bratislava",
+    "ruian_code": "101010102",
+    "available_technologies": [
+      "Optické vlákno",
+      "Kábel"
+    ],
+    "population_density": "Vysoká",
+    "average_speed": "120 Mbps",
+    "customer_satisfaction": 4.6
+  },
+  {
+    "address": "Hlavná 15, Prešov",
+    "ruian_code": "202020203",
+    "available_technologies": [
+      "DSL"
+    ],
+    "population_density": "Stredná",
+    "average_speed": "40 Mbps",
+    "customer_satisfaction": 4.0
+  },
+  {
+    "address": "SNP 22, Banská Bystrica",
+    "ruian_code": "303030304",
+    "available_technologies": [
+      "Bezdrôtové pripojenie"
+    ],
+    "population_density": "Nízka",
+    "average_speed": "60 Mbps",
+    "customer_satisfaction": 4.3
+  },
+  {
+    "address": "Kukučínova 1, Martin",
+    "ruian_code": "404040405",
+    "available_technologies": [
+      "Optické vlákno",
+      "DSL"
+    ],
+    "population_density": "Stredná",
+    "average_speed": "90 Mbps",
+    "customer_satisfaction": 4.7
+  },
+  {
+    "address": "Hviezdoslavova 7, Trenčín",
+    "ruian_code": "505050506",
+    "available_technologies": [
+      "Kábel"
+    ],
+    "population_density": "Stredná",
+    "average_speed": "55 Mbps",
+    "customer_satisfaction": 4.1
+  },
+  {
+    "address": "Sládkovičova 10, Poprad",
+    "ruian_code": "606060607",
+    "available_technologies": [
+      "Bezdrôtové pripojenie"
+    ],
+    "population_density": "Nízka",
+    "average_speed": "65 Mbps",
+    "customer_satisfaction": 4.4
+  },
+  {
+    "address": "Bernolákova 3, Nitra",
+    "ruian_code": "707070708",
+    "available_technologies": [
+      "Optické vlákno",
+      "DSL",
+      "Kábel"
+    ],
+    "population_density": "Vysoká",
+    "average_speed": "110 Mbps",
+    "customer_satisfaction": 4.9
+  }
+]
