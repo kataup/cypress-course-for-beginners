@@ -34,8 +34,6 @@ console.log(nasobenie(5, 5))
 let a = 10
 let b = 5
 
-
-
 // Scope 
 var pocasie = 'Slnecno'
 
@@ -71,4 +69,3 @@ function dom() {
 dom()
 congole.log(televize) // ReferenceError: televize nie je definovaná
 console.log(pocasie) // Slnecno
-
