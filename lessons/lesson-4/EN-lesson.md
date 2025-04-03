@@ -2,6 +2,8 @@
 
 ### **1. Content Outline**
 
+### to je ukazka Pull Request
+
 #### **A. Introduction to Arrays**
 - **What are Arrays?**
   - Definition and purpose.
