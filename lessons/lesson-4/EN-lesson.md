@@ -3,6 +3,7 @@
 ### **1. Content Outline**
 
 ### to je ukazka Pull Request
+### toto je len dalsi commit
 
 #### **A. Introduction to Arrays**
 - **What are Arrays?**
