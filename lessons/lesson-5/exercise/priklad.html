@@ -65,11 +65,14 @@
 
     <h2>Prihlásenie</h2>
     <input type="text" id="meno" placeholder="Zadaj meno">
+    <input type="text" data-testid="heslo" placeholder="Zadaj heslo">
+    <button onclick="nastavHeslo()">Nastav heslo</button>
     <button id="prihlas">Prihlásiť</button>
     <div id="vysledok"></div>
 
     <h2>Načítané produkty</h2>
     <div id="produkty"></div>
+    <a href="" id="nacitanie-produktov" onclick="zobrazProdukty()">Nacitaj produkty</a><br>
 
     <button id="zobrazAdresu">Zobraz URL adresu</button>
     <p id="url" class="skryte"></p>
@@ -102,6 +105,12 @@
       }
     })
 
+    function nastavHeslo() {
+      const heslo = document.querySelector('[data-testid="heslo"]')
+      heslo.value = "superTajneHeslo"
+
+    }
+
     // Simulácia JSON fetch a dynamické vytvorenie DOM prvkov
     const produktyData = [
       { nazov: "Notebook", cena: "900€" },
@@ -110,16 +119,18 @@
     ]
 
     function zobrazProdukty() {
+      event.preventDefault()
       const kontajner = document.getElementById("produkty")
       produktyData.forEach((produkt) => {
         const div = document.createElement("div")
         div.classList.add("produkt")
         div.innerText = `${produkt.nazov} - ${produkt.cena}`
         kontajner.appendChild(div)
+        console.log("pridane");
       })
     }
 
-    zobrazProdukty()
+    //zobrazProdukty()
 
     // window.location a setTimeout
     document.getElementById("zobrazAdresu").addEventListener("click", () => {
