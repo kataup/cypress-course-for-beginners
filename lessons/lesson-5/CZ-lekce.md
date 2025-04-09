@@ -1,84 +1,84 @@
 ## **Lekce 5: Úvod do DOM: Vlastnosti, Metody a Globální Objekt `window`**
 
-### **1. Obsah lekce**
+### **1. Obsah Lekce**
 
 #### **A. Úvod do DOM (Document Object Model)**
-- **Co je to DOM?**
+- **Co je DOM?**
   - Definice a účel.
-  - Reprezentace webové stránky jako stromové struktury.
-- **Přístup k prvkům DOM:**
+  - Reprezentace webové stránky jako stromová struktura.
+- **Přístup k Prvkům DOM:**
   - `document.getElementById()`.
   - `document.querySelector()` a `document.querySelectorAll()`.
-- **Manipulace s prvky DOM:**
+- **Manipulace s Prvky DOM:**
   - Změna obsahu (`innerText`, `innerHTML`).
   - Úprava atributů (`setAttribute()`, `getAttribute()`).
   - Přidávání a odstraňování tříd (`classList.add()`, `classList.remove()`).
-- **Zpracování událostí:**
-  - Přidání posluchačů událostí (`addEventListener()`).
+- **Zpracování Událostí:**
+  - Přidávání posluchačů událostí (`addEventListener()`).
   - Běžné události (kliknutí, vstup, odeslání).
 
 
-##### Co je to DOM?
+##### Co je DOM?
 
 **Definice:**
-Document Object Model (DOM) je programovací rozhraní, které reprezentuje strukturu HTML nebo XML dokumentu jako strom objektů. Každý prvek, atribut a kus textu se stává objektem, což vývojářům umožňuje programově manipulovat se strukturou, stylem a obsahem stránky.
+Model objektu dokumentu (DOM) je programovací rozhraní, které představuje strukturu HTML nebo XML dokumentu jako strom objektů. Každý prvek, atribut a kus textu se stává objektem, což umožňuje vývojářům programově manipulovat se strukturou, stylem a obsahem stránky.
 
-**Klíčové charakteristiky:**
-- **Struktura podobná stromu:** Dokument je reprezentován jako hierarchický uzlový strom.
-- **Skriptovací rozhraní:** JavaScript může interagovat s uzly DOM, aby změnil, co je zobrazeno v prohlížeči.
-- **Dynamické aktualizace:** Mění prvky, atributy a obsah na cestě bez nutnosti znovu načítat celou stránku.
+**Klíčové Vlastnosti:**
+- **Struktura jako Strom:** Dokument je reprezentován jako hierarchický strom uzlů.
+- **Rozhraní pro Skriptování:** JavaScript může interagovat s uzly DOM, aby změnil to, co je zobrazeno v prohlížeči.
+- **Dynamické Aktualizace:** Modifikace prvků, atributů a obsahu za běhu bez znovu načítání celé stránky.
 
-**Použití v automatizaci testů:**
-- Výběr prvků pro ověření jejich existence, atributů nebo textu.
-- Simulace uživatelských akcí (kliknutí, psaní) na prvcích DOM.
-- Ověření, že prvky se objevují nebo mizí podle očekávání po určitých akcích.
+**Případy Použití v Automatizaci Testování:**
+- Výběr prvků pro ověření jejich přítomnosti, atributů nebo textu.
+- Simulace uživatelských akcí (klikání, psaní) na prvcích DOM.
+- Ověření, že prvky se zobrazují nebo mizí podle očekávání po určitých akcích.
 
 
-#### Zpracování událostí v DOM
+##### Zpracování Událostí v DOM
 
 **Definice:**
-Zpracování událostí označuje proces detekce a reagování na interakce uživatelů nebo na události poháněné prohlížečem na webové stránce. Události mohou zahrnovat kliknutí, stisknutí kláves, odeslání formuláře, pohyby myši nebo jiné uživatelské akce.
+Zpracování událostí se vztahuje na proces detekce a reakce na uživatelské interakce nebo události řízené prohlížečem na webové stránce. Události mohou zahrnovat kliknutí, stisknutí kláves, odeslání formulářů, pohyby myší nebo jiné akce uživatele.
 
-**Klíčové charakteristiky:**
-- **Posluchači událostí:** Funkce, které se vykonávají v reakci na konkrétní události.
-- **Asynchronní chování:** Události se vyskytují asynchronně, vyvolané uživatelskou interakcí nebo časovanými akcemi.
-- **Kontrola nad uživatelskou interakcí:** Umožňuje vývojářům (a testerům) simulovat a ověřovat, jak se aplikace reaguje na uživatelský vstup.
+**Klíčové Vlastnosti:**
+- **Posluchači Událostí:** Funkce, které se provádějí v reakci na specifické události.
+- **Asynchronní Chování:** Události se vyskytují asynchronně, aktivovány uživatelskou interakcí nebo časovanými akcemi.
+- **Kontrola nad Uživatelskou Interakcí:** Umožňuje vývojářům (a testerům) simulovat a ověřit, jak aplikace reaguje na vstup uživatele.
 
-**Použití v automatizaci testů:**
+**Případy Použití v Automatizaci Testování:**
 - Testování interakcí uživatelského rozhraní, zajištění, že kliknutí na tlačítko spustí správné chování.
-- Ověření logiky odeslání formuláře nebo zpracování chyb.
-- Potvrzení, že události vstupu z klávesnice vedou k očekávaným změnám na obrazovce.
+- Validace logiky odeslání formuláře nebo zpracování chyb.
+- Potvrzení, že události vstupu na klávesnici vedou k očekávaným změnám na obrazovce.
 
 #### **B. Vlastnosti a Metody DOM**
 
-**Co jsou vlastnosti prvků DOM?**  
-Když je webová stránka načtena do prohlížeče, prohlížeč vytváří Document Object Model (DOM), který reprezentuje strukturu stránky jako strom objektů. Každý prvek HTML na stránce se stává objektem prvku DOM, který má vlastnosti a metody, ke kterým získáte přístup a manipulujete s nimi pomocí JavaScriptu.
+**Co jsou Vlastnosti Prvků DOM?**  
+Když je webová stránka načtena do prohlížeče, prohlížeč vytváří Model objektu dokumentu (DOM), který představuje strukturu stránky jako strom objektů. Každý HTML prvek na stránce se stává objektem prvku DOM, který má vlastnosti a metody, které můžete přistupovat a manipulovat pomocí JavaScriptu.
 
-- **Vlastnosti prvků DOM:**
+- **Vlastnosti Prvků DOM:**
   - `innerText`, `textContent`, `innerHTML`: Přístup nebo úprava textového a HTML obsahu prvku.
-  - `value`: Pro prvky formuláře, jako jsou vstupy, přístup nebo nastavení hodnoty zadané uživatelským.
+  - `value`: Pro prvky formuláře jako vstupy, přístup nebo nastavení uživatelsky zadané hodnoty.
   - `style`: Přístup k inline CSS vlastnostem.
-  - `classList`: Přidávat, odstraňovat nebo přepínat CSS třídy bez přímé úpravy HTML řetězců.
-- **Běžné metody DOM:**
-  - **Metody výběru:**
+  - `classList`: Přidání, odstranění nebo přepnutí CSS tříd bez přímé změny HTML řetězců.
+- **Běžné Metody DOM:**
+  - **Metody Výběru:**
     - `document.getElementById('id')`: Vybere prvek podle ID.
     - `document.querySelector('selector')`: Vybere první prvek odpovídající CSS selektoru.
-    - `document.querySelectorAll('selector')`: Vybere všechny prvky odpovídající CSS selektoru a vrací NodeList.
+    - `document.querySelectorAll('selector')`: Vybere všechny prvky odpovídající CSS selektoru a vrátí NodeList.
   - **Vlastní atributy:**
-    - `data-*`: Atributy jsou vlastní atributy, které umožňují ukládat další informace o prvku, aniž by to ovlivňovalo jeho prezentaci nebo chování podle výchozího stavu. Jsou zvlášť užitečné v JavaScriptu jako způsob přiřazení dalšího kontextu nebo konfigurace prvkům.
-    - Data atributy jsou neuvěřitelně mocné v automatizaci testů. Přiřazením atributů data-cy, data-test nebo data-testid vytváříte stabilní selektory, které jsou odolné vůči změnám UI. Tyto atributy nejsou viditelné pro uživatele a mohou být změněny, aniž by ovlivnily rozložení nebo styl UI. Testovací skripty mohou spolehlivě vybírat prvky pomocí cy.get('[data-test="login-button"]') například v Cypressu.
+    - `data-*`: Atributy jsou vlastní atributy, které vám umožňují ukládat extra informace o prvku, aniž by to ovlivnilo jeho prezentaci nebo chování ve výchozím nastavení. Jsou zvlášť užitečné v JavaScriptu jako způsob přiřazení dalšího kontextu nebo konfigurace k prvkům.
+    - Datové atributy jsou neuvěřitelně silné v automatizaci testování. Přiřazením atributů data-cy, data-test nebo data-testid vytváříte stabilní selektory, které jsou odolné vůči změnám uživatelského rozhraní. Tyto atributy nejsou viditelné pro uživatele a mohou být změněny, aniž by to ovlivnilo rozložení nebo styl uživatelského rozhraní. Testovací skripty mohou spolehlivě vybírat prvky pomocí cy.get('[data-test="login-button"]') v rámci Cypress, například.
   
-  - **Metody manipulace:**
-    - `element.appendChild(node)`: Přidá nový poduzel k prvku.
-    - `element.removeChild(node)`: Odstraní poduzel.
+  - **Metody Manipulace:**
+    - `element.appendChild(node)`: Přidává nový uzlový prvek k prvku.
+    - `element.removeChild(node)`: Odstraňuje uzlový prvek.
     - `element.setAttribute('name', 'value')`: Nastaví nebo změní atribut na prvku.
     - `element.removeAttribute('name')`: Odstraní atribut.
-  - **Zpracování událostí (stručný zmínka):**
+  - **Zpracování Událostí (stručně zmíněno):**
     - `element.addEventListener('event', callback)`: Připojte posluchače událostí k prvkům DOM.
-  - **Použití řídících struktur a datových struktur:**
-    - Smyčky a podmínky pro dynamickou aktualizaci prvků DOM (např. iterace přes pole dat pro vytvoření seznamu položek).
-    - Objekty pro ukládání selektorů nebo odkazů DOM pro znovupoužitelnost.
-    - JSON data mohou být načtena a použita k zaplnění prvků, aktualizující DOM na cestě.
+  - **Použití Řídících Struktur a Datových Struktur:**
+    - Smyčky a podmínky k dynamické aktualizaci prvků DOM (např. iterace přes pole dat k vytvoření seznamu položek).
+    - Objekty k uložení selektorů nebo referencí DOM pro opětovné použití.
+    - JSON data lze načíst a použít k populaci prvků, aktualizující DOM za běhu.
 
 
 1. **`innerText` / `textContent`:**
@@ -87,21 +87,21 @@ Když je webová stránka načtena do prohlížeče, prohlížeč vytváří Doc
      ```javascript
      const heading = document.getElementById('main-title');
      console.log(heading.innerText); // Čte zobrazený text nadpisu
-     heading.innerText = "Vítejte na řídicím panelu!";
+     heading.innerText = "Vítejte na Panelu!";
      ```
-   - **Rozdíl:** `innerText` respektuje styly a skryté prvky, `textContent` zobrazuje veškerý text včetně skrytých prvků a zalomení řádků.
+   - **Rozdíl:** `innerText` respektuje styl a skryté prvky, `textContent` zobrazuje všechen text včetně skrytých prvků a přerušení řádků.
 
 2. **`innerHTML`:**
-   - **Účel:** Přístup nebo změna HTML značkování uvnitř prvku.
+   - **Účel:** Přístup nebo změna HTML kódu uvnitř prvku.
    - **Příklad:**
      ```javascript
      const container = document.querySelector('#content');
-     container.innerHTML = "<p>Nový odstavec!</p>"; // Vstřikuje HTML kód
+     container.innerHTML = "<p>Nový odstavec!</p>"; // Vkládá HTML kód
      ```
    - **Opatrnost:** Používání `innerHTML` s nedůvěryhodnými daty může vystavit vaši stránku bezpečnostním rizikům jako XSS (Cross-Site Scripting).
 
 3. **`value`:**
-   - **Účel:** Pro prvky formuláře (vstupy, textové oblasti), `value` získává nebo nastavuje hodnotu zadanou uživatelským.
+   - **Účel:** U prvků formuláře (vstupy, textové oblasti), `value` získá nebo nastaví uživatelsky zadanou hodnotu.
    - **Příklad:**
      ```javascript
      const input = document.getElementById('username');
@@ -109,7 +109,7 @@ Když je webová stránka načtena do prohlížeče, prohlížeč vytváří Doc
      ```
 
 4. **`classList`:**
-   - **Účel:** Spravovat CSS třídy prvku bez manuální manipulace s řetězcem atributu `class`.
+   - **Účel:** Správa CSS tříd prvku bez ruční manipulace s řetězcem atributu `class`.
    - **Příklad:**
      ```javascript
      const button = document.querySelector('.btn');
@@ -126,11 +126,11 @@ Když je webová stránka načtena do prohlížeče, prohlížeč vytváří Doc
      box.style.backgroundColor = "blue";
      box.style.color = "white";
      ```
-   - **Poznámka:** Je obvykle lepší manipulovat s třídami a používat externí CSS než nastavovat styly inline pro udržovatelnost.
+   - **Poznámka:** Je obecně lepší manipulovat s třídami a používat externí CSS místo nastavování stylů inline pro udržovatelnost.
 
-#### Přístup k prvkům DOM
+##### Přístup k Prvkům DOM
 
-**Výběr prvků:**
+**Výběr Prvků:**
 ```html
 <!-- index.html -->
 <div id="container">
@@ -146,38 +146,38 @@ const title = document.querySelector(".title");
 const button = document.querySelector("#clickMeBtn");
 ```
 
-**Nejlepší praktiky:**
+**Nejlepší Praktiky:**
 - Používejte `document.getElementById()`, když vybíráte podle ID pro výkon.
-- Používejte `document.querySelector()` a `document.querySelectorAll()` pro složité nebo flexibilní selektory.
+- Používejte `document.querySelector()` a `document.querySelectorAll()` pro komplexní nebo flexibilní selektory.
 - Udržujte ID a názvy tříd popisné, aby byly selektory srozumitelnější.
 
-##### Manipulace s prvky DOM
+##### Manipulace s Prvky DOM
 
-**Změna obsahu:**
+**Změna Obsahu:**
 ```javascript
-title.innerText = "Vítejte na testovací stránce!";
+title.innerText = "Vítejte na Testovací Stránce!";
 ```
 
-**Úprava atributů:**
+**Úprava Atributů:**
 ```javascript
 button.setAttribute("disabled", "true");
 console.log(button.getAttribute("id")); // "clickMeBtn"
 ```
 
-**Úprava tříd:**
+**Úprava Tříd:**
 ```javascript
 title.classList.add("highlight");
 title.classList.remove("old-class");
 ```
 
-**Nejlepší praktiky:**
-- Minimalizujte přímou manipulaci s DOM tím, že ukládáte reference na prvky.
-- Používejte třídy a CSS pro změny stylu namísto inline stylů.
-- Udržujte operace DOM ve skupinách nebo dávkách, aby se snížilo zatížení výkonu.
+**Nejlepší Praktiky:**
+- Minimalizujte přímou manipulaci s DOM tím, že uchováte reference na prvky.
+- Používejte třídy a CSS pro změny stylu spíše než inline styly.
+- Udržujte operace DOM dávkově nebo skupinově, abyste snížili výkonové zatížení.
 
-##### Zpracování událostí
+##### Zpracování Událostí
 
-**Přidání posluchačů událostí:**
+**Přidávání Posluchačů Událostí:**
 ```javascript
 button.addEventListener("click", function () {
   console.log("Tlačítko bylo kliknuto!");
@@ -185,19 +185,19 @@ button.addEventListener("click", function () {
 });
 ```
 
-**Nejlepší praktiky:**
-- Používejte nezatěžující zpracování událostí (tj. `addEventListener`) spíše než inline atributy `onclick`.
-- Pojmenujte funkce obslužné rutiny událostí popisně:
+**Nejlepší Praktiky:**
+- Používejte nevtíravé zpracování událostí (tj. `addEventListener`) místo inline atributů `onclick`.
+- Pojmenovávejte funkce zpracovávající události popisně:
   
 ```javascript
 function handleButtonClick(event) {
-  console.log("Tlačítko kliknuto:", event.target);
+  console.log("Tlačítko bylo kliknuto:", event.target);
 }
 
 button.addEventListener("click", handleButtonClick);
 ```
 
-- Odstraňte posluchače událostí, když již nejsou potřeba, aby se zabránilo únikům paměti:
+- Odstraňujte posluchače událostí, když je již nepotřebujete, abyste zabránili únikům paměti:
   
 ```javascript
 button.removeEventListener("click", handleButtonClick);
@@ -206,68 +206,68 @@ button.removeEventListener("click", handleButtonClick);
 
 #### **B. Globální Objekt `window`**
 **Definice:**  
-V webových prohlížečích je objekt `window` globálním objektem, který reprezentuje prohlížečové okno obsahující vaši webovou stránku. Všechny globální proměnné, funkce a objekty se stávají vlastnostmi `window`.
+V webových prohlížečích je `window` objekt globální objekt, který reprezentuje prohlížečské okno obsahující vaši webovou stránku. Všechny globální proměnné, funkce a objekty se stávají vlastnostmi `window`.
 
-- **Co je to objekt `window`?**
-  - Objekt `window` je globálním objektem v prohlížečovém prostředí.
-  - Reprezentuje prohlížečové okno a poskytuje metody a vlastnosti pro jeho ovládání.
-- **Klíčové vlastnosti a metody `window`:**
+- **Co je Objekt `window`?**
+  - Objekt `window` je globální objekt v prostředí prohlížeče.
+  - Reprezentuje prohlížečské okno a poskytuje metody a vlastnosti pro jeho ovládání.
+- **Klíčové Vlastnosti a Metody `window`:**
   - **Vlastnosti:**
-    - `window.document`: Odkazuje na DOM aktuální stránky.
+    - `window.document`: Odkazuje na aktuální DOM stránky.
     - `window.location`: Informace o aktuální URL a navigaci.
     - `window.history`: Přístup k historii relace prohlížeče.
-    - `window.localStorage` a `window.sessionStorage`: Ukládají a načítají data v prohlížeči.
+    - `window.localStorage` a `window.sessionStorage`: Ukládejte a načítejte data v prohlížeči.
   - **Metody:**
-    - `window.alert('message')`: Zobrazí dialogové okno se zprávou.
-    - `window.confirm('message')`: Zobrazí dialogové okno pro potvrzení, které vrátí true nebo false.
-    - `window.setTimeout(callback, milliseconds)`: Zpožďuje vykonání kódu.
-    - `window.setInterval(callback, milliseconds)`: Periodicky vykonává kód.
-  - **Implicitní globální rozsah:**
-    - Proměnné deklarované na nejvyšší úrovni (bez `let`, `const` nebo `var` ve starším kódu) se mohou stát vlastnostmi `window`—praktika, které je třeba se vyvarovat.
-    - Porozumění rozsahu (z předchozích lekcí) pomáhá vyhnout se znečištění globálního jmenného prostoru.
+    - `window.alert('message')`: Zobrazí dialogové okno s upozorněním.
+    - `window.confirm('message')`: Zobrazí dialogové okno s potvrzením, vrací true nebo false.
+    - `window.setTimeout(callback, milliseconds)`: Zpožďuje exekuci kódu.
+    - `window.setInterval(callback, milliseconds)`: Provádí kód periodicky.
+  - **Implicitní Globální Rozsah:**
+    - Proměnné deklarované na nejvyšší úrovni (bez `let`, `const` nebo `var` ve starším kódu) se mohou stát vlastnostmi `window`—praktika, které se doporučuje vyhnout.
+    - Pochopení rozsahu (z předchozích lekcí) pomáhá předcházet znečištění globálního jmenného prostoru.
 
 
-**Klíčové body o `window`:**  
-- **Globální rozsah:** Proměnné deklarované globálně (bez `let`, `const`, nebo `var` ve starším kódu) se mohou stát vlastnostmi `window`. Moderní nejlepší praktiky odrazují od spoléhání se na toto chování.
-- **Přístup k dokumentu a API prohlížeče:**  
-  - `window.document` vám dává DOM pro aktuální stránku.  
+**Klíčové Body o `window`:**  
+- **Globální Rozsah:** Proměnné deklarované globálně (bez `let`, `const` nebo `var` ve starším kódu) se mohou stát vlastnostmi `window`. Moderní nejlepší praktiky od této funkčnosti odrazují.
+- **Přístup k Dokumentu a API Prohlížeče:**  
+  - `window.document` poskytuje DOM pro aktuální stránku.  
   - `window.location` poskytuje informace a metody pro aktuální URL.  
   - `window.history` umožňuje navigaci v historii relace prohlížeče.  
   - `window.alert()`, `window.confirm()`, `window.prompt()` zobrazují dialogy.  
-  - `window.setTimeout()` a `window.setInterval()` plánují vykonání kódu.
+  - `window.setTimeout()` a `window.setInterval()` plánují exekuci kódu.
 
 **Příklad:**
 ```javascript
-console.log(window.location.href); // Vypíše aktuální URL stránky
+console.log(window.location.href); // Zaznamenává aktuální URL stránky
 window.alert("Vítejte na stránce!");
 ```
 
-**Nejlepší praktika:**  
-Vyhněte se připojování zbytečných dat k `window`. Udržujte proměnné v rozsahu funkcí nebo modulů, abyste předešli znečištění globálního jmenného prostoru.
+**Nejlepší Praktika:**  
+Vyhněte se přiřazování zbytečných dat k `window`. Uchovávejte proměnné ve funkčních nebo modulových rozsazích, aby nedocházelo k znečišťování globálního jmenného prostoru.
 
-#### **D. Nejlepší praktiky pro práci s DOM a `window`**
-- **Udržovatelnost kódu:**
+#### **D. Nejlepší Praktiky pro Práci s DOM a `window`**
+- **Udržovatelnost Kódu:**
   - Ukládejte reference na často přístupné prvky do proměnných.
-  - Používejte popisné názvy proměnných pro odkazy DOM a vyhněte se „magickým řetězcům“.
-- **Úvahy o výkonu:**
-  - Minimalizujte zbytečné manipulace s DOM—změny dávkujte nebo používejte techniky k nízkému počtu návratů a repaintů.
-  - Znovu používejte pole, objekty a JSON data pro generování nebo aktualizaci DOM místo hardcodovaných prvků.
-- **Bezpečnost a validace dat:**
+  - Používejte popisné názvy proměnných pro referencí DOM a vyhněte se „magickým řetězcům“.
+- **Úvahy o Výkonu:**
+  - Minimalizujte zbytečné manipulace s DOM—dávkujte změny nebo používejte techniky, které omezují přepracování a překreslování.
+  - Znovu používejte pole, objekty a JSON data pro generování nebo aktualizaci DOM namísto tvrdého zakódování prvků.
+- **Bezpečnost a Ověření Dat:**
   - Vyhněte se nastavení `innerHTML` s nedůvěryhodnými daty (riziko XSS).
-  - Validujte JSON a uživatelský vstup před injektáží do DOM.
-- **Používání řídících struktur:**
+  - Ověřujte JSON a uživatelský vstup před injekcí do DOM.
+- **Použití Řídících Struktur:**
   - Používejte smyčky a podmínky k dynamické aktualizaci DOM na základě uživatelských akcí nebo dat načtených z API.
-  - Například, pokud máte JSON pole objektů produktů, můžete je iterovat a vytvářet DOM prvky pro každý produkt.
+  - Například, pokud máte JSON pole produktových objektů, můžete přes ně iterovat a vytvářet DOM prvky pro každý produkt.
 
-#### **E. Praktické příklady**
+#### **E. Praktické Příklady**
 
-1. **Přístup a aktualizace obsahu prvků:**
+1. **Přístup a Aktualizace Obsahu Prvků:**
    ```javascript
    const title = document.getElementById('page-title');
-   title.innerText = "Vítejte na řídicím panelu!";
+   title.innerText = "Vítejte na Panelu!";
    ```
 
-2. **Úprava atributů a tříd prvků:**
+2. **Úprava Atributů a Tříd Prvků:**
    ```javascript
    const loginButton = document.querySelector('#login-btn');
    loginButton.setAttribute('disabled', 'true');
@@ -277,13 +277,13 @@ Vyhněte se připojování zbytečných dat k `window`. Udržujte proměnné v r
    mainHeader.classList.remove('old-class');
    ```
 
-3. **Dynamické vytváření a přidávání prvků:**
+3. **Dynamické Vytváření a Přidávání Prvků:**
    ```javascript
    const userList = document.getElementById('user-list');
    const users = [
      { name: "Alice", role: "admin" },
      { name: "Bob", role: "user" },
-     { name: "Charlie", role: "moderator" }
+     { name: "Charlie", role: "moderátor" }
    ];
 
    users.forEach(user => {
@@ -293,10 +293,10 @@ Vyhněte se připojování zbytečných dat k `window`. Udržujte proměnné v r
    });
    ```
 
-4. **Načítání JSON dat a aktualizace DOM:**
+4. **Načítání JSON Dat a Aktualizace DOM:**
    
 **Co je `fetch()`?**  
-`fetch()` je vestavěná JavaScript funkce (součást Fetch API), která vám umožňuje provádět síťové požadavky, jako je načítání dat z URL. Vrací Promise, což usnadňuje manipulaci s asynchronními operacemi bez blokování hlavního vlákna.
+`fetch()` je vestavěná JavaScript funkce (část Fetch API), která vám umožňuje provádět síťové požadavky, například načítání dat z URL. Vrací Promise, takže je snadné zpracovávat asynchronní operace, aniž by to blokovalo hlavní vlákno.
 
    ```javascript
    fetch('users.json')
@@ -312,135 +312,135 @@ Vyhněte se připojování zbytečných dat k `window`. Udržujte proměnné v r
    ```
 
 
-5. **setTimeout**
-**Co je `setTimeout()`?**  
-`setTimeout()` je funkce poskytovaná prohlížečem (prostřednictvím `window`), která vám umožňuje vykonat specifikovanou funkci po nastaveném zpoždění (v milisekundách).
+  5. **setTimeout**
+  **Co je `setTimeout()`?**  
+`setTimeout()` je funkce poskytovaná prohlížečem (přes `window`), která vám umožňuje vykonat specifikovanou funkci po nastaveném zpoždění (v milisekundách).
 
 **Syntaxe:**
 ```javascript
 window.setTimeout(() => {
-  console.log("Tato zpráva se zobrazuje po 2 sekundách");
+  console.log("Tato zpráva se zobrazí po 2 sekundách");
 }, 2000);
 ```
 
 **Parametry:**
-1. **Callback Funkce:** Funkce, kterou chcete spustit po zpoždění.
-2. **Zpoždění (milisekundy):** Čas, který se má čekat před zavoláním callbacku. 1000 ms = 1 sekunda.
+1. **Zpětná Funkce:** Funkce, kterou chcete spustit po zpoždění.
+2. **Zpoždění (v milisekundách):** Čas, který se má čekat před zavoláním zpětné funkce. 1000 ms = 1 sekunda.
 
 **Chování:**
-- Callback není vykonáván, dokud nenastane stanovené zpoždění.
-- Kód nepřekáží; naplánuje callback a pokračuje v běhu zbytku skriptu. Když vyprší čas, callbacková funkce se vykoná.
+- Zpětná funkce není vykonána, dokud neuplyne specifikované zpoždění.
+- Kód nezablokuje; naplánuje zpětnou funkci a pokračuje v běhu zbytku skriptu. Když čas vyprší, zpětná funkce se vykoná.
 
-**Použití v automatizaci testů:**
-- **Simulace čekací doby uživatele:** Pokud chcete otestovat, jak se uživatelské rozhraní chová po zpoždění (jako zmizení načítacího indikátoru po několika sekundách).
-- **Plánování asynchronních kontrol:** Spuštění části kódu po zpoždění pro ověření, zda je splněna nějaká podmínka v DOM.
+**Případy Použití v Automatizaci Testování:**
+- **Simulace čekacích časů uživatele:** Pokud chcete otestovat, jak se uživatelské rozhraní chová po zpoždění (jako zmizení načítacího kruhu po několika sekundách).
+- **Plánování asynchronních kontrol:** Spuštění kódu po zpoždění k ověření, zda je některá podmínka v DOM splněna.
 
-**Zastavení timeoutu:**
-- Můžete přiřadit `setTimeout()` k proměnné a použít `clearTimeout()`, abyste jej v případě potřeby zrušili.
+**Zastavení Timeoutu:**
+- Můžete přiřadit `setTimeout()` do proměnné a použít `clearTimeout()`, abyste ho v případě potřeby zrušili.
   ```javascript
   const timeoutId = setTimeout(() => {
     console.log("Bude tato zpráva zobrazena?");
   }, 5000);
 
-  // Zrušte timeout před jeho spuštěním
+  // Ukončete timeout před jeho spuštěním
   clearTimeout(timeoutId);
   ```
    
-**Důležitost JSON v automatizaci testů:**  
-JSON (JavaScript Object Notation) je lehký datový formát, který je snadno čitelný jak pro lidi, tak pro stroje. Je nezávislý na jazyce a široce používaný pro komunikaci mezi klienty a servery. V automatizaci testů:
+**Důležitost JSON v Automatizaci Testování:**  
+JSON (JavaScript Object Notation) je lehký datový formát, který je snadno čitelný pro lidi i stroje. Je nezávislý na jazyce a široce používaný pro komunikaci mezi klienty a servery. V automatizaci testování:
 
-1. **Fixture a testovací data:**  
-   Můžete uložit testové vstupy a očekávané výsledky v JSON souborech. To odděluje data od testovací logiky, což usnadňuje aktualizaci, údržbu a znovupoužívání testovacích scénářů.
+1. **Fixture a Testovací Data:**  
+   Můžete ukládat testovací vstupy a očekávané výsledky do JSON souborů. To odděluje data od logiky testů, což usnadňuje aktualizaci, údržbu a opětovné použití testovacích scénářů.
 
 2. **Testování API:**  
-   Při testování aplikací, které komunikují s back-endy (API), jsou odpovědi často v JSON. Parsování odpovědí JSON a ověření, že vracená data odpovídají očekávání, je snadné.
+   Při testování aplikací, které komunikují se servery (API), jsou odpovědi často v JSON. Parsování JSON odpovědí a ověření, že vrácená data odpovídají očekávání, je jednoduché.
 
-3. **Mockování odpovědí:**  
-   V automatizovaných testech můžete zajišťovat předdefinovaná JSON data jako mock odpovědi. To zajišťuje deterministické testy bez spoléhání se na externí služby.
+3. **Mockování Odpovědí:**  
+   V automatizovaných testech můžete sloužit předdefinovaná JSON data jako mockované odpovědi. To zajišťuje deterministické testy bez spoléhání se na externí služby.
 
-**Parsování a zpracování JSON:**
+**Parsování a Zpracování JSON:**
 - **`response.json()` metoda:**  
   Po zavolání `fetch()` často převádíte surovou odpověď na JSON:
   ```javascript
   fetch('users.json')
-    .then(response => response.json()) // převod JSON z odpovědi
+    .then(response => response.json()) // parsuje JSON z odpovědi
     .then(data => {
       console.log(data);
-      // data je nyní JavaScriptový objekt/pole, které můžete iterovat, ověřovat nebo manipulovat
+      // data je nyní JavaScriptový objekt/pole, který můžete iterovat, ověřovat nebo manipulovat
     });
   ```
 
-#### Co je `then` v `fetch()` funkci?
+#### Co je `then` ve Funkci `fetch()`?
 
 **Vysvětlení:**
-`then()` je metoda dostupná na Promise. Když zavoláte `fetch()`, vrátí Promise. Metoda `then()` definuje, co se má stát, když je tato Promise vyřešena (tj. když asynchronní operace úspěšně dokončí).
+`then()` je metoda dostupná na Promises. Když zavoláte `fetch()`, vrátí to Promise. Metoda `then()` definuje, co by se mělo stát, když je tato Promise vyřešena (tj. když se asynchronní operace úspěšně dokončí).
 
-- **První `.then()`:** Často se používá pro zpracování surové odpovědi z `fetch()` a převod do použitelného formátu (jako JSON).
-- **Druhý `.then()`:** Jakmile máte zpracovaná data, můžete připojit další `then()` pro zpracování těchto dat (např. aktualizaci DOM, provedení asercí atd.).
+- **První `.then()`:** Často se používá k zpracování surové odpovědi z `fetch()` a převodu na použitelný formát (jako JSON).
+- **Druhá `.then()`:** Jakmile máte parsovaná data, můžete řetězit další `then()`, abyste zpracovali tato data (např. aktualizovali DOM, prováděli asertace atd.).
 
 **Příklad:**
 ```javascript
 fetch('users.json')
-  .then(response => response.json())    // převádí tělo odpovědi na JSON
+  .then(response => response.json())    // Převádí tělo odpovědi na JSON
   .then(data => {
-    console.log(data);                  // Zpracujte zde zpracovaná data
+    console.log(data);                  // Zde použijte parsovaná data
   })
   .catch(error => console.error(error));
 ```
 
-**Klíčový bod:**  
-- **`then()`** je, jak řetězíte operace v asynchronním toku. Každý `then()` vrací novou Promise, což vám umožňuje pokračovat v řetězci.
-- **`catch()`** se používá k zpracování chyb, pokud část řetězce selže.
+**Klíčový Bod:**  
+- **`then()`** je jak řetězíte operace v asynchronním toku. Každé `then()` vrací novou Promise, což vám umožňuje pokračovat v řetězci.
+- **`catch()`** se používá k zpracování chyb, pokud jakákoli část řetězce selže.
 
 
-5. **Používání objektu `window`:**
+5. **Použití Objektu `window`:**
    ```javascript
    console.log(window.location.href); // Aktuální URL stránky
    window.setTimeout(() => {
-     alert("Čas je vypršel!");
+     alert("Čas vypršel!");
    }, 2000);
    ```
 
-#### **F. Spojení s předchozími lekcemi**
-- **Pole a objekty:**
-  - Používejte pole k ukládání seznamů dat a iterujte přes ně pro dynamickou výrobu DOM prvků.
-  - Používejte objekty k uchování selektorů nebo odkazů DOM pro snazší manipulaci s DOM.
-- **JSON a interakce s API:**
-  - Načtěte JSON data a použijte je k zaplnění prvků na stránce.
-- **Řídící struktury:**
-  - Používejte `if/else` prohlášení, smyčky a logické podmínky, abyste určili jak a kdy aktualizovat DOM, zpracovávat určité uživatelské vstupy nebo měnit vlastnosti `window`.
-- **Kombinování konceptů:**
-  - Vše, co bylo naučeno—proměnné, funkce, pole, objekty, JSON, manipulace s DOM, zpracování událostí—nyní může být integrováno pro vytvoření interaktivních a dynamických webových zážitků.
+#### **F. Propojení s Předchozími Lekcemi**
+- **Pole a Objekty:**
+  - Použijte pole k ukládání seznamů dat a iterujte je, abyste dynamicky vytvářeli DOM prvky.
+  - Použijte objekty k uložení selektorů nebo referencí DOM pro snazší manipulaci s DOM.
+- **JSON a Interakce s API:**
+  - Načtěte JSON data a použijte je k populaci prvků na stránce.
+- **Řídící Struktury:**
+  - Použijte `if/else` příkazy, smyčky a logické podmínky k rozhodnutí o způsobu a načasování aktualizace DOM, zpracování určitých vstupů uživatelů nebo úpravy vlastností `window`.
+- **Kombinování Konceptů:**
+  - Vše, co bylo naučeno—proměnné, funkce, pole, objekty, JSON, manipulace s DOM, zpracování událostí—může nyní být integrováno k vytvoření interaktivních a dynamických webových zážitků.
 
 ---
 
-### **2. Praktické aktivity: Cvičení a návrhy webových funkcionalit**
+### **2. Aktivity Hands-On: Cvičení a Návrhy na Webovou Funkcionalitu**
 
-#### **A. Interakce s DOM v testech cvičení**
+#### **A. Interakce s DOM v Cvičení Testu**
 - **Cvičení:**
   - Vytvořte HTML stránku s různými prvky, jako jsou tlačítka, vstupní pole a kontejnery.
-  - Napište testy pro Cypress, které:
-    - Vyberte a interagujte s prvky DOM pomocí selektorů.
-    - Ověřte přítomnost a obsah prvků.
-    - Simulujte uživatelské interakce, jako jsou kliknutí a odeslání formulářů.
+  - Napište Cypress testy, které:
+    - Vyberou a interagují s prvky DOM pomocí selektorů.
+    - Ověří přítomnost a obsah prvků.
+    - Simulují uživatelské interakce, jako jsou kliknutí a odeslání formulářů.
   - **Příklad:**
     ```html
     <!-- index.html -->
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Test interakce DOM</title>
+      <title>Test Interakce DOM</title>
     </head>
     <body>
-      <h1 id="title">Vítejte na testovací stránce</h1>
-      <button id="changeTitle">Změnit název</button>
+      <h1 id="title">Vítejte na Testovací Stránce</h1>
+      <button id="changeTitle">Změnit Nadpis</button>
       <input type="text" id="username" placeholder="Zadejte uživatelské jméno" />
       <button id="submitForm">Odeslat</button>
       <div id="output"></div>
 
       <script>
         document.getElementById('changeTitle').addEventListener('click', () => {
-          document.getElementById('title').innerText = 'Název změněn!';
+          document.getElementById('title').innerText = 'Nadpis Změněn!';
         });
 
         document.getElementById('submitForm').addEventListener('click', () => {
@@ -453,18 +453,18 @@ fetch('users.json')
     ```
 
     ```javascript
-    // Test Cypress
-    describe('Test interakce DOM', () => {
+    // Cypress Test
+    describe('Test Interakce DOM', () => {
       beforeEach(() => {
         cy.visit('/index.html');
       });
 
-      it('Změní název po kliknutí na tlačítko', () => {
+      it('Změní nadpis, když je tlačítko kliknuto', () => {
         cy.get('#changeTitle').click();
-        cy.get('#title').should('have.text', 'Název změněn!');
+        cy.get('#title').should('have.text', 'Nadpis Změněn!');
       });
 
-      it('Odešle formulář a zobrazí pozdrav', () => {
+      it('Odesílá formulář a zobrazuje pozdrav', () => {
         cy.get('#username').type('TestUser');
         cy.get('#submitForm').click();
         cy.get('#output').should('have.text', 'Ahoj, TestUser!');
@@ -472,163 +472,163 @@ fetch('users.json')
     });
     ```
 
-- **Návrh webové funkcionality:**
-  - Vyvinout dynamickou webovou stránku, na které uživatelé mohou:
+- **Návrh Webové Funkcionality:**
+  - Vyvinout dynamickou webovou stránku, kde uživatelé mohou:
     - Změnit název stránky kliknutím na tlačítko.
-    - Odeslat formulář se svým uživatelským jménem a zobrazit personalizovaný pozdrav.
-  - Napište testy pro Cypress, abyste automatizovali a ověřili tyto interakce.
+    - Odeslat formulář se svým uživatelským jménem a vidět personalizovaný pozdrav.
+  - Napsat Cypress testy k automatizaci a ověření těchto interakcí.
 
 
-#### **B. Cvičení aktualizace obsahu DOM**
+#### **B. Aktualizace Obsahu DOM Cvičení**
 - **Cvičení:**
-  - Vytvořte jednoduchou webovou stránku s titulkem, odstavcem a tlačítkem.
+  - Vytvořte jednoduchou webovou stránku s názvem, odstavcem a tlačítkem.
   - Napište JavaScript kód, který:
-    - Změní text titulku pomocí `innerText`, když se stránka načte.
-    - Aktualizuje textový obsah odstavce, když je tlačítko kliknuto.
-  - **Návrh webové funkcionality:**
-    - „Vítejte“ stránka, která nejprve zobrazuje obecnou zprávu a personalizuje pozdrav, když uživatel klikne na tlačítko.
+    - Změní text nadpisu pomocí `innerText`, když se stránka načte.
+    - Aktualizuje text obsahu odstavce, když je tlačítko kliknuto.
+  - **Návrh Webové Funkcionality:**
+    - „Vítejte“ stránka, která ze začátku zobrazuje obecnou zprávu a personalizuje pozdrav, když uživatel klikne na tlačítko.
 
-#### **C. Dynamické vytváření seznamu z JSON cvičení**
+#### **C. Dynamické Vytváření Seznamu z JSON Cvičení**
 - **Cvičení:**
-  - Vytvořte JSON soubor (`products.json`) s polem objektů produktů (`name`, `price`, `category`).
-  - Použijte `fetch()`, abyste načetli JSON data.
-  - Dynamicky vytvořte seznam produktů na webové stránce, zobrazující jméno každého produktu a cenu.
-  - **Návrh webové funkcionality:**
-    - Stránka s výpisem produktů, která načítá data o produktech a zobrazuje je v tabulce nebo seznamu, aktualizovaná vždy, když se data změní.
+  - Vytvořte soubor JSON (`products.json`) se polem objektů produktů (`name`, `price`, `category`).
+  - Použijte `fetch()` k načtení JSON dat.
+  - Dynamicky vytvořte seznam produktů na webové stránce, zobrazující jméno a cenu každého produktu.
+  - **Návrh Webové Funkcionality:**
+    - Stránka s výpisem produktů, která načítá data o produktech a vykresluje je do tabulky nebo seznamu, aktualizované, kdykoli se data změní.
 
-#### **D. Používání metod `window` cvičení**
+#### **D. Použití Metod `window` Cvičení**
 - **Cvičení:**
   - Zobrazte upozornění po 2 sekundách pomocí `window.setTimeout()`.
-  - Vypište aktuální URL stránky pomocí `window.location.href`.
-  - Implementujte tlačítko „Načíst“ pomocí `window.location.reload()`, které stránku obnoví.
-  - **Návrh webové funkcionality:**
-    - Stránka s časovanou notifikací a tlačítkem, které obnovuje stránku, demonstrující manipulace s `window`.
+  - Zaznamenejte aktuální URL stránky pomocí `window.location.href`.
+  - Implementujte tlačítko „Znovu Načíst“, které používá `window.location.reload()` k obnovení stránky.
+  - **Návrh Webové Funkcionality:**
+    - Stránka s časovaným oznámením a tlačítkem pro obnovení stránky, demonstrující manipulace s `window`.
 
 ---
 
-### **3. Potenciální otázky studentů**
+### **3. Potenciální Otázky Studentů**
 
 1. **Jaký je rozdíl mezi `document.getElementById()` a `document.querySelector()`?**
    - **Odpověď:**  
-     `document.getElementById()` vybírá prvek podle jeho unikátního ID a je obecně rychlejší. `document.querySelector()` umožňuje výběr prvků pomocí jakéhokoli CSS selektoru, což poskytuje větší flexibilitu.
+     `document.getElementById()` vybírá prvek podle jeho unikátního ID a je obecně rychlejší. `document.querySelector()` umožňuje vybírat prvky pomocí jakéhokoli CSS selektoru, což poskytuje větší flexibilitu.
 
 2. **Jak mohu upravit obsah prvku DOM pomocí JavaScriptu?**
    - **Odpověď:**  
-     Můžete upravit obsah pomocí vlastností jako jsou `innerText`, `innerHTML` nebo `textContent`. Například:
+     Můžete upravit obsah pomocí vlastností jako `innerText`, `innerHTML` nebo `textContent`. Například:
      ```javascript
-     document.getElementById('title').innerText = 'Nový název';
+     document.getElementById('title').innerText = 'Nový Nadpis';
      ```
 
 3. **Kdy bych měl použít `innerText` vs. `innerHTML`?**  
    **Odpověď:**  
-   - `innerText` nastavuje nebo získává čitelný text uvnitř prvku, ignoruje HTML značky.
-   - `innerHTML` vám umožňuje přidávat nebo upravovat HTML přímo. Používejte opatrně `innerHTML`, abyste se vyhnuli bezpečnostním rizikům jako XSS.
+   - `innerText` nastavuje nebo získává text srozumitelný člověku uvnitř prvku, ignorující HTML značky.
+   - `innerHTML` vám umožňuje přidávat nebo upravovat HTML přímo. Používejte opatrnost při `innerHTML`, abyste se vyhnuli bezpečnostním rizikům jako XSS.
 
-4. **Jak se vyhnout znečištění globální proměnné pomocí objektu `window`?**  
+4. **Jak se vyhnout znečištění globálních proměnných pomocí objektu `window`?**  
    **Odpověď:**  
    - Vždy deklarujte proměnné pomocí `let` nebo `const` uvnitř funkcí nebo bloků.
-   - Používejte moduly nebo uzávěry k udržení proměnných v místním rozsahu.
-   - Nespoléhejte se na připojování dat k `window`—ukládejte je do objektů nebo modulů místo toho.
+   - Používejte moduly nebo uzávěry, abyste udrželi proměnné místní.
+   - Nezávislé na připojování dat k `window`—uchovávejte je v objektech nebo modulech místo toho.
 
 5. **Jaký je rozdíl mezi `document.getElementById()` a `document.querySelector()`?**  
    **Odpověď:**  
-   - `getElementById()` vybírá prvek podle jeho unikátního ID a vrací jediný prvek.
-   - `querySelector()` používá CSS selektory a může vybrat jakýkoli prvek odpovídající selektoru a vrátí první shodu.
-   - `querySelector()` je flexibilnější, ale `getElementById()` je rychlejší pro vyhledání jednoho ID.
+   - `getElementById()` vybírá prvek podle jeho unikátního ID a vrací jeden prvek.
+   - `querySelector()` používá CSS selektory, může vybrat jakýkoli prvek odpovídající selektoru a vrací první shodu.
+   - `querySelector()` je flexibilnější, ale `getElementById()` je rychlejší pro hledání jednotlivých ID.
 
 6. **Mohu iterovat přes kolekce prvků DOM jako přes pole?**  
    **Odpověď:**  
-   - `querySelectorAll()` vrací NodeList, přes který lze iterovat pomocí `forEach()`.
+   - `querySelectorAll()` vrací NodeList, který můžete iterovat pomocí `forEach()`.
    - Můžete také převést NodeLists nebo HTMLCollections na pole pomocí `Array.from()` a poté použít metody pole.
 
 ---
 
-### **4. Doplňkové materiály: Doporučení**
+### **4. Doporučené Doplňující Materiály**
 
-#### **A. Oficiální dokumentace a průvodci:**
+#### **A. Oficiální Dokumentace a Příručky:**
 - [MDN Web Docs - Úvod do DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [MDN Web Docs - Objekt Window](https://developer.mozilla.org/en-US/docs/Web/API/Window)
 - [MDN Web Docs - Manipulace s DOM](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
 
-#### **B. Tutoriály a články:**
-- **Tutoriál DOM W3Schools:** [https://www.w3schools.com/js/js_htmldom.asp](https://www.w3schools.com/js/js_htmldom.asp)
-- **Tutoriál DOM na JavaScript.info:** [https://javascript.info/document](https://javascript.info/document)
+#### **B. Tutoriály a Články:**
+- **W3Schools DOM Tutorial:** [https://www.w3schools.com/js/js_htmldom.asp](https://www.w3schools.com/js/js_htmldom.asp)
+- **JavaScript.info DOM Tutorial:** [https://javascript.info/document](https://javascript.info/document)
 
-#### **C. Interaktivní výukové platformy:**
-- **FreeCodeCamp:** Cvičení o manipulaci s DOM a zpracování událostí.
+#### **C. Interaktivní Učící Platformy:**
+- **FreeCodeCamp:** Cvičení na manipulaci s DOM a zpracování událostí.
 - **Codecademy:** Interaktivní lekce o práci s DOM.
 
-#### **D. Video tutoriály:**
-- **Traversy Media na YouTube:** Videá o základech manipulace s DOM.
-- **Net Ninja:** Tutoriály o DOM, vysvětlující vlastnosti, metody a použití objektu `window`.
+#### **D. Video Tutoriály:**
+- **Traversy Media na YouTube:** Videa o základech manipulace s DOM.
+- **The Net Ninja:** Tutoriály o DOM, vysvětlení vlastností, metod a použití objektu `window`.
 
-#### **E. Platformy pro procvičování:**
-- Vytvořte malé demo stránky pro experimentování s různými metodami DOM.
-- Používejte JSON soubory jako datové zdroje a dynamicky vykreslujte UI prvky založené na načtených datech.
+#### **E. Platformy pro Praxi:**
+- Vytvořte malé demo stránky, abyste experimentovali s různými metodami DOM.
+- Použijte JSON soubory jako zdroje dat a dynamicky renderujte UI prvky na základě načtených dat.
 
-#### **F. Komunita a podpora:**
-- **Stack Overflow** a **Reddit** (`r/javascript`): Skvělé zdroje pro konkrétní otázky týkající se DOM.
-- **Diskuzní komunity:** Připojte se k kanálům zaměřeným na JavaScript nebo front-end, abyste diskutovali o výzvách s DOM.
+#### **F. Komunita a Podpora:**
+- **Stack Overflow** a **Reddit** (`r/javascript`): Skvělé zdroje pro specifické dotazy týkající se DOM.
+- **Diskozní Komunity:** Připojte se k JavaScript nebo front-end zaměřeným kanálům k diskusi o výzvách DOM.
 
 ---
 
-### **5. Navrhovaný rozvrh lekce na 3 hodiny**
+### **5. Navrhovaná Struktura Lekce na 3 Hodiny**
 
 #### **Hodina 1: Vlastnosti a Metody DOM (60 minut)**
-- **Shrnutí konceptů DOM (10 minut):**
-  - Přezkoumání struktury DOM a jak JavaScript vidí webovou stránku.
+- **Rekapitulace Konceptů DOM (10 minut):**
+  - Přehled struktury DOM a jak JavaScript vidí webovou stránku.
 - **Vlastnosti a Metody DOM (40 minut):**
   - `innerText`, `innerHTML`, `textContent`.
   - `classList` a `style`.
-  - Vytváření, úprava a odstraňování prvků.
-- **Krátké Q&A (10 minut):**
-  - Odpovězení na okamžité dotazy.
+  - Vytváření, modifikace a odstraňování prvků.
+- **Krátký Q&A (10 minut):**
+  - Odpovědět na naléhavé dotazy.
 
 #### **Hodina 2: Globální Objekt Window a Integrace (60 minut)**
 - **Prozkoumání `window` (20 minut):**
   - `window.document`, `window.location`, `window.history`.
   - Časované akce (`setTimeout`, `setInterval`).
-- **Praktická integrace s daty (20 minut):**
-  - Načtěte JSON data a aktualizujte DOM prvky.
-  - Používejte smyčky a podmínky k určení, co se má zobrazit.
-- **Krátké Q&A (10 minut):**
-  - Vyjasnění jakýchkoliv nejasností.
+- **Praktická Integrace s Daty (20 minut):**
+  - Načíst JSON data a aktualizovat prvky DOM.
+  - Použít cykly a podmínky k rozhodnutí, co zobrazit.
+- **Krátký Q&A (10 minut):**
+  - Vyjasnit jakékoli nejasnosti.
 - **Pauza (10 minut):**
   - Rychlá přestávka.
 
-#### **Hodina 3: Praktické aktivity a nejlepší praktiky (60 minut)**
-- **Praktické cvičení (40 minut):**
+#### **Hodina 3: Aktivity Hands-On a Nejlepší Praktiky (60 minut)**
+- **Aktivity Hands-On (40 minut):**
   - Aktualizace textu a atributů.
   - Vytváření seznamů z polí nebo JSON.
-  - Používání metod `window` k zobrazení upozornění nebo obnovení stránky.
-- **Shrnutí a Q&A (20 minut):**
-  - Přehled klíčových konceptů a nejlepších praktik.
-  - Povzbuzení studentů k experimentování a pokusu o složitější manipulace s DOM.
+  - Použití metod `window` k zobrazení upozornění nebo obnovení stránky.
+- **Přehled a Q&A (20 minut):**
+  - Shrnutí klíčových konceptů a nejlepších praktik.
+  - Povzbudit studenty, aby experimentovali a zkoušeli složitější manipulace s DOM.
 
 ---
 
-### **6. Další doporučení**
+### **6. Další Doporučení**
 
-#### **A. Interaktivní demonstrace:**
-- Zobrazte živé kódovací příklady:
-  - Načtěte JSON soubor a zobrazte data na stránce.
-  - Aktualizujte třídy prvků při kliknutích na tlačítka.
-  - Zobrazte časované upozornění pomocí `setTimeout()`.
+#### **A. Interaktivní Demonstrace:**
+- Ukázat příklady živého kódování:
+  - Načtení JSON souboru a zobrazení dat na stránce.
+  - Aktualizace tříd prvků při kliknutí na tlačítko.
+  - Zobrazit časované upozornění pomocí `setTimeout()`.
 
-#### **B. Poutavé vizuály:**
-- Použijte diagramy pro zobrazení stromu DOM.
-- Tokové diagramy pro vizualizaci, jak se data dostávají z JSON do prvků DOM.
-- Zvýrazněte, jak `window` sedí na nejvyšší úrovni prohlížečového prostředí.
+#### **B. Zajímavé Vizualizace:**
+- Použijte diagramy k zobrazení stromu DOM.
+- Tokové diagramy k vizualizaci, jak data proudí z JSON do prvků DOM.
+- Zvýrazněte, jak `window` sedí na nejvyšší úrovni prohlížečského prostředí.
 
-#### **C. Povzbuďte účast:**
-- Požádejte studenty, aby našli a vypsali `window.location.href`.
-- Nechte studenty vytvářet a odstraňovat prvky na cestě.
-- Dovolte jim vyzkoušet výběr prvků pomocí různých metod a vlastností.
+#### **C. Povzbuzení ke Zúčastění:**
+- Požádejte studenty, aby našli a zaznamenali `window.location.href`.
+- Nechte studenty vytvářet a odstraňovat prvky za běhu.
+- Umožněte jim vyzkoušet vybírat prvky pomocí různých metod a vlastností.
 
-#### **D. Poskytněte jasné pokyny:**
-- Po krokové mini úkoly, např. „Změňte text nadpisu a přidejte nový odstavec pod něj.“
-- Tipy pro odstraňování problémů pro běžné chyby (např. výběr špatného ID, překlep v selektoru).
+#### **D. Poskytování Jasných Pokynů:**
+- Krok-za-krokem mini úkoly, např. „Změňte text nadpisu a přidejte nový odstavec pod něj.“
+- Tipy k řešení problémů pro běžné chyby (např. výběr špatného ID, překlep v selektoru).
 
-#### **E. Podporujte podpůrné prostředí:**
-- Povzbuďte studenty, aby sdíleli své kódové úryvky.
-- Nabídněte, že zkontrolujete a poskytnete zpětnou vazbu na jejich přístupy.
+#### **E. Podpora Podpůrného Prostředí:**
+- Povzbuzujte studenty, aby sdíleli své kódové úryvky.
+- Nabídněte přečíst a dát zpětnou vazbu na jejich přístupy.
