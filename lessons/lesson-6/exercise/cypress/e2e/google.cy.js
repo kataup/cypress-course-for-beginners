@@ -10,6 +10,7 @@ describe('Google search tests', () => {
   data.forEach((element) => {
     it(`should type ${element} in Google search box and hit Search button`, () => {
       cy.visit('https://www.google.com');
+      cy.wait(5000);
       cy.get('textarea').eq(0).type(element).type('{enter}');
     });
   });
