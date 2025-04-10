@@ -1,4 +1,4 @@
-import data from '../fixtures/example.json';
+import data from './exercise/cypress/fixtures/example.json';
 
 describe('Google search tests', () => {
   console.log(data);

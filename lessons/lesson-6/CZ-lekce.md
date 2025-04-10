@@ -4,13 +4,13 @@
 
 #### **A. Úvod do instalace Cypress**
 - **Proč je instalace důležitá:**
-  - Před psaním testů Cypress je potřeba správně nastavit prostředí, aby byla zajištěna kompatibilita a hladké provádění.
+  - Před psaním testů Cypress je potřeba správně nastavit prostředí, aby byla zajištěna kompatibilita a hladké provádění testu.
 - **Požadavky pro instalaci:**
   - Node.js nainstalovaný v systému.
   - Základní porozumění správcům balíčků jako `npm` nebo `yarn`.
 
 1. **Nainstalovaný Node.js:**
-   - Cypress vyžaduje Node.js k řízení své instalace a závislostí.
+   - Cypress vyžaduje Node.js k řízení své instalace a závislostí (balíčků).
    - Nainstalujte Node.js z oficiálního webu: [https://nodejs.org/](https://nodejs.org/).
    - Ověřte instalaci pomocí:
      ```bash
@@ -114,20 +114,15 @@
 
 #### **C. Přehled struktury složky Cypress**
 - **Výchozí adresáře:**
-  - `cypress/fixtures`: Uložte JSON soubory pro testovací data.
-  - `cypress/e2e`: Zde pište testovací soubory.
-  - `cypress/plugins`: Rozšiřte funkcionalitu Cypress.
-  - `cypress/support`: Přidejte opakovaně použitelné utility a globální konfigurace.
-- **Účel každého adresáře:**
-  - **`fixtures`:** Centralizujte mock data pro testy.
-  - **`integration`:** Organizujte testovací případy podle funkčnosti nebo vlastností.
-  - **`support`:** Přizpůsobte příkazy a nakonfigurujte globální chování.
-
+  - `cypress/fixtures`: JSON soubory pro testovací data.
+  - `cypress/e2e`: Soubory s testy.
+  - `cypress/plugins`: Rozširuje funkcionalitu Cypress.
+  - `cypress/support`: Opakovaně použitelné utility a globální konfigurace.
 ##### **Účel složek Cypress**
 
 1. **`fixtures`:**
-   - Uložíte mock data ve formátu JSON.
-   - Používá se pro simulaci odpovědí API nebo poskytování testovacích vstupů.
+   - Složka pro testovací data.
+   - Používá se pro simulaci odpovědí API nebo poskytování testovacích dat.
    - Příklad: `cypress/fixtures/users.json`
      ```json
      [
@@ -143,7 +138,7 @@
      ```
 
 2. **`e2e` (nebo `integration` ve starších verzích):**
-   - Ukládá skutečné testovací soubory, obvykle organizované podle funkčnosti.
+   - Ukládá testovací skripty, obvykle organizované podle funkčnosti.
    - Příklad:
      ```
      cypress/integration/login.spec.js
@@ -151,7 +146,7 @@
      ```
 
 3. **`plugins`:**
-   - Rozšiřte funkcionalitu Cypress, například upravením chování prohlížeče nebo konfigurací pluginů.
+   - Rozširuje funkcionalitu Cypress, například upravením chování prohlížeče nebo konfigurací pluginů.
    - Příklad:
      ```javascript
      module.exports = (on, config) => {
@@ -172,7 +167,7 @@
 
 #### **D. Konfigurační soubory**
 - **Přehled `cypress.config.js`:**
-  - Konfigurujte základní URL, velikost viewportu, časové limity a další.
+  - Konfigurační soubor. Lze nastavit základní URL, velikost viewportu, časové limity a další.
   - Příklad:
     ```javascript
     const { defineConfig } = require('cypress');
@@ -259,9 +254,9 @@ Vlastnost `env` v `cypress.config.js` uchovává proměnné specifické pro pros
 
 
 #### **E. Spuštění testů Cypress**
-- **Otevřený režim:**
+- **Dev režim:**
   - Použijte `npx cypress open` k otevření uživatelského rozhraní Test Runneru.
-- **Bezhlavý režim:**
+- **Headless režim:**
   - Použijte `npx cypress run` k provedení testů v terminálu.
   - Užitečné pro CI/CD pipeline.
 - **Příklad příkazu:**
@@ -269,7 +264,7 @@ Vlastnost `env` v `cypress.config.js` uchovává proměnné specifické pro pros
   npx cypress run --spec cypress/integration/login.spec.js
   ```
 
-**`npx`** je nástroj, který přichází s `npm` (od verze 5.2.0) a používá se k provádění balíčků Node.js přímo z příkazové řádky bez jejich globální instalace. Umožňuje spouštět binární soubory balíčků, které jsou buď nainstalovány lokálně ve vašem projektu, nebo staženy přímo z npm registru.
+**`npx`** je nástroj, který přichází s `npm` (od verze 5.2.0) a používá se k spusteni balíčků Node.js přímo z příkazové řádky bez jejich globální instalace. Umožňuje spouštět binární soubory balíčků, které jsou buď nainstalovány lokálně ve vašem projektu, nebo staženy přímo z npm registru.
 
 
 ##### **Proč používat `npx`?**
@@ -295,7 +290,7 @@ Vlastnost `env` v `cypress.config.js` uchovává proměnné specifické pro pros
      Tímto se spustí Cypress z vaší lokální složky `node_modules`, pokud je již nainstalován.
 
 4. **Provádění konkrétní verze:**
-   - Můžete specifikovat konkrétní verzi balíčku k provedení:
+   - Můžete specifikovat konkrétní verzi balíčku:
      ```bash
      npx some-package@1.2.3
      ```
@@ -312,7 +307,7 @@ Vlastnost `env` v `cypress.config.js` uchovává proměnné specifické pro pros
 - Když spustíte příkaz pomocí `npx`:
   1. Zkontroluje, zda balíček existuje lokálně ve vašem `node_modules`.
   2. Pokud balíček není nalezen lokálně, dočasně jej stáhne a spustí.
-  3. Jakmile je balíček vykonán, vyčistí se odstraněním dočasných souborů (pokud byl stažen).
+  3. Jakmile je process dokončen, npx vykoná vyčištení odstraněním dočasných souborů (pokud byl stažen).
 
 ---
 
@@ -349,7 +344,7 @@ Vlastnost `env` v `cypress.config.js` uchovává proměnné specifické pro pros
    npx some-package@2.0.0
    ```
 
-5. **Dočasné provádění pro testování:**
+5. **Dočasná exekuce pro testování:**
    - Spusťte `npx cowsay` jako zábavným příkladem:
      ```bash
      npx cowsay "Hello, World!"
@@ -409,8 +404,8 @@ Vlastnost `env` v `cypress.config.js` uchovává proměnné specifické pro pros
 2. **Musím instalovat Cypress globálně?**
    - **Odpověď:** Ne, Cypress je obvykle nainstalován lokálně v projektu pro lepší správu verzí a reprodukovatelnost.
 
-3. **Jaký je rozdíl mezi otevřeným režimem a bezhlavým režimem Cypress?**
-   - **Odpověď:** Otevřený režim spouští interaktivní Cypress Test Runner, což umožňuje studentům vizuálně sledovat provádění testů. Bezhlavý režim spouští testy v terminálu bez otevření uživatelského rozhraní, vhodné pro automatizované pipeline.
+3. **Jaký je rozdíl mezi Dev režimem a Headless režimem Cypress?**
+   - **Odpověď:** Dev režim spouští interaktivní Cypress Test Runner, což umožňuje studentům vizuálně sledovat provádění testů. Headless režim spouští testy v terminálu bez otevření uživatelského rozhraní, vhodné pro automatizované pipeline.
 
 4. **Proč bych měl použít základní URL v konfiguraci?**
    - **Odpověď:** Nastavení základní URL zjednodušuje testovací příkazy. Místo psaní `cy.visit('http://localhost:3000/login')` můžete napsat `cy.visit('/login')`. 
