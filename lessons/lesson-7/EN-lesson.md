@@ -1,7 +1,5 @@
 ### **Lesson 7: Interacting with Web Elements and Handling User Inputs**
 
----
-
 ## **1. Content Outline**
 
 ### **A. Introduction**
@@ -189,7 +187,6 @@ cy.get('[data-testid="submit-button"]').click();
 
 **Key Difference:**  
 Use `cy.get()` to query the global DOM. Use `cy.find()` when you need to narrow down the search to elements inside a specific container or context.
-
 
 
 ##### cy.trigger()
