@@ -9,12 +9,14 @@
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required @blur="validatePassword" data-testid="password-input" />
+        <input type="password" id="password" v-model="password" required @blur="validatePassword"
+          data-testid="password-input" />
         <span v-if="passwordError" class="error">{{ passwordError }}</span>
       </div>
       <div class="button-group">
         <button type="submit" :disabled="!isFormValid" data-testid="login-btn">Login</button>
-        <button type="button" @click="handleRegister" data-testid="register-btn">Register</button>
+        <button type="button" @click="handleRegister" :disabled="!isFormValid"
+          data-testid="register-btn">Register</button>
       </div>
     </form>
   </div>
@@ -37,11 +39,25 @@ const validateEmail = () => {
 };
 
 const validatePassword = () => {
-  passwordError.value = password.value.length >= 6 ? '' : 'Password must be at least 6 characters long';
+  const specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  if (!password.value) { // Handle empty password case for initial state or clearing
+    passwordError.value = ''; // Or set a specific message if needed
+  } else if (password.value.length < 6) {
+    passwordError.value = 'Password must be at least 6 characters long';
+  } else if (!specialCharRegex.test(password.value)) {
+    passwordError.value = 'Password must contain at least one special character';
+  } else {
+    passwordError.value = '';
+  }
 };
 
 const isFormValid = computed(() => {
-  return email.value && password.value && !emailError.value && !passwordError.value;
+  // Trigger validation explicitly if needed, or rely on @blur
+  // Ensure errors are checked *after* potential validation runs
+  const isEmailValid = email.value && !emailError.value;
+  const isPasswordValid = password.value && !passwordError.value;
+  // Check the actual error refs *after* validation logic might have run
+  return email.value && password.value && emailError.value === '' && passwordError.value === '';
 });
 
 const handleSubmit = () => {
