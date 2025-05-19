@@ -62,6 +62,8 @@
 1. **Understanding Cypress Contexts:**
    - **Definition:**  
      Contexts (or logical groupings) are used to organize tests that share a common setup or belong to a specific user scenario.
+     
+    
    - **Usage:**  
      While Cypress doesn’t have a built‑in context function (as `context()` is just an alias for `describe()`), you can use nested `describe()` blocks to create meaningful groups.
 
@@ -91,6 +93,11 @@
        });
      });
      ```
+
+      In the Cypress world, a test context usually refers to the test’s execution environment — this includes:
+        - the JavaScript scope Cypress runs your code in,
+        - the domain (origin) of the page you're visiting,
+        - the browser state like cookies, localStorage, sessions, and even variables in memory.
 ---
 
 ## Multidomain Testing in Cypress
