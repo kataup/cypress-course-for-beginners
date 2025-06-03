@@ -1,4 +1,4 @@
-## **Lesson 16: Introduction to Cypress Plugins and Extensions (Condensed)**
+## **Lesson 16: Introduction to Cypress Plugins and Extensions**
 
 ### **Objectives**
 
@@ -288,7 +288,7 @@
       ```
       
     2. **Configuration:**  
-      Update your `cypress.config.js` to integrate the preprocessor:
+      Update your `cypress.config.ts` to integrate the preprocessor:
       ```javascript
       import { defineConfig } from 'cypress';
       import createBundler from "@bahmutov/cypress-esbuild-preprocessor"

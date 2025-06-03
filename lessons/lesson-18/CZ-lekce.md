@@ -1,62 +1,63 @@
-## **Lekce 18: Cypress Dashboard, Reporting a Průběžná integrace a dodávání (CI/CD)**
+## **Lekce 18: Cypress Dashboard, Reportování a Nepřetržitá Integrace a Dodávání (CI/CD)**
 
 ### **Cíle**
 
 - **Cypress Dashboard:**  
-  Pochopit funkce a přínosy Cypress Dashboardu pro správu a sledování běhů testů.
+  Porozumění funkcím a výhodám Cypress Dashboard pro správu a sledování spouštění testů.
 
-- **Reporting:**  
-  Naučit se generovat, přizpůsobovat a interpretovat Cypress testovací reporty a metriky.
+- **Reportování:**  
+  Naučit se vytvářet, přizpůsobovat a interpretovat Cypress testovací reporty a metriky.
 
 - **Integrace CI/CD:**  
-  Integrovat Cypress testy do automatizovaných workflow pomocí populárních CI/CD nástrojů (například GitHub Actions, GitLab CI nebo Jenkins), aby se testy spouštěly při každém commitu a nasazení kódu.
+  Integrace Cypress testů do automatizovaných pracovních postupů pomocí populárních CI/CD nástrojů (například GitHub Actions, GitLab CI nebo Jenkins), aby se testy spouštěly při každém commitu a nasazení kódu.
 
 ---
 
-### **Podrobný obsah**
+### **Rozvržení obsahu**
 
 #### **A. Cypress Dashboard**
 
-1. **Přehled funkcí Cypress Dashboardu:**  
-Webová služba poskytovaná Cypress.io pro správu a vizualizaci běhů testů.  
-K dispozici pro open-source i komerční použití.
+1. **Přehled funkcí Cypress Dashboard:**
+Webová služba poskytovaná Cypress.io pro správu a vizualizaci testovacích běhů.  
+Dostupná pro open-source i komerční použití.
 
-Registrujte se zde: [https://dashboard.cypress.io](https://dashboard.cypress.io)
+Registrace na [https://dashboard.cypress.io](https://dashboard.cypress.io)
 
+   
    - **Monitorování v reálném čase:**  
-     Sledujte stav běhu testů, videa, screenshoty a logy v reálném čase.
-   - **Historie testů & analytika:**  
-     Analyzujte trendy v čase, detailní historii běhů a sledujte výkon.
+     Zobrazte stav testovacích běhů, videa, snímky obrazovky a logy v reálném čase.
+   - **Historie testů & analýzy:**  
+     Analyzujte trendy v čase, prohlédněte si detailní historii běhů a sledujte výkon.
    - **Ladění chyb:**  
-     Přístup k časovým snímkům a podrobným logům pro rychlé odhalení problémů.
+     Přístup k "time-travel" snímkům a detailním logům pro rychlou identifikaci selhání.
    - **Spolupráce:**  
-     Sdílení výsledků testů s kolegy a integrace s nástroji pro sledování úkolů.
+     Sdílejte výsledky testů s členy týmu a integrujte s nástroji pro sledování chyb.
 
-2. **Přínosy pro správu a reporting testů:**  
+2. **Výhody pro správu testů a reportování:**
    - **Centralizovaný pohled:**  
-     Všechny běhy testů a jejich detaily jsou uloženy na jednom dashboardu.
-   - **Automatický záznam videí a screenshotů:**  
-     Jednodušší ladění občasně se vyskytujících problémů.
-   - **Vylepšený reporting:**  
+     Všechny běhy a jejich detaily jsou uloženy na jednom dashboardu.
+   - **Automatické pořizování videí/snímků:**  
+     Jednodušší ladění nekonzistentních problémů.
+   - **Rozšířené reportování:**  
      Vizualizace výkonu testů a trendů.
    - **Týmová spolupráce:**  
-     Umožňuje sdílení poznatků a historických dat se zainteresovanými stranami.
+     Usnadňuje sdílení poznatků a historických dat s účastníky projektu.
 
-3. **Nastavení integrace Cypress Dashboardu:**  
+3. **Nastavení integrace Cypress Dashboard:**
    - **Vytvoření účtu:**  
      Registrujte se na [Cypress Dashboard](https://dashboard.cypress.io/).
    - **Konfigurace projektu:**  
      Přidejte ID projektu do konfigurace Cypress.
      ```json
-     // Ukázka v cypress.config.js:
+     // cypress.config.js ukázka:
      module.exports = defineConfig({
        e2e: {
          // ... další nastavení
-         projectId: 'your-project-id', // Poskytuje Cypress Dashboard
+         projectId: 'your-project-id', // Dodáno Cypress Dashboard
        }
      });
      ```
-   - **Nahrání výsledků:**  
+   - **Nahrávání výsledků:**  
      Použijte CLI příkaz `npx cypress run --record --key <record-key>` pro nahrání výsledků testů.
 
    - **Přidání do testovacího příkazu:**
@@ -68,56 +69,58 @@ Registrujte se zde: [https://dashboard.cypress.io](https://dashboard.cypress.io)
 
 ---
 
-#### **B. Reporting**
+#### **B. Reportování**
 
-1. **Generování testovacích reportů:**  
-- Pomáhá odhalit vzorce v neúspěších.
+1. **Generování testovacích reportů:**
+- Pomáhá detekovat vzorce selhání.
 - Dokumentuje kvalitu a spolehlivost testů.
-- Užitečné v týmové komunikaci a CI dashboardech.
-- Screenshoty a videa jsou automaticky ukládány při chybě (`videos/`, `screenshots/`).
+- Užitečné pro týmovou komunikaci a CI dashboardy.
+- Snímky obrazovky a videa jsou automaticky ukládány při selhání (`videos/`, `screenshots/`).
 
-   - **Vestavěný reporting:**  
-     Cypress poskytuje základní reporting v CLI, včetně detailů o úspěšných, neúspěšných a přeskočených testech.
+   - **Vestavěné reportování:**  
+     Cypress poskytuje základní reportování v CLI, včetně podrobností o úspěšných, neúspěšných a přeskočených testech.
    - **Vlastní reportery:**  
-     Pluginy jako `cypress-mochawesome-reporter` mohou generovat podrobné HTML reporty.
+     Pluginy jako `cypress-mochawesome-reporter` mohou generovat detailnější HTML reporty.
      ```bash
      npm install cypress-mochawesome-reporter --save-dev
      ```
-     Poté nakonfigurujte v konfiguraci Cypress:
+     Poté nastavte ve své Cypress konfiguraci:
      ```javascript
      module.exports = defineConfig({
+      reporter: 'cypress-mochawesome-reporter',
+      reporterOptions: {
+        charts: true,
+        embeddedScreenshots: true,
+        inlineAssets: true,
+      },
        e2e: {
-         reporter: 'cypress-mochawesome-reporter',
-         reporterOptions: {
-           reportDir: 'cypress/reports',
-           overwrite: false,
-           html: true,
-           json: true
-         }
+          setupNodeEvents(on, config) {
+            require('cypress-mochawesome-reporter/plugin')(on);
+          }
        }
      });
      ```
-     Vygenerování plného HTML reportu:
-      ```bash
-      npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator --reportDir cypress/reports/html
-      ```
+     Přidejte do cypress/support/e2e.js
+     ```
+     import 'cypress-mochawesome-reporter/register'
+     ```
 
-2. **Přizpůsobení výstupních reportů:**  
-   - Přizpůsobte název reportu, téma a výstupní složky pomocí voleb v reporteru.
-   - Analyzujte metriky jako délka testu, počet opakování a chybové logy pro nové poznatky.
+2. **Přizpůsobení výstupů reportů:**
+   - Přizpůsobte název reportu, téma a cesty pro výstup pomocí volby reporter options.
+   - Analyzujte metriky jako délka testu, počet opakování a logy chyb pro získání statistik.
 
-3. **Analýza výsledků testů a metrik:**  
-   - Prohlížejte screenshoty a záznamy z Dashboardu.
-   - Využijte podrobné logy a snímky k nalezení selhání a úzkých míst ve výkonu testů.
+3. **Analýza výsledků testů a metrik:**
+   - Prohlížejte snímky obrazovky a video záznamy poskytnuté Dashboardem.
+   - Využijte detailní logy a snímky pro přesné určení selhání a výkonových problémů.
 
 ---
 
-#### **C. Průběžná integrace (CI) a průběžné dodávání (CD)**
+#### **C. Nepřetržitá integrace (CI) a nepřetržité dodávání (CD)**
 
-- **CI (Continuous Integration):** Automaticky testuje a validuje změny v kódu.
-- **CD (Continuous Delivery/Deployment):** Automaticky nasazuje kód do testovacích nebo produkčních prostředí.
+- **CI (Continuous Integration):** Automatické testování a ověřování změn v kódu.
+- **CD (Continuous Delivery/Deployment):** Automatické nasazení kódu do testovacího nebo produkčního prostředí.
 
-###### 🔹 Populární CI nástroje:
+###### 🔹 Oblíbené CI nástroje:
 - GitHub Actions ✅
 - GitLab CI
 - Jenkins
@@ -125,85 +128,134 @@ Registrujte se zde: [https://dashboard.cypress.io](https://dashboard.cypress.io)
 - Bitbucket Pipelines
 - Azure DevOps
 
-1. **Úvod do konceptů CI/CD:**  
+
+1. **Úvod do pojmů CI/CD:**
    - **CI (Continuous Integration):**  
-     Automatizace procesu buildu a testování kódu při každém commitu.
+     Automatizace procesu sestavení a testování kódu při každém commitu.
    - **CD (Continuous Delivery):**  
-     Automatizace nasazování, aby se změny kódu dostaly do produkce rychle a spolehlivě.
+     Automatizace nasazení tak, aby byly změny co nejrychleji a spolehlivě doručeny do produkce.
 
-2. **Konfigurace spouštění Cypress testů v CI/CD pipelinech:**  
-   - **Příklad pro GitHub Actions:**
-     ```yaml
-     # .github/workflows/cypress.yml
-     name: Cypress Tests
+2. **Nastavení běhu Cypress testů v CI/CD pipelinu:**
+   - **Příklad GitHub Actions:**
+    ```yaml
+    name: Cypress E2E Tests
 
-     on:
-       push:
-         branches:
-           - main
-       pull_request:
-         branches:
-           - main
+    on:
+      push:
+        branches: [main, master]
+      pull_request:
+        branches: [main, master]
+      workflow_dispatch:
+        inputs:
+          spec:
+            description: 'Spec soubor(y) ke spuštění (volitelné, spustí všechny pokud prázdné)'
+            required: false
+            default: ''
+            type: string
+          browser:
+            description: 'Prohlížeč pro spuštění testů'
+            required: false
+            default: 'chrome'
+            type: string
 
-     jobs:
-       cypress-run:
-         runs-on: ubuntu-latest
-         steps:
-           - uses: actions/checkout@v2
-           - name: Use Node.js
-             uses: actions/setup-node@v2
-             with:
-               node-version: '16'
-           - name: Install Dependencies
-             run: npm install
-           - name: Run Cypress Tests
-             run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
-     ```
-   - **Automatizace běhů testů:**  
-     Nastavte CI/CD pipeline tak, aby testy běžely automaticky při commitech, pull requestech nebo nasazeních.
+    jobs:
+      cypress-run:
+        name: Spustit Cypress testy na ${{ matrix.browser }}
+        runs-on: ubuntu-latest
+        strategy:
+          fail-fast: false
+          matrix:
+            browser: [chrome, firefox, edge]
+        steps:
+          - name: Checkout kódu
+            uses: actions/checkout@v4
 
-4. **Notifikace a upozornění:**  
-   - Integrace se Slackem, e-mailem nebo jinými zprávovými systémy pro upozornění týmu na selhání testů.
-   - Využívejte notifikace Dashboardu k informování zainteresovaných o problémech s buildem.
+          - name: Nastavení Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version: '18'
+              cache: npm
 
-5. **Osvědčené postupy v CI/CD:**  
-   - Bezpečné spravování environment proměnných a tajných údajů (používejte šifrované úložiště CI/CD platforem).
-   - Zajištěte konzistentní prostředí pro testování (například pomocí Dockeru nebo kontejnerizace).
-   - Optimalizujte běh testů paralelizací a využíváním cachování.
+          - name: Instalace závislostí
+            run: npm ci
+
+          - name: Ověření Cypress binary
+            run: npx cypress verify
+
+          - name: Spuštění Cypress testů
+            uses: cypress-io/github-action@v6
+            with:
+              browser: ${{ matrix.browser }}
+              spec: ${{ github.event.inputs.spec }}
+              record: true
+              group: 'E2E na ${{ matrix.browser }}'
+              tag: ${{ github.event_name }}
+              parallel: false
+            env:
+              CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+              GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+
+          - name: Nahrát snímky při selhání
+            if: failure()
+            uses: actions/upload-artifact@v4
+            with:
+              name: screenshots-${{ matrix.browser }}
+              path: cypress/screenshots
+
+          - name: Nahrát videa při selhání
+            if: failure()
+            uses: actions/upload-artifact@v4
+            with:
+              name: videos-${{ matrix.browser }}
+              path: cypress/videos
+      
+    ```
+
+   - **Automatizace běhu testů:**  
+     Nastavte vaše CI/CD pipeliny tak, aby se testy spouštěly automaticky při commitech, pull requestech nebo nasazeních.
+
+4. **Notifikace a upozornění:**
+   - Integrace se Slackem, emailem či dalšími komunikačními systémy pro upozornění týmu na selhání testů.
+   - Využijte upozornění Dashboardu pro informování stakeholderů o problémech buildu.
+
+5. **Osvědčené postupy v CI/CD:**
+   - Bezpečně spravujte proměnné prostředí a tajné klíče (použijte šifrované úložiště v CI/CD platformě).
+   - Zajistěte konzistenci testovacího prostředí například pomocí Dockeru nebo kontejnerizovaných řešení.
+   - Optimalizujte spouštění testů paralelizací a použitím cache strategií, kde je to možné.
 
 ---
 
 #### **D. Praktické aktivity**
 
-1. **Nastavení Cypress Dashboardu:**  
-   - Vytvořte účet na Cypress Dashboardu a nakonfigurujte projekt s přiděleným ID projektu.
-   - Spouštějte testy s volbou record, aby se výsledky nahrávaly do Dashboardu.
+1. **Nastavení Cypress Dashboard:**
+   - Vytvořte si účet na Cypress Dashboard a nakonfigurujte projekt pomocí přiděleného project ID.
+   - Spusťte testy s volbou record pro nahrání výsledků do Dashboardu.
 
-2. **Konfigurace CI pipeline:**  
-   - Použijte GitHub Actions (nebo jiný CI nástroj) k nastavení workflow, které bude spouštět Cypress testy automaticky po pushi a pull requestech.
-   - Procvičte si spuštění pipeline a prohlédněte si vygenerované reporty testů.
+2. **Konfigurace CI pipeline:**
+   - Použijte GitHub Actions (nebo jiný CI nástroj) pro nastavení workflow, které automaticky spustí Cypress testy při push a pull requestech.
+   - Procvičte si spouštění pipeline a kontrolu vygenerovaných reportů.
 
-3. **Generování a interpretace testovacích reportů:**  
-   - Nakonfigurujte vlastní reporter (například `cypress-mochawesome-reporter`) a generujte HTML reporty.
-   - Analyzujte reporty pro odhalení nestabilních testů, problémů s výkonem a trendů v chybách.
+3. **Vytváření a interpretace testovacích reportů:**
+   - Nakonfigurujte vlastní reporter (např. `cypress-mochawesome-reporter`) a generujte HTML reporty.
+   - Analyzujte reporty pro identifikaci nestabilních testů, výkonových problémů a trendů chyb.
 
-4. **Simulace scénáře z praxe:**  
-   - Použijte `cy.intercept()` k podvržení síťových požadavků a simulaci různých odpovědí backendu.
-   - Kombinujte UI testy s API testy tím, že ověříte, že UI zobrazuje data odpovídající API odpovědím.
+4. **Simulace scénáře z praxe:**
+   - Použijte `cy.intercept()` k podvržení síťových požadavků a simulujte různé reakce backendu.
+   - Kombinujte UI testy s API testy tak, že ověříte konzistenci dat zobrazovaných v UI s odpověďmi API.
 
-5. **CI/CD upozornění:**  
-   - Nastavte upozornění (například přes Slack) v CI pipeline, která vás informují o selhání testů.
-   - Diskutujte, jak automatizovaná upozornění zlepšují reakci týmu na problémy.
+5. **CI/CD Notifikace:**
+   - Nakonfigurujte notifikace (například přes Slack) v CI pipeline pro upozornění na neúspěšné testy.
+   - Diskutujte, jak automatizovaná oznámení zlepšují reakci týmu na vzniklé problémy.
 
 ---
 
 #### **E. Zdroje**
 
-- **Dokumentace Cypress Dashboardu:**  
+- **Dokumentace Cypress Dashboard:**  
   [Cypress Dashboard](https://docs.cypress.io/guides/dashboard)
-- **Pluginy pro reporting v Cypressu:**  
+- **Reportovací pluginy pro Cypress:**  
   - [cypress-mochawesome-reporter](https://github.com/adamgruber/cypress-mochawesome-reporter)
-- **Průvodci integrací CI/CD:**  
+- **CI/CD integrační návody:**  
   - GitHub Actions: [GitHub Actions for Cypress](https://docs.cypress.io/guides/guides/continuous-integration)
   - GitLab CI: [Cypress with GitLab CI](https://docs.cypress.io/guides/guides/gitlab-ci)
   - Jenkins: [Using Cypress with Jenkins](https://docs.cypress.io/guides/guides/jenkins)
@@ -212,22 +264,22 @@ Registrujte se zde: [https://dashboard.cypress.io](https://dashboard.cypress.io)
 
 ---
 
-### **Potenciální otázky studentů a odpovědi**
+### **Možné studentské otázky a odpovědi**
 
-1. **Q:** *Jaký je hlavní přínos používání Cypress Dashboardu?*  
-   **A:** Cypress Dashboard centralizuje výsledky běhů testů, poskytuje zpětnou vazbu v reálném čase pomocí videí a screenshotů a pomáhá při ladění chyb díky podrobným logům a historickým datům.
+1. **Q:** *Jaký je hlavní přínos využití Cypress Dashboard?*  
+   **A:** Cypress Dashboard centralizuje výsledky testovacích běhů, nabízí zpětnou vazbu v reálném čase pomocí videí a snímků obrazovky a pomáhá při ladění chyb díky detailním logům a historickým datům.
 
-2. **Q:** *Jak můžu v Cypressu přizpůsobit testovací reporty?*  
-   **A:** Můžete použít vlastní reportery jako `cypress-mochawesome-reporter` pro generování podrobných HTML reportů. Tito reportéři jsou nakonfigurovatelní pomocí voleb v konfiguračním souboru Cypress pro úpravu formátu reportu a umístění výstupu.
+2. **Q:** *Jak mohu přizpůsobit reporty testů v Cypress?*  
+   **A:** Můžete použít vlastní reportery jako `cypress-mochawesome-reporter` pro generování detailních HTML reportů. Tito reportéři se nastavují prostřednictvím volby options v konfiguračním souboru Cypress a lze s nimi upravit formát i umístění výsledných reportů.
 
-3. **Q:** *Co je CI/CD a proč je důležitý pro testovací automatizaci?*  
-   **A:** CI/CD znamená průběžnou integraci a průběžné dodávání. Automatizuje proces buildování, testování a nasazování, což zajišťuje, že změny v kódu jsou automaticky ověřeny a rychle vydávané. Integrace Cypress testů do CI/CD pipeline pomáhá odhalit chyby včas a zajišťuje kvalitu každého vydání.
+3. **Q:** *Co je CI/CD a proč je důležité pro automatizaci testů?*  
+   **A:** CI/CD znamená Nepřetržitou Integraci a Dodávání. Automatizuje proces sestavení, testování a nasazení, což zajišťuje, že změny v kódu jsou automaticky ověřovány a rychle nasazeny. Integrace Cypress testů do CI/CD pipeline pomáhá odhalit chyby včas a zajistit kvalitu každého vydání.
 
-4. **Q:** *Jak fungují environment proměnné a tajné údaje v CI/CD pipelinech?*  
-   **A:** CI/CD platformy poskytují zabezpečené způsoby správy environment proměnných a tajných údajů. Tyto hodnoty jsou vstřikovány do procesu buildu a testování, takže citlivá data (například API klíče) nejsou zapsána v testech natvrdo.
+4. **Q:** *Jak fungují proměnné prostředí a tajné klíče v CI/CD pipeline?*  
+   **A:** CI/CD platformy poskytují bezpečný způsob správy proměnných prostředí a tajných údajů. Tyto hodnoty jsou vkládány do procesu sestavení a testování, aby se citlivá data, např. API klíče, nevyskytovala přímo v testech.
 
-5. **Q:** *Jak cy.intercept() zlepšuje spolehlivost testů?*  
-   **A:** `cy.intercept()` umožňuje podvrhnout síťové požadavky, takže vaše testy nejsou ovlivněny variabilitou externího backendu. To vede k determinističtějším výsledkům a rychlejšímu provádění testů.
+5. **Q:** *Jak může cy.intercept() zlepšit spolehlivost testů?*  
+   **A:** `cy.intercept()` umožňuje podvrhnout síťové požadavky, což znamená, že vaše testy nejsou ovlivněny vnější variabilitou backendu. To vede k předvídatelnějším výsledkům testů a rychlejšímu provedení.
 
 6. **Q:** *Jaké jsou výhody integrace Cypress testů do CI/CD pipeline?*  
-   **A:** Automatizace běhů testů při každém commitu nebo nasazení, rychlá zpětná vazba na změny, zlepšená spolupráce a schopnost odhalit chyby v rané fázi jsou hlavními výhodami. Umožňuje také průběžné zajišťování kvality napříč vývojovým cyklem.
+   **A:** Automatizace spouštění testů při každém commitu či nasazení, rychlá zpětná vazba ke změnám v kódu, lepší spolupráce týmu a schopnost včas zachytit chyby jsou hlavními výhodami. Také umožňuje kontinuální zajišťování kvality v celém vývojovém cyklu.

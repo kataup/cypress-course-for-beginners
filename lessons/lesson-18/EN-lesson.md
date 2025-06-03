@@ -88,21 +88,23 @@ Sign up at [https://dashboard.cypress.io](https://dashboard.cypress.io)
      Then configure in your Cypress configuration:
      ```javascript
      module.exports = defineConfig({
+      reporter: 'cypress-mochawesome-reporter',
+      reporterOptions: {
+        charts: true,
+        embeddedScreenshots: true,
+        inlineAssets: true,
+      },
        e2e: {
-         reporter: 'cypress-mochawesome-reporter',
-         reporterOptions: {
-           reportDir: 'cypress/reports',
-           overwrite: false,
-           html: true,
-           json: true
-         }
+          setupNodeEvents(on, config) {
+            require('cypress-mochawesome-reporter/plugin')(on);
+          }
        }
      });
      ```
-     Generate full HTML report:
-      ```bash
-      npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator --reportDir cypress/reports/html
-      ```
+     Add to cypress/support/e2e.js
+     ```
+     import 'cypress-mochawesome-reporter/register'
+     ```
 
 2. **Customizing Report Outputs:**
    - Customize report title, theme, and output paths using reporter options.
@@ -136,32 +138,80 @@ Sign up at [https://dashboard.cypress.io](https://dashboard.cypress.io)
 
 2. **Configuring Cypress Tests to Run in CI/CD Pipelines:**
    - **GitHub Actions Example:**
-     ```yaml
-     # .github/workflows/cypress.yml
-     name: Cypress Tests
+    ```yaml
+    name: Cypress E2E Tests
 
-     on:
-       push:
-         branches:
-           - main
-       pull_request:
-         branches:
-           - main
+    on:
+      push:
+        branches: [main, master]
+      pull_request:
+        branches: [main, master]
+      workflow_dispatch:
+        inputs:
+          spec:
+            description: 'Spec file(s) to run (optional, runs all if empty)'
+            required: false
+            default: ''
+            type: string
+          browser:
+            description: 'Browser to run tests against'
+            required: false
+            default: 'chrome'
+            type: string
 
-     jobs:
-       cypress-run:
-         runs-on: ubuntu-latest
-         steps:
-           - uses: actions/checkout@v2
-           - name: Use Node.js
-             uses: actions/setup-node@v2
-             with:
-               node-version: '16'
-           - name: Install Dependencies
-             run: npm install
-           - name: Run Cypress Tests
-             run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
-     ```
+    jobs:
+      cypress-run:
+        name: Run Cypress tests on ${{ matrix.browser }}
+        runs-on: ubuntu-latest
+        strategy:
+          fail-fast: false
+          matrix:
+            browser: [chrome, firefox, edge]
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v4
+
+          - name: Setup Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version: '18'
+              cache: npm
+
+          - name: Install dependencies
+            run: npm ci
+
+          - name: Verify Cypress binary
+            run: npx cypress verify
+
+          - name: Run Cypress tests
+            uses: cypress-io/github-action@v6
+            with:
+              browser: ${{ matrix.browser }}
+              spec: ${{ github.event.inputs.spec }}
+              record: true
+              group: 'E2E on ${{ matrix.browser }}'
+              tag: ${{ github.event_name }}
+              parallel: false
+            env:
+              CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+              GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+
+          - name: Upload screenshots on failure
+            if: failure()
+            uses: actions/upload-artifact@v4
+            with:
+              name: screenshots-${{ matrix.browser }}
+              path: cypress/screenshots
+
+          - name: Upload videos on failure
+            if: failure()
+            uses: actions/upload-artifact@v4
+            with:
+              name: videos-${{ matrix.browser }}
+              path: cypress/videos
+      
+    ```
+
    - **Automating Test Execution:**  
      Configure your CI/CD pipelines to run tests automatically on commits, pull requests, or deployments.
 

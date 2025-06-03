@@ -61,35 +61,36 @@
      cy.waitUntil(() => cy.get('[data-testid="status"]').should('contain', 'Ready'));
      ```
 
-   - **Why Avoid Explicit `cy.wait()`**
-    **1. Test Brittleness and Unpredictability:**
+   #### **Why Avoid Explicit `cy.wait()`**
+    
+      **1. Test Brittleness and Unpredictability:**
 
-    - **Fixed Delays Are Arbitrary:**  
-      Explicitly waiting for a fixed duration (e.g., `cy.wait(2000)`) assumes that the application will always be ready after that time. In real-world scenarios, network latency, server response times, or client-side rendering can vary. This can lead to tests that sometimes pass and sometimes fail—making them flaky.
+      - **Fixed Delays Are Arbitrary:**  
+        Explicitly waiting for a fixed duration (e.g., `cy.wait(2000)`) assumes that the application will always be ready after that time. In real-world scenarios, network latency, server response times, or client-side rendering can vary. This can lead to tests that sometimes pass and sometimes fail—making them flaky.
 
-    - **Wasted Time:**  
-      Fixed waits unnecessarily extend test execution time even when the application is ready sooner. For instance, if an element loads in 500ms but you wait 2000ms, you’re wasting valuable test time.
+      - **Wasted Time:**  
+        Fixed waits unnecessarily extend test execution time even when the application is ready sooner. For instance, if an element loads in 500ms but you wait 2000ms, you’re wasting valuable test time.
 
-    **2. Better Alternatives:**
+      **2. Better Alternatives:**
 
-    - **Timeouts in Assertions:**  
-      Cypress’s built‑in assertions like `.should()` include an implicit retry mechanism. When you assert an element is visible with `.should('be.visible')`, Cypress keeps checking until the element appears or the default timeout expires.  
-      **Example:**
-      ```javascript
-      // Cypress will retry this assertion until the element is visible or 4 seconds (default) pass.
-      cy.get('[data-testid="login-button"]').should('be.visible');
-      ```
+      - **Timeouts in Assertions:**  
+        Cypress’s built‑in assertions like `.should()` include an implicit retry mechanism. When you assert an element is visible with `.should('be.visible')`, Cypress keeps checking until the element appears or the default timeout expires.  
+        **Example:**
+        ```javascript
+        // Cypress will retry this assertion until the element is visible or 4 seconds (default) pass.
+        cy.get('[data-testid="login-button"]').should('be.visible');
+        ```
 
-    - **cy.waitUntil() Plugin:**  
-      The `cypress-wait-until` plugin offers a more dynamic waiting mechanism by repeatedly checking for a condition until it is met. This avoids the arbitrary delay of `cy.wait()` and makes tests more robust.
-      **Example:**
-      ```javascript
-      // Wait until the status element contains the text "Ready"
-      cy.waitUntil(() => cy.get('[data-testid="status"]').should('contain', 'Ready'), {
-        timeout: 10000,  // Wait up to 10 seconds
-        interval: 500,   // Check every 500ms
-      });
-      ```
+      - **cy.waitUntil() Plugin:**  
+        The `cypress-wait-until` plugin offers a more dynamic waiting mechanism by repeatedly checking for a condition until it is met. This avoids the arbitrary delay of `cy.wait()` and makes tests more robust.
+        **Example:**
+        ```javascript
+        // Wait until the status element contains the text "Ready"
+        cy.waitUntil(() => cy.get('[data-testid="status"]').should('contain', 'Ready'), {
+          timeout: 10000,  // Wait up to 10 seconds
+          interval: 500,   // Check every 500ms
+        });
+        ```
 
 2. **Reducing Flakiness with Intelligent Selectors and Retries**
    - **Intelligent Selectors:**  
@@ -108,7 +109,7 @@
 
 3. **Managing Application State**
 
-2. **cy.session: Managing Sessions Across Tests**
+    **cy.session**
    - **Purpose:**  
      `cy.session` caches and restores the state (like cookies, localStorage) to reduce the need for repetitive setup (such as logging in) across multiple tests.
    - **Example Usage:**
@@ -128,7 +129,7 @@
    - **Benefits:**  
      Speeds up tests by avoiding re-login; ensures consistent test state.
 
-    #### Importance of `cy.session()` from Performance perspective
+    ##### Importance of `cy.session()` from Performance perspective
 
     **What is `cy.session()`?**  
     `cy.session()` caches and restores session state (e.g., cookies, localStorage, sessionStorage) across tests. This is particularly useful in multidomain testing and performance optimization.
