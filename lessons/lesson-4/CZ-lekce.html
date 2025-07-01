@@ -1,0 +1,812 @@
+<!DOCTYPE html><html><head>
+      <title>CZ-lekce</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/katerinaulicna/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.18/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h2 id="lekce-4-pole-objekty-json-a-dom"><strong>Lekce 4: Pole, objekty, JSON a DOM</strong> </h2>
+<h3 id="1-osnova-obsahu"><strong>1. Osnova obsahu</strong> </h3>
+<h4 id="a-úvod-do-polí"><strong>A. Úvod do polí</strong> </h4>
+<ul>
+<li><strong>Co jsou pole?</strong>
+<ul>
+<li>Definice a účel.</li>
+<li>Uspořádané kolekce prvků.</li>
+</ul>
+</li>
+<li><strong>Vytváření polí:</strong>
+<ul>
+<li>Pomocí literálů polí (<code>[]</code>).</li>
+<li>Pomocí konstruktoru <code>Array</code>.</li>
+</ul>
+</li>
+<li><strong>Přístup k prvkům pole:</strong>
+<ul>
+<li>Indexování (začíná od 0).</li>
+<li>Negativní indexování (nativně není v JavaScriptu podporováno).</li>
+</ul>
+</li>
+<li><strong>Běžné metody polí:</strong>
+<ul>
+<li><code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code>.</li>
+<li><code>forEach()</code>, <code>map()</code>, <code>filter()</code>, <code>reduce()</code>.</li>
+</ul>
+</li>
+<li><strong>Vícedimenzionální pole:</strong>
+<ul>
+<li>Vytváření a přístup k vnořeným polím.</li>
+</ul>
+</li>
+</ul>
+<h5 id="co-jsou-pole">Co jsou pole? </h5>
+<p><strong>Definice:</strong><br>
+Pole je uspořádaná seznamová struktura sloužící k uložení více hodnot v jedné proměnné. Každá hodnota v poli se nazývá prvek a každý prvek je dostupný skrze číselný index začínající nulou.</p>
+<p><strong>Klíčové vlastnosti:</strong></p>
+<ul>
+<li><strong>Uspořádanost:</strong> Prvky si zachovávají pořadí, v jakém byly vloženy.</li>
+<li><strong>Přístup přes index:</strong> První prvek je na indexu 0, druhý na indexu 1 atd.</li>
+<li><strong>Dynamická velikost:</strong> Pole v JavaScriptu můžou dynamicky růst i zmenšovat se přidáváním a odebíráním prvků.</li>
+<li><strong>Heterogenní prvky:</strong> Pole mohou obsahovat prvky různého datového typu (číselné hodnoty, řetězce, objekty, apod.).</li>
+</ul>
+<p><strong>Využití v testovací automatizaci:</strong></p>
+<ul>
+<li>Ukládání seznamů testovacích vstupů nebo datových sad.</li>
+<li>Iterace přes pole pro spuštění podobných testů s různými vstupy.</li>
+<li>Organizace kolekcí výsledků testů nebo chybových zpráv.</li>
+</ul>
+<h5 id="vytváření-polí">Vytváření polí </h5>
+<p><strong>Základní vytvoření pole:</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// Pomocí pole literálu</span>
+<span class="token keyword keyword-const">const</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"Cherry"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Pomocí konstruktoru Array (méně časté, většinou se nedoporučuje)</span>
+<span class="token keyword keyword-const">const</span> numbers <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Nejlepší postupy:</strong></p>
+<ul>
+<li>Preferujte literály pole pro jednoduchost a čitelnost.</li>
+<li>Volte popisné názvy proměnných, které reflektují uložená data.</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// Dobrá praxe</span>
+<span class="token keyword keyword-const">const</span> userNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"alice"</span><span class="token punctuation">,</span> <span class="token string">"bob"</span><span class="token punctuation">,</span> <span class="token string">"charlie"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Vyhněte se vágním názvům</span>
+<span class="token keyword keyword-const">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"data1"</span><span class="token punctuation">,</span> <span class="token string">"data2"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Není popisné</span>
+</code></pre><h4 id="b-úvod-do-objektů"><strong>B. Úvod do objektů</strong> </h4>
+<ul>
+<li><strong>Co jsou objekty?</strong>
+<ul>
+<li>Definice a účel.</li>
+<li>Pářování klíč-hodnota pro ukládání dat.</li>
+</ul>
+</li>
+<li><strong>Vytváření objektů:</strong>
+<ul>
+<li>Pomocí literálů objektů (<code>{}</code>).</li>
+<li>Pomocí konstruktoru <code>Object</code>.</li>
+</ul>
+</li>
+<li><strong>Přístup k vlastnostem objektu:</strong>
+<ul>
+<li>Tečková notace.</li>
+<li>Závorková notace.</li>
+</ul>
+</li>
+<li><strong>Běžné metody objektů:</strong>
+<ul>
+<li><code>Object.keys()</code>, <code>Object.values()</code>, <code>Object.entries()</code>.</li>
+</ul>
+</li>
+<li><strong>Vnořené objekty:</strong>
+<ul>
+<li>Vytváření objektů uvnitř objektů.</li>
+<li>Přístup ke vnořeným vlastnostem.</li>
+</ul>
+</li>
+</ul>
+<h5 id="co-jsou-objekty">Co jsou objekty? </h5>
+<p><strong>Definice:</strong><br>
+Objekt v JavaScriptu je kolekce párů klíč-hodnota. Klíče jsou obvykle řetězce (nebo symboly), které slouží jako identifikátory hodnot, a hodnoty mohou být jakéhokoli typu – včetně dalších objektů nebo polí.</p>
+<p><strong>Klíčové vlastnosti:</strong></p>
+<ul>
+<li><strong>Struktura klíč-hodnota:</strong> Přístup k datům pomocí klíčů místo číselných indexů.</li>
+<li><strong>Neuspořádané vlastnosti:</strong> Není zaručené pořadí, v jakém jsou vlastnosti definovány.</li>
+<li><strong>Referenční typ:</strong> Objekty jsou referenční typy, což znamená, že více proměnných může odkazovat na stejný objekt v paměti.</li>
+<li><strong>Flexibilní struktura:</strong> Objekty lze za běhu rozšiřovat nebo měnit přidáváním či odebíráním vlastností.</li>
+</ul>
+<p><strong>Využití v testovací automatizaci:</strong></p>
+<ul>
+<li>Reprezentace složitých testovacích datových struktur (např. uživatelské profily, konfigurační nastavení).</li>
+<li>Ukládání odpovědí API a snadné získávání konkrétních datových bodů.</li>
+<li>Správa stavových dat během provádění testů.</li>
+</ul>
+<h5 id="vytváření-objektů">Vytváření objektů </h5>
+<p><strong>Základní vytvoření objektu:</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// Pomocí literálu objektu</span>
+<span class="token keyword keyword-const">const</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">"alice@example.com"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">role</span><span class="token operator">:</span> <span class="token string">"admin"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Nejlepší postupy:</strong></p>
+<ul>
+<li>Používejte literály objektu pro jednoduchost.</li>
+<li>Udržujte názvy vlastností popisné.</li>
+<li>Vyhýbejte se příliš složitým objektům; rozdělte je na menší části pokud je to potřebné.</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// Dobrá praxe</span>
+<span class="token keyword keyword-const">const</span> product <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">101</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Wireless Mouse"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">29.99</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">stock</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Špatná praxe: nejasné názvy vlastností nebo míchání nesouvisejících dat</span>
+<span class="token keyword keyword-const">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token string">"Nějaká hodnota"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Bob"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><h5 id="vnořené-objekty">Vnořené objekty </h5>
+<p><strong>Definice:</strong><br>
+Vnořený objekt je objekt, který obsahuje jiný objekt jako jednu ze svých vlastností. To umožňuje hierarchickou datovou strukturu, která reprezentuje složitější vztahy.</p>
+<p><strong>Klíčové vlastnosti:</strong></p>
+<ul>
+<li><strong>Hierarchická data:</strong> Vlastnosti mohou být samy objekty, což povoluje víceúrovňové datové reprezentace.</li>
+<li><strong>Přístup k hlubším vlastnostem:</strong> Přístup k vnořeným vlastnostem vyžaduje víceúrovňové vyhledávání.</li>
+<li><strong>Užitečnost ve struktuře dat:</strong> Vnořené objekty jsou vhodné pro modelování reálných entit a jejich atributů (např. objekt uživatele obsahující objekt adresy).</li>
+</ul>
+<p><strong>Využití v testovací automatizaci:</strong></p>
+<ul>
+<li>Ukládání vícestupňových konfigurací (např. nastavení prostředí, uživatelské přihlašovací údaje s více atributy).</li>
+<li>Organizace komplexních odpovědí API, kde jeden endpoint vrací vnořená data (například detaily uživatele včetně adresy, platebních metod a preferencí).</li>
+</ul>
+<h5 id="vnořené-objekty-1">Vnořené objekty </h5>
+<p><strong>Příklad vnořeného objektu:</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> userProfile <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">"alice@example.com"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">street</span><span class="token operator">:</span> <span class="token string">"123 Main St"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">city</span><span class="token operator">:</span> <span class="token string">"Townsville"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">zip</span><span class="token operator">:</span> <span class="token string">"12345"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Přístup k vnořeným vlastnostem:</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>userProfile<span class="token punctuation">.</span><span class="token property-access">address</span><span class="token punctuation">.</span><span class="token property-access">city</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Townsville"</span>
+</code></pre><p><strong>Nejlepší praxe:</strong></p>
+<ul>
+<li>Strukturovat objekty tak, aby odrážely reálné entity.</li>
+<li>Vyhýbat se příliš hlubokému zanoření (kvůli údržbě).</li>
+<li>U rozměrných dat raději rozložit na více objektů nebo pole.</li>
+</ul>
+<h5 id="přístup-k-vlastnostem-objektu">Přístup k vlastnostem objektu </h5>
+<p><strong>Tečková notace:</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Alice"</span>
+</code></pre><p><strong>Závorková notace:</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>user<span class="token punctuation">[</span><span class="token string">"email"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "alice@example.com"</span>
+</code></pre><p><strong>Nejlepší praxe:</strong></p>
+<ul>
+<li>Preferujte tečkovou notaci, pokud jsou názvy vlastností známé a jsou platné identifikátory.</li>
+<li>Použijte závorkovou notaci, když jsou názvy vlastností dynamické nebo obsahují speciální znaky.</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> propertyName <span class="token operator">=</span> <span class="token string">"role"</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>user<span class="token punctuation">[</span>propertyName<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "admin"</span>
+</code></pre><h4 id="c-porozumění-json-javascript-object-notation"><strong>C. Porozumění JSON (JavaScript Object Notation)</strong> </h4>
+<ul>
+<li><strong>Co je to JSON?</strong>
+<ul>
+<li>Definice a účel.</li>
+<li>Lehký formát pro výměnu dat.</li>
+</ul>
+</li>
+<li><strong>Struktura JSON:</strong>
+<ul>
+<li>Objekty a pole v JSON.</li>
+<li>Datové typy podporované v JSON.</li>
+</ul>
+</li>
+<li><strong>Konverze mezi JSON a JavaScript objekty:</strong>
+<ul>
+<li><code>JSON.stringify()</code> – převod JavaScript objektu na JSON řetězec.</li>
+<li><code>JSON.parse()</code> – převod JSON řetězce na JavaScript objekt.</li>
+</ul>
+</li>
+<li><strong>Využití v testovací automatizaci:</strong>
+<ul>
+<li>Ukládání a správa testovacích dat.</li>
+<li>Mockování odpovědí API.</li>
+</ul>
+</li>
+</ul>
+<h5 id="co-je-to-json">Co je to JSON? </h5>
+<p><strong>Definice:</strong><br>
+JSON (JavaScript Object Notation) je lehký, na jazyku nezávislý formát pro výměnu dat. Využívá podmnožinu syntaxe JavaScriptu k prezentaci datových struktur jako text, což usnadňuje čtení, zápis a přenos.</p>
+<p><strong>Klíčové vlastnosti:</strong></p>
+<ul>
+<li><strong>Textový formát:</strong> JSON se ukládá jako řetězec, což usnadňuje jeho přenos přes síť.</li>
+<li><strong>Páry klíč-hodnota a pole:</strong> JSON zrcadlí objektové a polní struktury JavaScriptu.</li>
+<li><strong>Podporované datové typy:</strong> Řetězce, čísla, booleany, null, objekty a pole. Funkce a hodnoty undefined nejsou podporovány.</li>
+<li><strong>Jazyková nezávislost:</strong> Přestože pochází z JavaScriptu, JSON je široce podporován v mnoha programovacích jazycích.</li>
+</ul>
+<p><strong>Využití JSON v testovací automatizaci pro testovací data a API:</strong></p>
+<ul>
+<li><strong>Fixture data:</strong> Ukládejte testovací vstupy v JSON souborech pro snadnou údržbu a aktualizaci testovacích scénářů.</li>
+<li><strong>Mockování odpovědí API:</strong> Poskytování předdefinovaných JSON odpovědí pro simulaci chování backendu v testovacím prostředí.</li>
+<li><strong>Data řízené testy:</strong> Parsování JSON pro dynamické zásobení více testovacích případů, což snižuje duplikaci a úsilí.</li>
+</ul>
+<h5 id="konverze-mezi-json-a-javascript-objekty">Konverze mezi JSON a JavaScript objekty </h5>
+<p><strong>Převod JavaScript objektu na JSON řetězec (<code>JSON.stringify()</code>):</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> userObj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">"bob@example.com"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> jsonString <span class="token operator">=</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">stringify</span><span class="token punctuation">(</span>userObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>jsonString<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '{"name":"Bob","email":"bob@example.com"}'</span>
+</code></pre><p><strong>Převod JSON řetězce na JavaScript objekt (<code>JSON.parse()</code>):</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> parsedObj <span class="token operator">=</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span>jsonString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>parsedObj<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Bob"</span>
+</code></pre><p><strong>Nejlepší postupy:</strong></p>
+<ul>
+<li>Provádějte validaci a sanitizaci JSON před parsováním (pokud pochází z externího zdroje).</li>
+<li>Při parsování neznámých dat zpracovávejte chyby pomocí try/catch.</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword control-flow keyword-try">try</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> safeObj <span class="token operator">=</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span>incomingJson<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Použijte safeObj zde</span>
+<span class="token punctuation">}</span> <span class="token keyword control-flow keyword-catch">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span><span class="token string">"Neplatná JSON data:"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="d-nejlepší-praxe-pro-práci-s-poli-objekty-json-a-dom"><strong>D. Nejlepší praxe pro práci s poli, objekty, JSON a DOM</strong> </h4>
+<ul>
+<li><strong>Čitelnost a udržovatelnost kódu:</strong>
+<ul>
+<li>Používejte popisné názvy pro pole a objekty.</li>
+<li>Udržujte JSON struktury jednoduché a konzistentní.</li>
+</ul>
+</li>
+<li><strong>Výkonové aspekty:</strong>
+<ul>
+<li>Vyhněte se zbytečným manipulacím s DOM.</li>
+<li>Optimalizujte operace s poli u velkých datových sad.</li>
+</ul>
+</li>
+<li><strong>Validace dat:</strong>
+<ul>
+<li>Validujte JSON data před parsováním.</li>
+<li>Ověřte existenci vlastností objektu před přístupem.</li>
+</ul>
+</li>
+</ul>
+<h4 id="f-praktické-příklady"><strong>F. Praktické příklady</strong> </h4>
+<ul>
+<li><strong>Implementace testovacích dat pomocí polí a objektů:</strong>
+<ul>
+<li>Vytvoření a správa testovacích datových sad.</li>
+<li>Iterace přes testovací data pomocí metod pole.</li>
+</ul>
+</li>
+<li><strong>Práce s JSON v Cypress testech:</strong>
+<ul>
+<li>Mockování odpovědí API pomocí JSON.</li>
+<li>Parsování a využití JSON dat v rámci testů.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-praktické-aktivity-cvičení-a-návrhy-webové-funkcionality"><strong>2. Praktické aktivity: Cvičení a návrhy webové funkcionality</strong> </h3>
+<h4 id="a-práce-s-poli--cvičení"><strong>A. Práce s poli – cvičení</strong> </h4>
+<ul>
+<li><strong>Cvičení:</strong>
+<ul>
+<li>Vytvořte pole objektů uživatelů, každý obsahuje <code>name</code>, <code>email</code> a <code>role</code>.</li>
+<li>Využijte metody pole jako <code>map()</code>, <code>filter()</code> a <code>reduce()</code> k následujícím operacím:
+<ul>
+<li>Extrahování všech emailových adres.</li>
+<li>Filtrování uživatelů podle role (např. "admin").</li>
+<li>Výpočet celkového počtu uživatelů.</li>
+</ul>
+</li>
+<li><strong>Příklad:</strong><pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> users <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">"alice@example.com"</span><span class="token punctuation">,</span> <span class="token literal-property property">role</span><span class="token operator">:</span> <span class="token string">"admin"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">"bob@example.com"</span><span class="token punctuation">,</span> <span class="token literal-property property">role</span><span class="token operator">:</span> <span class="token string">"user"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Charlie"</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">"charlie@example.com"</span><span class="token punctuation">,</span> <span class="token literal-property property">role</span><span class="token operator">:</span> <span class="token string">"user"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Dave"</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">"dave@example.com"</span><span class="token punctuation">,</span> <span class="token literal-property property">role</span><span class="token operator">:</span> <span class="token string">"moderator"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> emails <span class="token operator">=</span> users<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">user</span> <span class="token arrow operator">=&gt;</span> user<span class="token punctuation">.</span><span class="token property-access">email</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> admins <span class="token operator">=</span> users<span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span><span class="token parameter">user</span> <span class="token arrow operator">=&gt;</span> user<span class="token punctuation">.</span><span class="token property-access">role</span> <span class="token operator">===</span> <span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> totalUsers <span class="token operator">=</span> users<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">count</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>emails<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>admins<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>totalUsers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="b-manipulace-s-objekty--cvičení"><strong>B. Manipulace s objekty – cvičení</strong> </h4>
+<ul>
+<li><strong>Cvičení:</strong>
+<ul>
+<li>Vytvořte objekt reprezentující produkt s vlastnostmi jako <code>id</code>, <code>name</code>, <code>price</code>, a <code>stock</code>.</li>
+<li>Napište funkce pro:
+<ul>
+<li>Aktualizaci množství na skladě.</li>
+<li>Aplikaci slevy na cenu.</li>
+<li>Získání informací o produktu.</li>
+</ul>
+</li>
+<li><strong>Příklad:</strong><pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> product <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">101</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Wireless Mouse"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">25.99</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">stock</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">updateStock</span><span class="token punctuation">(</span><span class="token parameter">product<span class="token punctuation">,</span> quantity</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  product<span class="token punctuation">.</span><span class="token property-access">stock</span> <span class="token operator">+=</span> quantity<span class="token punctuation">;</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Aktualizovaný stav: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>product<span class="token punctuation">.</span><span class="token property-access">stock</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">applyDiscount</span><span class="token punctuation">(</span><span class="token parameter">product<span class="token punctuation">,</span> percentage</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  product<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">-=</span> product<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> <span class="token punctuation">(</span>percentage <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Cena po slevě: $</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>product<span class="token punctuation">.</span><span class="token property-access">price</span><span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">getProductInfo</span><span class="token punctuation">(</span><span class="token parameter">product</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>product<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> (ID: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>product<span class="token punctuation">.</span><span class="token property-access">id</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">) - $</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>product<span class="token punctuation">.</span><span class="token property-access">price</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | Sklad: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>product<span class="token punctuation">.</span><span class="token property-access">stock</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">updateStock</span><span class="token punctuation">(</span>product<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">applyDiscount</span><span class="token punctuation">(</span>product<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">getProductInfo</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="c-práce-s-json-v-cypress-testech--cvičení"><strong>C. Práce s JSON v Cypress testech – cvičení</strong> </h4>
+<ul>
+<li>
+<p><strong>Cvičení:</strong></p>
+<ul>
+<li>
+<p>Vytvořte JSON soubor (<code>users.json</code>) obsahující pole objektů uživatelů s vlastnostmi jako <code>name</code>, <code>email</code> a <code>role</code>.</p>
+</li>
+<li>
+<p>Napište Cypress test, který:</p>
+<ul>
+<li>Načte JSON data pomocí <code>cy.fixture()</code>.</li>
+<li>Projde uživatelská data a provede akce jako vytvoření uživatelských účtů nebo ověření detailů uživatelů.</li>
+</ul>
+</li>
+<li>
+<p><strong>Příklad:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token comment">// users.json</span>
+<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"alice@example.com"</span><span class="token punctuation">,</span> <span class="token property">"role"</span><span class="token operator">:</span> <span class="token string">"admin"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"bob@example.com"</span><span class="token punctuation">,</span> <span class="token property">"role"</span><span class="token operator">:</span> <span class="token string">"user"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Charlie"</span><span class="token punctuation">,</span> <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"charlie@example.com"</span><span class="token punctuation">,</span> <span class="token property">"role"</span><span class="token operator">:</span> <span class="token string">"user"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre><pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// Cypress Test</span>
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Registrace uživatelů'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    cy<span class="token punctuation">.</span><span class="token method function property-access">fixture</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword module keyword-as">as</span><span class="token punctuation">(</span><span class="token string">'usersData'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'Registruje více uživatelů z JSON dat'</span><span class="token punctuation">,</span> <span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">usersData</span><span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">user</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      cy<span class="token punctuation">.</span><span class="token method function property-access">visit</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cy<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">'#username'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">type</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cy<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">'#email'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">type</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token property-access">email</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cy<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">'#role'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">select</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token property-access">role</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cy<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">'#submit'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cy<span class="token punctuation">.</span><span class="token method function property-access">contains</span><span class="token punctuation">(</span><span class="token string">'Registrace byla úspěšná!'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">should</span><span class="token punctuation">(</span><span class="token string">'be.visible'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Návrh webové funkcionality:</strong></p>
+<ul>
+<li>Implementujte registrační formulář, kde:
+<ul>
+<li>Testeři mohou automatizovat zadávání více registrací uživatelů pomocí dat ze JSON souboru.</li>
+<li>Ověřte, že každá registrace je úspěšná na základě vstupních dat v JSON.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-možné-studentské-otázky"><strong>3. Možné studentské otázky</strong> </h3>
+<h4 id="a-pole-a-objekty"><strong>A. Pole a objekty:</strong> </h4>
+<ol>
+<li>
+<p><strong>Jaký je rozdíl mezi polem a objektem v JavaScriptu?</strong></p>
+<ul>
+<li><strong>Odpověď:</strong><br>
+Pole je uspořádaná kolekce prvků přístupných přes číselné indexy, vhodná pro ukládání seznamů položek. Objekt je neuspořádaná kolekce párů klíč-hodnota, ideální pro reprezentaci složitějších datových struktur s pojmenovanými vlastnostmi.</li>
+</ul>
+</li>
+<li>
+<p><strong>Jak lze iterovat přes prvky pole?</strong></p>
+<ul>
+<li><strong>Odpověď:</strong><br>
+Přes pole můžete iterovat pomocí cyklů (<code>for</code>, <code>while</code>), metod pole (<code>forEach()</code>, <code>map()</code>, <code>filter()</code>, <code>reduce()</code>) nebo novější syntaxe jako je <code>for...of</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Jaké jsou výhody použití objektů pro ukládání dat v testech?</strong></p>
+<ul>
+<li><strong>Odpověď:</strong><br>
+Objekty umožňují strukturovanou a popisnou reprezentaci dat, což zjednodušuje správu a přístup ke konkrétním vlastnostem. Zvyšují čitelnost a udržovatelnost, obzvlášť pokud pracujete se složitými testovacími daty.</li>
+</ul>
+</li>
+</ol>
+<h4 id="b-json"><strong>B. JSON:</strong> </h4>
+<ol>
+<li>
+<p><strong>Proč je JSON preferovaný pro výměnu dat ve webových aplikacích?</strong></p>
+<ul>
+<li><strong>Odpověď:</strong><br>
+JSON je lehký, snadno čitelný a zapisovatelný, a je nativně podporovaný v JavaScriptu. Jeho kompatibilita napříč různými platformami a jazyky z něj činí ideální volbu pro výměnu dat mezi klientem a serverem.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mohu v JSON datech zahrnout funkce?</strong></p>
+<ul>
+<li><strong>Odpověď:</strong><br>
+Ne, JSON podporuje pouze datové typy jako řetězce, čísla, objekty, pole, booleany a null. Funkce nejsou podporovány a nelze je serializovat v JSON.</li>
+</ul>
+</li>
+</ol>
+<h4 id="c-nejlepší-praxe"><strong>C. Nejlepší praxe:</strong> </h4>
+<ol>
+<li>
+<p><strong>Proč je důležité vyhýbat se hlubokému zanoření v řídících strukturách?</strong></p>
+<ul>
+<li><strong>Odpověď:</strong><br>
+Hluboké zanoření může ztížit čitelnost, pochopení a údržbu kódu. Zvyšuje složitost a pravděpodobnost chyb. Použití 'guard' vět nebo rozdělení kódu do menších funkcí může napomoci snížení zanoření.</li>
+</ul>
+</li>
+<li>
+<p><strong>Jak se uplatňuje princip DRY při psaní funkcí a řídících struktur?</strong></p>
+<ul>
+<li><strong>Odpověď:</strong><br>
+DRY (Don’t Repeat Yourself – neopakuj se) vybízí k eliminaci duplicitního kódu tím, že abstraktujete opakující se úkoly do znovupoužitelných funkcí nebo využíváte cykly, čímž zvyšujete udržovatelnost a snižujete chybovost kódu.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="4-doporučené-doplňkové-materiály"><strong>4. Doporučené doplňkové materiály</strong> </h3>
+<h4 id="a-oficiální-dokumentace-a-návody"><strong>A. Oficiální dokumentace a návody:</strong> </h4>
+<ul>
+<li><strong>JavaScriptová pole:</strong>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN Arrays</a></li>
+</ul>
+</li>
+<li><strong>JavaScriptové objekty:</strong>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">MDN Objects</a></li>
+</ul>
+</li>
+<li><strong>JSON:</strong>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">MDN JSON</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="b-tutoriály-a-články"><strong>B. Tutoriály a články:</strong> </h4>
+<ul>
+<li><strong>Pochopení JavaScriptových polí a objektů:</strong>
+<ul>
+<li><a href="https://www.w3schools.com/js/js_arrays.asp">W3Schools JavaScript Arrays</a></li>
+<li><a href="https://www.w3schools.com/js/js_objects.asp">W3Schools JavaScript Objects</a></li>
+</ul>
+</li>
+<li><strong>Práce s JSON:</strong>
+<ul>
+<li><a href="https://www.freecodecamp.org/news/javascript-json-tutorial-how-to-parse-json-with-examples/">FreeCodeCamp JSON Guide</a></li>
+</ul>
+</li>
+<li><strong>Manipulace s DOM:</strong>
+<ul>
+<li><a href="https://javascript.info/dom-nodes">JavaScript.info DOM Introduction</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="c-interaktivní-výukové-platformy"><strong>C. Interaktivní výukové platformy:</strong> </h4>
+<ul>
+<li><strong>Codecademy:</strong>
+<ul>
+<li><a href="https://www.codecademy.com/learn/introduction-to-javascript/modules/arrays">Learn JavaScript Arrays</a></li>
+<li><a href="https://www.codecademy.com/learn/introduction-to-javascript/modules/objects">Learn JavaScript Objects</a></li>
+</ul>
+</li>
+<li><strong>FreeCodeCamp:</strong>
+<ul>
+<li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/">JavaScript Data Structures: Arrays</a></li>
+<li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/">JavaScript Data Structures: Objects</a></li>
+</ul>
+</li>
+<li><strong><a href="http://JavaScript.info">JavaScript.info</a>:</strong>
+<ul>
+<li><a href="https://javascript.info/object">JavaScript Objects</a></li>
+<li><a href="https://javascript.info/json">JSON</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="d-video-tutoriály"><strong>D. Video tutoriály:</strong> </h4>
+<ul>
+<li><strong>Traversy Media:</strong>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=R8rmfD9Y5-c">JavaScript Arrays Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=7yUnN5n2nUc">JavaScript Objects Tutorial</a></li>
+</ul>
+</li>
+<li><strong>The Net Ninja:</strong>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=iiADhChRriM">JavaScript JSON Tutorial</a></li>
+</ul>
+</li>
+<li><strong>Academind:</strong>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=R8rmfD9Y5-c">JavaScript Arrays and Objects</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="e-procvičovací-platformy"><strong>E. Procvičovací platformy:</strong> </h4>
+<ul>
+<li><strong>HackerRank:</strong>
+<ul>
+<li><a href="https://www.hackerrank.com/domains/tutorials/10-days-of-javascript">JavaScript Arrays Challenges</a></li>
+<li><a href="https://www.hackerrank.com/domains/tutorials/10-days-of-javascript">JavaScript Objects Challenges</a></li>
+</ul>
+</li>
+<li><strong>LeetCode:</strong>
+<ul>
+<li><a href="https://leetcode.com/problemset/all/?language=JavaScript&amp;topicSlugs=array">JavaScript Arrays Problems</a></li>
+<li><a href="https://leetcode.com/problemset/all/?language=JavaScript&amp;topicSlugs=hash-table">JavaScript Objects Problems</a></li>
+</ul>
+</li>
+<li><strong>Exercism:</strong>
+<ul>
+<li><a href="https://exercism.io/tracks/javascript/exercises?difficulty=all&amp;topic=arrays">JavaScript Track - Arrays</a></li>
+<li><a href="https://exercism.io/tracks/javascript/exercises?difficulty=all&amp;topic=objects">JavaScript Track - Objects</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="f-komunita-a-podpora"><strong>F. Komunita a podpora:</strong> </h4>
+<ul>
+<li><strong>Stack Overflow:</strong>
+<ul>
+<li><a href="https://stackoverflow.com/questions/tagged/javascript+arrays">JavaScript Arrays Questions</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/javascript+objects">JavaScript Objects Questions</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/json">JSON Questions</a></li>
+</ul>
+</li>
+<li><strong>Reddit:</strong>
+<ul>
+<li><a href="https://www.reddit.com/r/javascript/">r/javascript</a></li>
+<li><a href="https://www.reddit.com/r/learnjavascript/">r/learnjavascript</a></li>
+</ul>
+</li>
+<li><strong>Discord komunity:</strong>
+<ul>
+<li>Připojte se na Discord servery zaměřené na JavaScript pro okamžitou pomoc a diskusi.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-doporučené-rozdělení-lekce-na-3-hodiny"><strong>5. Doporučené rozdělení lekce na 3 hodiny</strong> </h3>
+<h4 id="hodina-1-pole-a-objekty-60-minut"><strong>Hodina 1: Pole a objekty (60 minut)</strong> </h4>
+<ul>
+<li><strong>Úvod do polí (25 minut):</strong>
+<ul>
+<li>Definice, vytvoření, přístup k prvkům.</li>
+<li>Běžné metody pole s příklady.</li>
+</ul>
+</li>
+<li><strong>Praktická aktivita:</strong>
+<ul>
+<li>Studenti vytvářejí a manipulují s poli různými metodami.</li>
+</ul>
+</li>
+<li><strong>Úvod do objektů (25 minut):</strong>
+<ul>
+<li>Definice, vytvoření, přístup k vlastnostem.</li>
+<li>Běžné metody objektu s příklady.</li>
+</ul>
+</li>
+<li><strong>Praktická aktivita:</strong>
+<ul>
+<li>Studenti vytváří objekty a pracují s nimi pomocí metod.</li>
+</ul>
+</li>
+<li><strong>Přestávka (10 minut):</strong>
+<ul>
+<li>Krátká pauza k odpočinku.</li>
+</ul>
+</li>
+</ul>
+<h4 id="hodina-2-json-a-dom-60-minut"><strong>Hodina 2: JSON a DOM (60 minut)</strong> </h4>
+<ul>
+<li><strong>Porozumění JSON (50 minut):</strong>
+<ul>
+<li>Definice, struktura, konverze mezi JSON a objekty.</li>
+<li>Využití v testovací automatizaci.</li>
+</ul>
+</li>
+<li><strong>Praktická aktivita:</strong>
+<ul>
+<li>Studenti vytváří JSON soubory a procvičují parsování i serializaci JSON dat.</li>
+</ul>
+</li>
+<li><strong>Přestávka (10 minut):</strong>
+<ul>
+<li>Krátká pauza k odpočinku.</li>
+</ul>
+</li>
+</ul>
+<h4 id="hodina-3-nejlepší-praxe-a-praktické-aplikace-60-minut"><strong>Hodina 3: Nejlepší praxe a praktické aplikace (60 minut)</strong> </h4>
+<ul>
+<li><strong>Nejlepší praxe pro práci s poli, objekty, JSON a DOM (20 minut):</strong>
+<ul>
+<li>Čitelnost kódu, výkon, validace dat, bezpečnostní zásady.</li>
+<li>Znovupoužitelnost a modularita.</li>
+</ul>
+</li>
+<li><strong>Praktická aktivita:</strong>
+<ul>
+<li>Studenti refaktorují existující kód do nejlepší praxe.</li>
+</ul>
+</li>
+<li><strong>Praktické příklady (25 minut):</strong>
+<ul>
+<li>Implementace testovacích dat pomocí polí a objektů.</li>
+<li>Práce s JSON v Cypress testech.</li>
+</ul>
+</li>
+<li><strong>Interaktivní ukázka (10 minut):</strong>
+<ul>
+<li>Projděte si vizualizaci rozsahu proměnných na webové stránce.</li>
+</ul>
+</li>
+<li><strong>Q&amp;A sekce (5 minut):</strong>
+<ul>
+<li>Odpovědi na dotazy studentů.</li>
+<li>Vysvětlení nejasností a posílení klíčových konceptů z lekce.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-další-doporučení"><strong>6. Další doporučení</strong> </h3>
+<h4 id="a-interaktivní-demonstrace"><strong>A. Interaktivní demonstrace:</strong> </h4>
+<ul>
+<li><strong>Živé kódování:</strong>
+<ul>
+<li>Ukažte tvorbu a manipulaci s poli a objekty v reálném čase.</li>
+<li>Předveďte parsování a serializaci JSON dat.</li>
+<li>Živě provádějte manipulaci s DOM a obsluhu událostí.</li>
+</ul>
+</li>
+<li><strong>Ladění pomocí <code>console.log</code>:</strong>
+<ul>
+<li>Používejte <code>console.log</code> ke sledování operací s poli a objekty.</li>
+<li>Kontrolujte JSON data a změny v DOM v konzoli prohlížeče.</li>
+</ul>
+</li>
+</ul>
+<h4 id="b-přitažlivé-vizuály"><strong>B. Přitažlivé vizuály:</strong> </h4>
+<ul>
+<li><strong>Diagramy:</strong>
+<ul>
+<li>Vizualizujte strukturu polí a objektů.</li>
+<li>Ilustrujte formát JSON a jeho vztah k JavaScript objektům.</li>
+<li>Ukažte stromovou strukturu DOM pro vysvětlení hierarchie prvků.</li>
+</ul>
+</li>
+<li><strong>Ukázky kódu:</strong>
+<ul>
+<li>Předkládejte jasné a zřetelné ukázky kódu pro demonstraci pojmů.</li>
+</ul>
+</li>
+<li><strong>Vývojové diagramy:</strong>
+<ul>
+<li>Využijte diagramy průběhu pro znázornění toku dat JSON do Cypress testů nebo vlivu manipulace s DOM na prvky webu.</li>
+</ul>
+</li>
+</ul>
+<h4 id="c-povzbuzujte-účast"><strong>C. Povzbuzujte účast:</strong> </h4>
+<ul>
+<li><strong>Párové programování:</strong>
+<ul>
+<li>Nechte studenty spolupracovat v párech na úlohách s poli a objekty, čímž podpoříte týmovou práci.</li>
+</ul>
+</li>
+<li><strong>Živé ankety a kvízy:</strong>
+<ul>
+<li>Zařaďte rychlé kvízy pro ověření znalostí a zvýšení zapojení.</li>
+<li>Využívejte ankety k získání okamžité zpětné vazby ohledně porozumění materiálu.</li>
+</ul>
+</li>
+</ul>
+<h4 id="d-poskytujte-jasné-instrukce"><strong>D. Poskytujte jasné instrukce:</strong> </h4>
+<ul>
+<li><strong>Krok za krokem:</strong>
+<ul>
+<li>Nabídněte detailní instrukce pro každou praktickou aktivitu, aby všichni mohli postupovat.</li>
+</ul>
+</li>
+<li><strong>Rady pro řešení problémů:</strong>
+<ul>
+<li>Předvídejte běžné problémy (např. chyby v syntaxi JSON, výběr elementů v DOM) a nabídněte řešení.</li>
+</ul>
+</li>
+</ul>
+<h4 id="e-podporujte-přátelské-prostředí"><strong>E. Podporujte přátelské prostředí:</strong> </h4>
+<ul>
+<li><strong>Povzbuzujte k otázkám:</strong>
+<ul>
+<li>Vytvářejte otevřené prostředí, kde se studenti nebojí ptát na radu.</li>
+</ul>
+</li>
+<li><strong>Nabízejte více příkladů:</strong>
+<ul>
+<li>Uvádějte různé příklady ke každému pojmu, abyste pokryli různé styly učení a posílili pochopení.</li>
+</ul>
+</li>
+<li><strong>Recenze od spolužáků:</strong>
+<ul>
+<li>Podporujte studenty, aby si vzájemně kontrolovali kód, což zvyšuje spolupráci a upevňuje nejlepší praxi.</li>
+</ul>
+</li>
+</ul>
+<h4 id="f-využijte-reálné-scénáře"><strong>F. Využijte reálné scénáře:</strong> </h4>
+<ul>
+<li><strong>Správa testovacích dat:</strong>
+<ul>
+<li>Ukažte, jak spravovat složitá testovací data pomocí polí a objektů.</li>
+</ul>
+</li>
+<li><strong>Mockování API pomocí JSON:</strong>
+<ul>
+<li>Předveďte, jak v Cypress testech mockovat API odpovědi pomocí JSON dat.</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
