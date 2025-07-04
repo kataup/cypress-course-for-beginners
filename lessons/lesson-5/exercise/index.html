@@ -16,8 +16,8 @@
 <body>
   <h1>Vitajte to Lesson 5</h1>
   <p id="simpleText"></p>
-  <button>Zmena textu</button>
-  <p>chcem byt cerveny</p>
+  <button onclick='zobrazAlert()'>Zmena textu</button> 
+  <p id="mojeId">chcem byt cerveny</p>
   <p>a ja tiez</p>
 
   <h4>Users:</h4>
@@ -31,14 +31,58 @@
   <p data-user-id="123">User: John Doe</p>
   <p data-user-id="143">User: John Boe</p>
   <script>
-    // Napiste funkciu, ktora po kliknuti na tlacidlo zmeni text v paragrafe na "Hello World"
 
+  console.log('Hello World')
+  zmenaTitle()
+    // Napiste funkciu, ktora po kliknuti na tlacidlo zmeni text v paragrafe na "Hello World"
+ 
+  function zmenaTextu() {
+   let paragraf = document.getElementById('simpleText')
+    console.log(paragraf)
+    paragraf.innerText = 'Hello world'
+  }
+
+function zmenaBarva() {
+  let paragraf = document.getElementById('mojeId')
+  console.log(paragraf)
+  paragraf.innerText = 'Chci být zelená'
+}
     // Napiste funckciu, ktora 2 sekundy po nacitani stranky zmeni Title stranky
 
     // Napiste funckciu, ktora zmeni farbu vsetky paragrafov na stranke na cervenu
 
-    // Napiste funkciu, ktora vypise aktualnu adresu stranky do konzoly
+    function novaBarva () {
+    let paragrafy = document.querySelectorAll('p')
+    console.log(paragrafy)
+  paragrafy.forEach((paragraf) => {
+    paragraf.style.color = 'red'
+  })
+    }
 
+  function barvaTlacitek () {
+    let buttons = document.querySelectorAll('button')
+    console.log(buttons)
+    buttons.forEach((tlacitko) => {
+      tlacitko.style.backgroundColor = 'yellow'
+    })
+  }
+
+  function zmenaTitle () {
+    setTimeout(() => {
+      document.title = 'Novy Title'
+    }, 5000)
+    
+  }
+
+    // Napiste funkciu, ktora vypise aktualnu adresu stranky do konzoly
+function printUrl() {
+  var url = window.location.href
+
+}
+
+function zobrazAlert () {
+window.alert('Hey')
+}
     // Napiste funkciu, ktora zobrazi Alert okno s lubovolnym textom
 
     // V zlozkte data/users.json upravte users.json tak, aby obsahovalo pole uzivatelov a kazdy uzivatel mal meno, priezvisko, role a popis, ktory podporuje HTML tagy
@@ -49,6 +93,7 @@
 
     // Napiste funkciu, ktora zmeni meno uzivatela s id 123 na "Cypress Test"
   </script>
+
 </body>
 
 </html>
