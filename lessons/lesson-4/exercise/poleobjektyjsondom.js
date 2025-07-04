@@ -1,4 +1,4 @@
-// pole [] a prvek je oddělený čárkou, začíná se od 0, pole jsou dynamická (lze zmenšovat, zvětšovat), pole nejsou heterogenní, prvky může být undefined, string, number
+// pole [] a prvek je oddělený čárkou, začíná se od 0, pole jsou dynamická (lze zmenšovat, zvětšovat), pole jsou heterogenní, prvky může být undefined, string, number
 
 const pole = new Array('item1', true, 1, undefined)
 const policko = ['item2', true, undefined, 2]
@@ -28,3 +28,4 @@ const user = {
 console.log(userName[0]) // přes index, bere to z mého definovaného pole, index0 je hodnota 'Josef'
 console.log(user['jmeno']) // dynamická data
 console.log(user.name)
+
