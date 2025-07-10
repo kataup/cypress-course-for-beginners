@@ -55,7 +55,7 @@ Conditional statements are control structures that execute specific blocks of co
      - **Purpose:** Executes a block of code if a specified condition is true.
      - **Syntax:**
        ```javascript
-       if (condition) {   
+       if (condition) {
          // code to execute if condition is true
        }
        ```
