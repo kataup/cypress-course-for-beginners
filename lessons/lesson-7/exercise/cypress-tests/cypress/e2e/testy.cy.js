@@ -74,10 +74,19 @@ describe('template spec', () => {
   cy.get('input[data-testid="email-input"]').clear().type('email@email.cz')
   cy.get('input[data-testid="url-input"]').clear().type('http://www.seznam.cz/')
   cy.get('input[data-testid="tel-input"]').clear().type('+420777777777')
-  cy.get('input[data-testid="date-input"]').clear().type('1990-10-10')
-  cy.get('select[data-testid="country-select"]').value(2)
+  cy.get('input[data-testid="date-input"]').clear().type('1990-10-10').wait(2000).clear()
+  .wait(3000)
+  cy.get('input[data-testid="date-input"]').clear().type('2000-11-10')
+  cy.get('select[data-testid="country-select"]').select(2)
+  cy.get('select[data-testid="experience-select"]').select(3)
+  cy.get('input[data-testid="tech-javascript"]').click().wait(2000)
+  cy.get('input[data-testid="tech-java"]').click().wait(2000)
+  cy.get('input[data-testid="tech-java"]').click().wait(2000)
+  cy.get('input[data-testid="tech-python"]').click().wait(2000)
+    
+  cy.get('form[data-testid="complex-form"]').submit()
+  cy.get('p[data-testid="complex-success"]').should('be.visible')
 
   })
-  
-   })
+    })
   })
