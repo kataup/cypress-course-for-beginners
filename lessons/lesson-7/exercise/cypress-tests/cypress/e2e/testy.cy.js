@@ -74,7 +74,8 @@ describe('template spec', () => {
   cy.get('input[data-testid="email-input"]').clear().type('email@email.cz')
   cy.get('input[data-testid="url-input"]').clear().type('http://www.seznam.cz/')
   cy.get('input[data-testid="tel-input"]').clear().type('+420777777777')
-  cy.get('input[data-testid="date-input"]').clear().select('1O.10.1995')
+  cy.get('input[data-testid="date-input"]').clear().type('1990-10-10')
+  cy.get('select[data-testid="country-select"]').value(2)
 
   })
   
