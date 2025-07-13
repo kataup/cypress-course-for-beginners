@@ -59,7 +59,7 @@ describe('template spec', () => {
     cy.get('h2').contains('Nastavenia') */
 
 
-    cy.get('input[data-testid="dynamic-search"]').type('l')
+/*     cy.get('input[data-testid="dynamic-search"]').type('l')
     cy.get('ul[data-testid="search-results"]').within(() => {
       cy.get('li').eq(0).should('be.visible').should('contain.text', 'Alice')
       cy.get('li').eq(1).should('not.be.visible').should('contain.text', 'Bob')
@@ -68,5 +68,15 @@ describe('template spec', () => {
 
     })
   })
+ */
 
+  cy.get('div[data-testid="complex-form-section"]').within(() => {
+  cy.get('input[data-testid="email-input"]').clear().type('email@email.cz')
+  cy.get('input[data-testid="url-input"]').clear().type('http://www.seznam.cz/')
+  cy.get('input[data-testid="tel-input"]').clear().type('+420777777777')
+  cy.get('input[data-testid="date-input"]').clear().select('1O.10.1995')
+
+  })
   
+   })
+  })
