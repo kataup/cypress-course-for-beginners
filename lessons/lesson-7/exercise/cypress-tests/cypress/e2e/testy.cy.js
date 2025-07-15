@@ -87,6 +87,6 @@ describe('template spec', () => {
   cy.get('form[data-testid="complex-form"]').submit()
   cy.get('p[data-testid="complex-success"]').should('be.visible')
 
-  })
+      })
     })
   })
