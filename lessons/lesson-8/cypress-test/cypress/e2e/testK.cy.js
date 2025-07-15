@@ -25,11 +25,11 @@ cy.get('[data-testid="login-button"]').should('be.disabled')
 
 cy.get('[data-testid="username-input"]').clear().type('nick')
 cy.get('[data-testid="username-input"]').clear().type('heslo')
-cy.get('[data-testid="login-button"]').should('be.enabled')
+cy.get('[]').should('be.enabled')
 
 cy.get('[data-testid="username-input"]').clear().type('nick')
 cy.get('[data-testid="username-input"]').clear().type('heslo')
-cy.get('[data-testid="reset-button"]').click()
+cy.get('[]').click()
 
 cy.get('[data-testid="username-input"]').clear().type('nick')
 cy.get('[data-testid="username-input"]').clear().type('heslo')
