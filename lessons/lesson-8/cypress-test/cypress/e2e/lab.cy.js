@@ -27,7 +27,5 @@ cy.get('[data-test="inventory-item"').eq(0).should('contain.text', 'Sauce Labs B
 cy.get('[data-test="inventory-item"]').eq(1).should('contain.text', 'Sauce Labs Backpack')
 
 
-
-
   })
 })
