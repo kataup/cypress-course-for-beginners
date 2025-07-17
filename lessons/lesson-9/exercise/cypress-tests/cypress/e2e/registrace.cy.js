@@ -13,9 +13,9 @@ describe('registrace', () => {
         cy.log(userEmail)
         cy.log(userPassword)
 
-        cy.get()
-
-
+        cy.get('[data-testid="reg-username-input"]').type(userName)
+        cy.get('[data-testid="reg-email-input"]').type(userEmail)
+        cy.get('[data-testid="reg-password-input"]').type(userPassword)
 
     })
 })
