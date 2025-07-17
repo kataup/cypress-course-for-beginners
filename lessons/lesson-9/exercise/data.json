@@ -36,7 +36,7 @@
     "last_updated": "2025-07-10"
   },
   {
-    "address": "999 Elm St",
+    "address": "555 Elm St",
     "ruian_code": "RU999",
     "available_technologies": ["Cable", "Fiber", "DSL", "Satellite"],
     "city": "Ogdenville",
