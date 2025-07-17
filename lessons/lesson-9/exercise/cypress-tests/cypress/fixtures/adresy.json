@@ -1,14 +1,33 @@
 [
     {
 "hledanaAdresa": "123 Main St",
-"ruianKod": "RU123"
+"ruianKod": "RU123",
+"ocekavanyPocetAdres": 1
     },
  {
 "hledanaAdresa": "555 Elm St",
-"ruianKod": "RU999"
+"ruianKod": "RU999",
+"ocekavanyPocetAdres": 1
     },
 {
 "hledanaAdresa": "321 Maple Ave",
-"ruianKod": "RU321"
+"ruianKod": "RU321",
+"ocekavanyPocetAdres": 1
+    },
+
+    {
+"hledanaAdresa": "Neexistující adresa",
+"ruianKod": "",
+"ocekavanyPocetAdres": 0
+    },
+     {
+"hledanaAdresa": "123 MAIN ST",
+"ruianKod": "RU123",
+"ocekavanyPocetAdres": 1
+    },
+     {
+"hledanaAdresa": "555 elm st",
+"ruianKod": "RU999",
+"ocekavanyPocetAdres": 1
     }
 ]

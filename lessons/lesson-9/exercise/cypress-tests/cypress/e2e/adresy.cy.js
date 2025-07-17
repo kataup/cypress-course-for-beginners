@@ -9,24 +9,42 @@ describe('testovani adres', () => {
         cy.get('button[data-testid="search-button"]').should('be.visible').and('be.enabled')
 
 
-        cy.fixtures('adresy.json').then((adresy) => {
+        cy.fixture('adresy.json').then((adresy) => {
             adresy.forEach((adresa) => {
-            cy.log(adresa.hledanaAdresa)
-            cy.get('input[data-testid="search-input"]').clear().type(adresa.hledanaAdresa)
-            cy.get('button[data-testid="search-button"]').click()
-            cy.get('[data-testid="result-display"]').find('[class="result-item"]').eq(0).should('contain', adresa.ruianKod)
+                cy.log(adresa.hledanaAdresa)
+                cy.get('input[data-testid="search-input"]').clear().type(adresa.hledanaAdresa)
+                cy.get('button[data-testid="search-button"]').click()
+
+
+                if (adresa.ocekavanyPocetAdres === 0) {
+                    cy.get('[data-testid="not-found-message"]').should('be.visible').and('contain', 'Adresa sa nenašla.')
+                }
+                else {
+                    cy.get('[data-testid="result-display"]').find('[class="result-item"]').eq(0).should('contain', adresa.ruianKod)
+                    cy.get('[data-testid="result-display"]').find('[class="result-item"]').should('have.length', adresa.ocekavanyPocetAdres)
+
+                }
+
+
+
+
+
+
             })
         })
-        
 
-      /*   cy.get('input[data-testid="search-input"]').type('123')
-        cy.get('button[data-testid="search-button"]').click()
-
-        cy.get('[data-testid="result-display"]').find('.result-item').eq(0).should('contain', 'RU123') */
+        // zadám neuplnou adresu, kdyz zadam adresu 123 tak nam to najde i 2 výsledky
 
 
 
-    
+        /*   cy.get('input[data-testid="search-input"]').type('123')
+          cy.get('button[data-testid="search-button"]').click()
+  
+          cy.get('[data-testid="result-display"]').find('.result-item').eq(0).should('contain', 'RU123') */
+
+
+
+
     })
 })
 
