@@ -20,19 +20,33 @@ describe('template spec', () => {
 
 
 cy.get('[data-testid="username-input"]').should('exist')
-cy.get('[data-testid="username-input"]').should('be.visible')
+cy.get('[data-testid="password-input"]').should('be.visible')
 cy.get('[data-testid="login-button"]').should('be.disabled')
 
 cy.get('[data-testid="username-input"]').clear().type('nick')
-cy.get('[data-testid="username-input"]').clear().type('heslo')
-cy.get('[]').should('be.enabled')
+cy.get('[data-testid="password-input"]').clear().type('heslo')
+cy.get('[data-testid="login-button"]').should('be.enabled')
 
 cy.get('[data-testid="username-input"]').clear().type('nick')
-cy.get('[data-testid="username-input"]').clear().type('heslo')
-cy.get('[]').click()
+cy.get('[data-testid="password-input"]').clear().type('heslo')
+cy.get('[data-testid="reset-button"]').click()
 
-cy.get('[data-testid="username-input"]').clear().type('nick')
-cy.get('[data-testid="username-input"]').clear().type('heslo')
-cy.get()
+
+cy.get('[data-testid="username-input"]').should('have.value', '')
+cy.get('[data-testid="login-button"]').should('be.disabled')
+
+cy.get('[data-testid="username-input"]').clear().type('user')
+cy.get('[data-testid="password-input"]').clear().type('pass')
+cy.get('[data-testid="role-select"]').select(1)
+cy.get('[data-testid="remember-me"]').check()
+cy.get('[data-testid="login-button"]').click()
+
+cy.url().should('contain', 'dashboard')
+cy.get('[data-testid="dashboard-title"]').should('exist')
+
+
+
+
+
 })
 })
