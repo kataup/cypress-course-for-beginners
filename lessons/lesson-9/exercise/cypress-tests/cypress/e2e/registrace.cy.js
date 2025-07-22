@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 
 describe('registrace', () => {
     it('faker registrace', () => {
-        cy.visit('http://127.0.0.1:5500/cypress-course-for-beginners/lessons/lesson-9/exercise2/login.html')
+        cy.visit('http://127.0.0.1:5500/cypress-course-for-beginners/lessons/lesson-9/exercise2/registration.html')
         
         const userName = faker.internet.username()
         const userEmail = faker.internet.email()
@@ -16,6 +16,7 @@ describe('registrace', () => {
         cy.get('[data-testid="reg-username-input"]').type(userName)
         cy.get('[data-testid="reg-email-input"]').type(userEmail)
         cy.get('[data-testid="reg-password-input"]').type(userPassword)
+        cy.get('[data-testid="reg-submit-button"]').click()
 
     })
 })
