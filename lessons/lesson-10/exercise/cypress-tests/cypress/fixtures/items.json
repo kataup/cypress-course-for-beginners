@@ -1,0 +1,23 @@
+[
+ {
+    "nazevItem": "jeden", 
+    "count": 1,
+    "isActive": true 
+},
+ {
+    "nazevItem": "dva",
+    "count": 2,
+    "isActive": false
+ },
+ {
+    "nazevItem": "tri",
+    "count":1,
+    "isActive": true
+ }
+]
+
+
+
+
+
+
