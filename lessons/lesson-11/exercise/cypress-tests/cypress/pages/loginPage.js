@@ -14,13 +14,9 @@ export default new class LoginPage {
    // emailInput = () => cy.get('input[data-testid="email-input"]')
 
     login(emailValue, passwordValue) {
-        this.getEmailInput().type(emailValue)
-        this.getPasswordInput().type(passwordValue)
-        this.getLoginButton().click()
+        this.getEmailInput().type(emailValue).blur()
+        this.getPasswordInput().type(passwordValue).blur()
+        this.getLoginButton().blur.apply().click()
     }
     
 }
-
-
-// nebo:
-// export const loginPage = new LoginPage()
