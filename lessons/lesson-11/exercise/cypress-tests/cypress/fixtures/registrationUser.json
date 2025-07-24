@@ -1,13 +1,9 @@
-[
+
     {
     "username": "testuser",
     "email": "validemail@email.com",
-    "password": "1234"
-    },
-
-    {
+    "password": "1234",
     "invalidUsername": "invalid",
     "invalidEmail": "invalidmail",
     "invalidPassowrd": "zadnyheslo"
     }
-]

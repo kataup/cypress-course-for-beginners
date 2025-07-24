@@ -29,6 +29,6 @@ describe('template spec', () => {
 
         // assert 
 
-        cy.contains('invalid email format').should('be.visible')
+        cy.contains('Invalid email format').should('be.visible')
     })
 })
