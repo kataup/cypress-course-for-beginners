@@ -23,8 +23,6 @@ describe('template spec', () => {
         cy.url().should('contain', 'account')
     })
 
-    
-
     it('register new user with invalid', () => {
         registrationPage.insertRegistrationData(registrationUserdata.username, registrationUserdata.invalidEmail, registrationUserdata.password)
 
