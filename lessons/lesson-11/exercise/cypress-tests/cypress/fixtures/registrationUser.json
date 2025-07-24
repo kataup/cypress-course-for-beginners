@@ -2,7 +2,7 @@
     {
     "username": "testuser",
     "email": "validemail@email.com",
-    "password": "1234",
+    "password": "Heslo1234!",
     "invalidUsername": "invalid",
     "invalidEmail": "invalidmail",
     "invalidPassowrd": "zadnyheslo"

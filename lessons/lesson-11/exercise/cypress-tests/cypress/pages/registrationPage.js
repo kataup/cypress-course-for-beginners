@@ -9,6 +9,7 @@ insertRegistrationData (usernamValue, emailValue, passwordValue) {
 this.usernameInput().clear().type(usernamValue).blur()
 this.emailInput().clear().type(emailValue).blur()
 this.passwordInput().clear().type(passwordValue).blur()
+cy.wait(2000)
 }
 }
 

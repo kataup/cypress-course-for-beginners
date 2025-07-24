@@ -20,9 +20,10 @@ describe('template spec', () => {
         registrationPage.insertRegistrationData(registrationUserdata.username, registrationUserdata.email, registrationUserdata.password)
         registrationPage.registrationButton().click()
 
+        cy.url().should('contain', 'account')
     })
 
-    cy.url().should('contain', 'account')
+    
 
     it('register new user with invalid', () => {
         registrationPage.insertRegistrationData(registrationUserdata.username, registrationUserdata.invalidEmail, registrationUserdata.password)
