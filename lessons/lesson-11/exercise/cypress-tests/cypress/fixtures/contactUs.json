@@ -1,0 +1,8 @@
+{
+    "name": "tester1",
+    "email": "email@email.com",
+    "message": "Hello yellow, Hello yellow",
+    "nameInvalid": "xy",
+    "emailInvalid": "yx",
+    "messageInvalid": "xoxo"
+}
