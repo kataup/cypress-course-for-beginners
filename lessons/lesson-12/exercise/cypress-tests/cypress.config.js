@@ -6,6 +6,7 @@ export default defineConfig({
   viewportWidth: 1920,
   pageLoadTimeout: 60000,
   defaultCommandTimeout: 10000,
+  retries: {openMode: 0, runMode: 2},
   e2e: {
 
     setupNodeEvents(on, config) {
