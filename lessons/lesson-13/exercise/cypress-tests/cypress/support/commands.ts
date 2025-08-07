@@ -38,7 +38,6 @@
 Cypress.Commands.add('login', () => {})
 Cypress.Commands.add('loginWithParams', (emailValue: string, passwordValue: string) => {})
 
-
 export { }
 declare global {
     namespace Cypress {
@@ -48,3 +47,4 @@ declare global {
         }
     }
 }
+

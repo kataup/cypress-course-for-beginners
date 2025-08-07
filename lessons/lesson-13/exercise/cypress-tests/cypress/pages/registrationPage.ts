@@ -11,7 +11,12 @@ export default new class RegistrationPage {
     interestsMusicCheckBox = () => cy.get('[data-testid="reg-interest-music"]')      
 
     subscriptionMonthly = () => cy.get('[data-testid="reg-subscription-monthly"]')   
-    subscriptionYearly = () => cy.get('[data-testid="reg-subscription-yearly"]')    
+    subscriptionYearly = () => cy.get('[data-testid="reg-subscription-yearly"]') 
+    
+    chooseFileInput = () => cy.get('input[data-testid="reg-avatar-upload"]')
+
+    sendForm = () => cy.get('button[data-testid="reg-submit-button"]')
+    
 
     sendRegistrationForm(data: RegistrationData) {
         this.nameInput().clear().type(data.name)
@@ -48,19 +53,30 @@ export default new class RegistrationPage {
         }
     }
 
+    chooseFile(data: RegistrationData) {
+        this.chooseFileInput().click()
+    }
+
+    sendFormButton() {
+        this.sendForm().click()
+    }
     navigateTo() {
         menuComponents.navigate(MenuItem.REGISTRATION)
     }
 }
 
 export interface RegistrationData {
-    name: string,
-    email: string,
-    adress: string,
-    userRole: UserRole,
+    name: string
+    email: string
+    adress: string
+    userRole: UserRole
     interests?: InterestsItems[]
-    subscripton?: Subscription[] // je to pole, mohu vybrat více checkboxů
+    subscripton?: Subscription[] // je to pole, mohu vybrat více checkboxů 
 
+}
+
+export interface Picture {
+    image: string
 }
 
 export enum UserRole {
