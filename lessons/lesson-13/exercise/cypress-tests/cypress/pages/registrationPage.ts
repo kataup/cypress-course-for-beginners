@@ -23,6 +23,7 @@ export default new class RegistrationPage {
         this.emailInput().clear().type(data.email)
         this.adressInput().clear().type(data.adress)
         this.roleSelect().select(data.userRole)
+        this.chooseFileInput().selectFile('cypress/fixtures/' + data.image, {force: true})
 
         if (data.interests) {
             cy.log('we have interests')
@@ -71,13 +72,11 @@ export interface RegistrationData {
     adress: string
     userRole: UserRole
     interests?: InterestsItems[]
-    subscripton?: Subscription[] // je to pole, mohu vybrat více checkboxů 
+    subscripton?: Subscription[]
+    image: string // je to pole, mohu vybrat více checkboxů 
 
 }
 
-export interface Picture {
-    image: string
-}
 
 export enum UserRole {
     ADMIN = 'Admin',
