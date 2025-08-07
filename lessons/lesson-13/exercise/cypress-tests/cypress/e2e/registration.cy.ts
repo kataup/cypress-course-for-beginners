@@ -2,6 +2,7 @@ import registrationPage from "../pages/registrationPage";
 import menuComponents from "../pages/Components/menuComponents";
 import { UserRole } from "../pages/registrationPage";
 import { RegistrationData } from "../pages/registrationPage";
+import { Subscription } from "../pages/registrationPage";
 describe('registration', () => {
     beforeEach(() => {
         cy.visit('http://localhost:5173/registration')
@@ -14,5 +15,6 @@ describe('registration', () => {
         userRole: UserRole.ADMIN
         }
         registrationPage.sendRegistrationForm(registrationData)
+        registrationPage.selectSubscription(Subscription.MONTHLY);
     })
 });

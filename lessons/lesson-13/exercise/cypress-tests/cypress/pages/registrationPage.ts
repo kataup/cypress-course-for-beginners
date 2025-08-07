@@ -1,5 +1,5 @@
-import menuComponents, { MenuItem } from "./Components/menuComponents"
-
+import { MenuItem } from "./Components/menuComponents"
+import menuComponents from "./Components/menuComponents"
 export default new class RegistrationPage {
     nameInput = () => cy.get('[data-testid="reg-name-input"]')
     emailInput = () => cy.get('[data-testid="reg-email-input"]')
@@ -7,8 +7,11 @@ export default new class RegistrationPage {
     roleSelect = () => cy.get('[data-testid="reg-role-select"]')
 
     interestsTechCheckBox = () => cy.get('[data-testid="reg-interest-tech"]')
-    interestsDesignCheckBox = () => cy.get('[data-testid="reg-interest-design""]')
-    interestsMusicCheckBox = () => cy.get('[data-testid="reg-interest-design""]')
+    interestsDesignCheckBox = () => cy.get('[data-testid="reg-interest-design"]')   
+    interestsMusicCheckBox = () => cy.get('[data-testid="reg-interest-music"]')      
+
+    subscriptionMonthly = () => cy.get('[data-testid="reg-subscription-monthly"]')   
+    subscriptionYearly = () => cy.get('[data-testid="reg-subscription-yearly"]')    
 
     sendRegistrationForm(data: RegistrationData) {
         this.nameInput().clear().type(data.name)
@@ -26,22 +29,38 @@ export default new class RegistrationPage {
                     case InterestsItems.DESIGN:
                         this.interestsDesignCheckBox().click()
                         break
+                    case InterestsItems.MUSIC:
+                        this.interestsMusicCheckBox().click()
+                        break
                 }
             })
         }
-    } navigateTo() {
+    }
+
+    selectSubscription(subscription: Subscription) {
+        switch (subscription) {
+            case Subscription.MONTHLY:
+                this.subscriptionMonthly().click();
+                break;
+            case Subscription.YEARLY:
+                this.subscriptionYearly().click();
+                break;
+        }
+    }
+
+    navigateTo() {
         menuComponents.navigate(MenuItem.REGISTRATION)
     }
 }
-
 
 export interface RegistrationData {
     name: string,
     email: string,
     adress: string,
     userRole: UserRole,
-    interests?: InterestsItems[] // je to pole, mohu vybrat více checkboxů
-   
+    interests?: InterestsItems[]
+    subscripton?: Subscription[] // je to pole, mohu vybrat více checkboxů
+
 }
 
 export enum UserRole {
