@@ -21,11 +21,11 @@ export default defineConfig({
       },
 
       saveSharedDataToFile(testshareddata: string) {
-        writeFileSync('cypress/fixtures/shareData.txt', testshareddata, 'utf8')
+        writeFileSync('cypress/fixtures/sharedData.txt', testshareddata, 'utf8')
         return null
 
       },
-      getSharedDateFromFile() {
+      getSharedDataFromFile() {
         const data = readFileSync('cypress/fixtures/sharedData.txt', 'utf8')
         return data
 
